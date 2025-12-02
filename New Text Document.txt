@@ -1,0 +1,228 @@
+<li><a href="#results" class="nav-link">Results</a></li>
+
+
+<li><i class="fas fa-check"></i> Proven track record with 50+ clients</li>
+
+  <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Proven Results</h2>
+                <p class="section-subtitle">Real metrics from real clients</p>
+            </div>
+            
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-number">+42%</div>
+                    <div class="stat-label">Lead-to-Call Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Hours Saved/Month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3×</div>
+                    <div class="stat-label">Reply Rate</div>
+                </div>
+            </div>
+            
+            <div class="case-studies">
+                <div class="case-card reveal">
+                    <h3>Instagram DM Assistant</h3>
+                    <p>Automated lead qualification and booking for a fitness coaching business</p>
+                    <ul class="case-results">
+                        <li>+67% response rate</li>
+                        <li>85% of leads qualified automatically</li>
+                        <li>40 hours saved per week</li>
+                    </ul>
+                </div>
+                
+                <div class="case-card reveal">
+                    <h3>E-commerce Post-Purchase</h3>
+                    <p>Automated follow-up sequence for an online retail store</p>
+                    <ul class="case-results">
+                        <li>+23% repeat purchase rate</li>
+                        <li>92% customer satisfaction</li>
+                        <li>60% reduction in support tickets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Dashboard Section EG-->
+
+    <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+      <div class="container">
+        <h2 id="dashboard-title" class="section-title reveal">Control Everything From Your Dashboard</h2>
+        <p class="dashboard-subtitle reveal">
+          Manage calls, view appointments, track leads, and customize your AI receptionist — all from one simple, web-based app.
+        </p>
+
+        <div class="dashboard-grid reveal" role="list">
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-calendar"></i>
+            <h3>Appointments Made Easy</h3>
+            <p>View and manage all bookings in real time, with calendar sync.</p>
+          </article>
+
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-chart-line"></i>
+            <h3>Business Insights</h3>
+            <p>Track answered calls, saved hours, pipeline value, and ROI at a glance.</p>
+          </article>
+
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-sliders-h"></i>
+            <h3>Custom Settings</h3>
+            <p>Control tone, availability, qualifying questions, and escalation rules.</p>
+          </article>
+        </div>
+
+        <div class="dashboard-visual reveal">
+          <div class="mockup-grid">
+            <div class="mockup-item mockup-main">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_33 PM.png"
+                  alt="AIAnchor dashboard main view showing appointments and analytics"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Main Dashboard</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_43 PM.png"
+                  alt="AIAnchor analytics view"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Analytics</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_47 PM.png"
+                  alt="AIAnchor settings panel"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">AI Receptionist</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_51 PM.png"
+                  alt="AIAnchor mobile view"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Bookings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </section>
+
+
+
+ <!-- Dashboard Section GR-->
+    <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+      <div class="container">
+        <h2 id="dashboard-title" class="section-title reveal">Ελέγξτε Όλα από το Dashboard σας</h2>
+        <p class="dashboard-subtitle reveal">
+          Διαχειριστείτε κλήσεις, δείτε ραντεβού, παρακολουθήστε πιθανούς πελάτες και προσαρμόστε τον AI υποδοχέα σας — όλα από μια απλή, εφαρμογή web.
+        </p>
+
+        <div class="dashboard-grid reveal" role="list">
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-calendar"></i>
+            <h3>Εύκολη Διαχείριση Ραντεβού</h3>
+            <p>Δείτε και διαχειριστείτε όλες τις κρατήσεις σε πραγματικό χρόνο, με συγχρονισμό ημερολογίου.</p>
+          </article>
+
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-chart-line"></i>
+            <h3>Επιχειρηματικές Αναλύσεις</h3>
+            <p>Παρακολουθήστε απαντημένες κλήσεις, αποθηκευμένες ώρες, αξία αγωγού πωλήσεων και ROI με μια ματιά.</p>
+          </article>
+
+          <article class="dashboard-feature" role="listitem">
+            <i class="fas fa-sliders-h"></i>
+            <h3>Custom Settings</h3>
+            <p>Control tone, availability, qualifying questions, and escalation rules.</p>
+          </article>
+        </div>
+
+        <div class="dashboard-visual reveal">
+          <div class="mockup-grid">
+            <div class="mockup-item mockup-main">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_33 PM.png"
+                  alt="AIAnchor dashboard main view showing appointments and analytics"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Κύριο Dashboard</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_43 PM.png"
+                  alt="AIAnchor analytics view"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Analytics</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_47 PM.png"
+                  alt="AIAnchor settings panel"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">AI Receptionist</div>
+              </div>
+            </div>
+            
+            <div class="mockup-item mockup-side">
+              <div class="mockup-border">
+                <img
+                  src="media/Anchor Insights - Demo - Google Chrome 9_13_2025 6_39_51 PM.png"
+                  alt="AIAnchor mobile view"
+                  loading="lazy"
+                  onclick="openImageModal(this)"
+                  style="cursor: pointer;"
+                />
+                <div class="mockup-label">Bookings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </section>
