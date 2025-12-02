@@ -8,6 +8,7 @@ const Hero: React.FC = () => {
   
   // Mouse position state for background spotlight
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   // Motion values for 3D tilt effect
   const x = useMotionValue(0);
@@ -19,6 +20,7 @@ const Hero: React.FC = () => {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
+    setIsHovering(true);
     
     const rect = containerRef.current.getBoundingClientRect();
     const clientX = e.clientX;
@@ -42,6 +44,7 @@ const Hero: React.FC = () => {
   };
 
   const handleMouseLeave = () => {
+    setIsHovering(false);
     x.set(0);
     y.set(0);
   };
@@ -67,15 +70,15 @@ const Hero: React.FC = () => {
     >
       {/* Dynamic Background with Cursor Spotlight */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Interactive Cursor Spotlight - Enhanced */}
+        {/* Interactive Cursor Spotlight - Exclusive to Hero */}
         <div 
-            className="absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-100 pointer-events-none mix-blend-screen"
+            className="absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-500 pointer-events-none mix-blend-screen"
             style={{
                 left: mousePosition.x,
                 top: mousePosition.y,
                 transform: 'translate(-50%, -50%)',
                 background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.4) 0%, rgba(112, 0, 255, 0.15) 50%, transparent 70%)',
-                opacity: 0.8
+                opacity: isHovering ? 0.8 : 0
             }}
         />
 

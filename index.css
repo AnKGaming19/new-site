@@ -1,0 +1,22 @@
+/* Custom Styles - Tailwind is loaded via CDN in index.html */
+
+body {
+    background-color: #050507;
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+  
+.gradient-text {
+    background: linear-gradient(to right, #00f0ff, #7000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+  
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

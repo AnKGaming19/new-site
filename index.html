@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Anchor | Strategic Intelligence</title>
     <meta name="description" content="AI Anchor provides tailored AI infrastructures, voice agents, and automation consulting to scale your business operations." />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      // Polyfill process.env for standard browser environments
-      // This allows the website to run statically without a Node.js environment or build step
-      if (typeof process === 'undefined') {
-        window.process = { env: { API_KEY: '' } };
-      }
-    </script>
+    
+    <!-- Tailwind CSS CDN for immediate styling without build step -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -26,15 +21,15 @@
             },
             colors: {
               primary: {
-                DEFAULT: '#00f0ff', // Cyberpunk cyan
+                DEFAULT: '#00f0ff',
                 dark: '#00a3cc',
               },
               secondary: {
-                DEFAULT: '#7000ff', // Deep neon purple
+                DEFAULT: '#7000ff',
                 dark: '#4a00b3',
               },
               dark: {
-                900: '#050507', // Almost black
+                900: '#050507',
                 800: '#0a0a12',
                 700: '#12121f',
               }
@@ -43,43 +38,42 @@
               'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%)',
               'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)"
             }
-          }
-        }
+          },
+        },
       }
     </script>
-    <style>
-      body {
-        background-color: #050507;
-        color: #e2e8f0;
-        overflow-x: hidden;
-      }
-      .gradient-text {
-        background: linear-gradient(to right, #00f0ff, #7000ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-    </style>
-  <script type="importmap">
+
+    <!-- Import Map for browser-native TypeScript/React execution -->
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
-</head>
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Polyfill for process.env to prevent crashes in browser -->
+    <script>
+      window.process = {
+        env: {
+          NODE_ENV: 'production',
+          API_KEY: '' 
+        }
+      }
+    </script>
+    
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
