@@ -1,78 +1,248 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Anchor | Strategic Intelligence</title>
-    <meta name="description" content="AI Anchor provides tailored AI infrastructures, voice agents, and automation consulting to scale your business operations." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN for immediate styling without build step -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-            },
-            colors: {
-              primary: {
-                DEFAULT: '#00f0ff',
-                dark: '#00a3cc',
-              },
-              secondary: {
-                DEFAULT: '#7000ff',
-                dark: '#4a00b3',
-              },
-              dark: {
-                900: '#050507',
-                800: '#0a0a12',
-                700: '#12121f',
-              }
-            },
-            backgroundImage: {
-              'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%)',
-              'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)"
-            }
-          },
-        },
-      }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Import Map for browser-native TypeScript/React execution -->
-<script>
-  // Check for import map support (Safari < 16.4 does not support it)
-  if (!('importMap' in document.createElement('script'))) {
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('root').innerHTML =
-        '<div style="color:red;text-align:center;padding:2em;">Your browser does not support import maps. Please update your browser or use a supported one for full functionality.</div>';
-    });
-  } else {
-    // Dynamically inject the import map if supported
-    const importMapScript = document.createElement('script');
-    importMapScript.type = 'importmap';
-    importMapScript.textContent = `{
-      "imports": {
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-        "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
-        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "vite": "https://aistudiocdn.com/vite@^7.2.6",
-        "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  <!-- Primary SEO -->
+  <title>AIAnchor | AI Tailored Solutions & Infrastructures for Real Estate and Service Businesses</title>
+  <meta
+    name="description"
+    content="AIAnchor builds AI tailored solutions and infrastructures that automate what slows you down and scale what drives revenue. Book a free strategy call."
+  />
+  <meta
+    name="keywords"
+    content="AI receptionist, business automation, AI agency, lead generation, AI automation services, automated booking system, AI phone system, business process automation, AI customer service, automated lead capture, AI scheduling, business efficiency, AI solutions, digital transformation, AI consulting, AI implementation, automated workflows, AI integration, smart business tools, AI-powered business, automated customer support, AI business solutions, AI automation agency, AI receptionist service, business automation software, AI chatbot, automated appointment booking, AI lead qualification, business automation tools, AI automation platform, AI business automation, automated business processes, AI automation consulting, business automation services, AI automation solutions, automated business operations, AI automation technology, business automation software, AI automation system, automated business workflow, AI automation tools, business automation platform, AI automation software, automated business management, AI automation services, business automation consulting, AI automation implementation, automated business solutions"
+  />
+  <meta name="author" content="AIAnchor" />
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+
+  <!-- Canonical & sitemap -->
+  <link rel="canonical" href="https://aianchor.online/" />
+  <link
+    rel="sitemap"
+    type="application/xml"
+    title="Sitemap"
+    href="https://aianchor.online/sitemap.xml"
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aianchor.online/" />
+  <meta
+    property="og:title"
+    content="AIAnchor | AI Tailored Solutions & Infrastructures for Business Automation"
+  />
+  <meta
+    property="og:description"
+    content="AIAnchor builds AI tailored solutions and infrastructures that automate what slows you down and scale what drives revenue. Book a free strategy call."
+  />
+  <meta
+    property="og:image"
+    content="https://aianchor.online/media/AIAnchor.jpg"
+  />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta
+    property="og:image:alt"
+    content="AIAnchor – AI Receptionist & Automation Agency"
+  />
+  <meta property="og:site_name" content="AIAnchor" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://aianchor.online/" />
+  <meta
+    name="twitter:title"
+    content="AIAnchor | AI Tailored Solutions & Infrastructures for Business Automation"
+  />
+  <meta
+    name="twitter:description"
+    content="AIAnchor builds AI tailored solutions and infrastructures that automate what slows you down and scale what drives revenue. Book a free strategy call."
+  />
+  <meta
+    name="twitter:image"
+    content="https://aianchor.online/media/AIAnchor.jpg"
+  />
+  <meta
+    name="twitter:image:alt"
+    content="AIAnchor – AI Receptionist & Automation Agency"
+  />
+
+  <!-- Brand / PWA -->
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="msapplication-TileColor" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AIAnchor" />
+
+  <!-- Extra business / geo (optional but fine to keep) -->
+  <meta name="classification" content="Business" />
+  <meta name="category" content="AI Automation Services" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="revisit-after" content="1 days" />
+  <meta name="target" content="all" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <meta name="business:contact_data:street_address" content="Greece" />
+  <meta name="business:contact_data:locality" content="Greece" />
+  <meta name="business:contact_data:region" content="Greece" />
+  <meta name="business:contact_data:postal_code" content="00000" />
+  <meta
+    name="business:contact_data:country_name"
+    content="Greece"
+  />
+
+  <meta name="geo.region" content="GR" />
+  <meta name="geo.placename" content="Greece" />
+  <meta name="geo.position" content="37.9755;23.7348" />
+  <meta name="ICBM" content="37.9755, 23.7348" />
+
+  <meta name="language" content="English" />
+  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
+
+  <!-- Search console (update values when you have real codes) -->
+  <meta name="google-site-verification" content="your-google-verification-code" />
+  <meta name="msvalidate.01" content="your-bing-verification-code" />
+  <meta name="yandex-verification" content="your-yandex-verification-code" />
+
+  <!-- Performance: preconnect / fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Preload hero image (adjust path if needed) -->
+  <link
+    rel="preload"
+    href="media/aianchor phone2.png"
+    as="image"
+  />
+
+  <!-- Main CSS from Vite/Tailwind build -->
+  <link rel="stylesheet" href="/index.css" />
+
+  <!-- Favicon set -->
+  <link rel="icon" type="image/x-icon" href="media/favicon/favicon.ico" sizes="any" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="media/favicon/favicon-16x16 (1).png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="media/favicon/favicon-32x32 (1).png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="64x64"
+    href="media/favicon/favicon-64x64.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="media/favicon/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="media/favicon/favicon.ico" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AIAnchor",
+      "alternateName": "AI Anchor",
+      "description": "AIAnchor builds AI tailored solutions and infrastructures that automate what slows you down and scale what drives revenue.",
+      "url": "https://aianchor.online",
+      "logo": "https://aianchor.online/media/AIAnchor.jpg",
+      "image": "https://aianchor.online/media/AIAnchor.jpg",
+      "telephone": "+30-XXX-XXX-XXXX",
+      "email": "info@aianchor.online",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GR",
+        "addressLocality": "Greece"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "AIAnchor Team",
+        "image": "https://aianchor.online/media/AIAnchor.jpg",
+        "jobTitle": "AI Automation Experts",
+        "description": "Specialized team of AI automation experts and business strategists"
+      },
+      "sameAs": [
+        "https://www.instagram.com/aianchor_/",
+        "http://linkedin.com/company/aianchor"
+      ],
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Greece"
+      },
+      "keywords": "AI receptionist, business automation, AI agency, lead generation, AI automation services, automated booking system, AI phone system, business process automation, AI customer service, automated lead capture, AI scheduling, business efficiency, AI solutions, digital transformation, AI consulting, AI implementation, automated workflows, AI integration, smart business tools, AI-powered business, automated customer support, AI business solutions"
+    }
+  </script>
+
+  <!-- Structured Data: Website -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AIAnchor",
+      "url": "https://aianchor.online",
+      "description": "AI automation agency specializing in AI receptionists and business process automation",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://aianchor.online/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
-    }`;
-    document.currentScript.parentNode.insertBefore(importMapScript, document.currentScript.nextSibling);
-  }
-</script>
-    <link rel="stylesheet" href="/index.css">
-  </head>
+    }
+  </script>
+
+  <!-- Structured Data: Service -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Automation Services",
+      "description": "We build AI automations that capture more leads, close more deals, and free your team from repetitive work.",
+      "provider": {
+        "@type": "Organization",
+        "name": "AIAnchor",
+        "url": "https://aianchor.online"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Greece"
+      },
+      "serviceType": "AI Automation",
+      "offers": {
+        "@type": "Offer",
+        "description": "Free strategy call to discuss AI automation opportunities",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  </script>
+</head>
+
   <body>
     <div id="root"></div>
     
