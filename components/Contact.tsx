@@ -115,23 +115,48 @@ const Contact: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
-                        <input name="firstName" required type="text" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
+                        <input
+                          name="firstName"
+                          required
+                          type="text"
+                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
+                          title="First Name"
+                          placeholder="Enter your first name"
+                        />
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
-                        <input name="lastName" required type="text" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
+                        <input
+                          name="lastName"
+                          required
+                          type="text"
+                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
+                          title="Last Name"
+                          placeholder="Enter your last name"
+                        />
                     </div>
                     </div>
                     
                     <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                    <input name="email" required type="email" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
+                    <input
+                      name="email"
+                      required
+                      type="email"
+                      className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
+                      title="Email Address"
+                      placeholder="Enter your email address"
+                    />
                     </div>
 
                     <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Interest</label>
                     <div className="relative">
-                        <select name="interest" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors appearance-none">
+                        <select
+                          name="interest"
+                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors appearance-none"
+                          aria-label="Interest"
+                        >
                             <option>Strategic Consulting</option>
                             <option>Voice Agents & Automation</option>
                             <option>Operational Visibility</option>
@@ -145,7 +170,14 @@ const Contact: React.FC = () => {
 
                     <div className="mb-8">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                    <textarea name="message" required rows={4} className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"></textarea>
+                    <textarea
+                      name="message"
+                      required
+                      rows={4}
+                      className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
+                      placeholder="Type your message here..."
+                      title="Message"
+                    ></textarea>
                     </div>
 
                     <button 

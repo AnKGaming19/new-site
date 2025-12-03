@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, Loader2, ChevronDown, Sparkles } from 'lucide-react';
-import { GoogleGenAI, Chat } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
 
 interface Message {
   role: 'user' | 'model';
@@ -41,7 +42,8 @@ const ChatWidget: React.FC = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatSession = useRef<Chat | null>(null);
+const chatSession = useRef<any | null>(null);
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -52,23 +54,37 @@ const ChatWidget: React.FC = () => {
   }, [messages, isOpen]);
 
   const initChat = () => {
-      const apiKey = process.env.API_KEY;
-      if (!apiKey) return;
+  const apiKey =
+    typeof window !== "undefined"
+      ? (globalThis as any).NEXT_PUBLIC_API_KEY ||
+        (window as any).NEXT_PUBLIC_API_KEY
+      : undefined;
 
-      const ai = new GoogleGenAI({ apiKey });
-      chatSession.current = ai.chats.create({
-        model: 'gemini-3-pro-preview',
-        config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
-        },
-        history: [
-            {
-                role: 'model',
-                parts: [{ text: "Hi there! 👋 Welcome to AI Anchor. What part of your business are you looking to automate or improve today?" }]
-            }
-        ]
-      });
-  };
+  if (!apiKey) return;
+
+  // Old SDK client
+  const genAI = new GoogleGenerativeAI(apiKey);
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-flash", // or "gemini-1.5-pro" if you prefer
+    systemInstruction: SYSTEM_INSTRUCTION,
+  });
+
+  chatSession.current = model.startChat({
+    history: [
+      {
+        role: "model",
+        parts: [
+          {
+            text:
+              "Hi there! 👋 Welcome to AI Anchor. What part of your business are you looking to automate or improve today?",
+          },
+        ],
+      },
+    ],
+  });
+};
+
 
   useEffect(() => {
       // Initialize chat when opened if not already initialized
@@ -88,12 +104,10 @@ const ChatWidget: React.FC = () => {
 
     try {
       if (!chatSession.current) initChat();
-      
-      const result = await chatSession.current!.sendMessage({
-        message: userMsg
-      });
-      
-      const responseText = result.text;
+
+      const result = await chatSession.current!.sendMessage(userMsg);
+      const responseText = result.response?.text() ?? "";
+
       setMessages(prev => [...prev, { role: 'model', text: responseText }]);
 
     } catch (error) {
@@ -134,6 +148,7 @@ const ChatWidget: React.FC = () => {
                 <button 
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white"
+                  title="Close chat"
                 >
                   <ChevronDown size={20} />
                 </button>
@@ -182,6 +197,7 @@ const ChatWidget: React.FC = () => {
                     type="submit"
                     disabled={!input.trim() || isLoading}
                     className="absolute right-2 top-2 bottom-2 aspect-square flex items-center justify-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-black transition-all disabled:opacity-50 disabled:hover:bg-primary/10 disabled:hover:text-primary disabled:cursor-not-allowed"
+                    title="Send message"
                   >
                     <Send size={16} />
                   </button>
