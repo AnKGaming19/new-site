@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, ArrowRight, Loader2, CheckCircle, Linkedin, Instagram } from 'lucide-react';
-import ParticleBackground from './ParticleBackground';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -34,25 +33,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0b0c15] relative overflow-hidden scroll-mt-20">
-
-      {/* Dynamic Background with Cursor Spotlight */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Interactive Cursor Spotlight - Exclusive to Hero (made more discreet) */}
-        <div 
-            className="absolute w-[220px] h-[220px] rounded-full blur-[30px] transition-all duration-300 pointer-events-none"
-            style={{
-                left: mousePosition.x,
-                top: mousePosition.y,
-                transform: 'translate(-50%, -50%)',
-                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.14) 0%, rgba(112, 0, 255, 0.08) 45%, transparent 60%)',
-                opacity: isHovering ? 0.32 : 0,
-                mixBlendMode: 'normal'
-            }}
-        />
+    <section id="contact" className="py-24 bg-[#0b0c15] relative overflow-visible scroll-mt-20">
       
-      <ParticleBackground />
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
@@ -130,48 +112,23 @@ const Contact: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
-                        <input
-                          name="firstName"
-                          required
-                          type="text"
-                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
-                          title="First Name"
-                          placeholder="Enter your first name"
-                        />
+                        <input name="firstName" required type="text" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
-                        <input
-                          name="lastName"
-                          required
-                          type="text"
-                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
-                          title="Last Name"
-                          placeholder="Enter your last name"
-                        />
+                        <input name="lastName" required type="text" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
                     </div>
                     </div>
                     
                     <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                    <input
-                      name="email"
-                      required
-                      type="email"
-                      className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
-                      title="Email Address"
-                      placeholder="Enter your email address"
-                    />
+                    <input name="email" required type="email" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors" />
                     </div>
 
                     <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Interest</label>
                     <div className="relative">
-                        <select
-                          name="interest"
-                          className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors appearance-none"
-                          aria-label="Interest"
-                        >
+                        <select name="interest" className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors appearance-none">
                             <option>Strategic Consulting</option>
                             <option>Voice Agents & Automation</option>
                             <option>Operational Visibility</option>
@@ -185,14 +142,7 @@ const Contact: React.FC = () => {
 
                     <div className="mb-8">
                     <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={4}
-                      className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"
-                      placeholder="Type your message here..."
-                      title="Message"
-                    ></textarea>
+                    <textarea name="message" required rows={4} className="w-full bg-dark-900 border border-white/10 rounded-lg p-3 text-white focus:border-primary outline-none transition-colors"></textarea>
                     </div>
 
                     <button 
@@ -221,12 +171,12 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-       {/* Bottom Wave to Footer (#050507) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px] rotate-180">
-           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#050507"></path>
-        </svg>
-      </div>
+         {/* Bottom Wave to Services (#0000) */}
+<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px]">
+<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#0000"></path>
+</svg>
+</div>
     </section>
   );
 };

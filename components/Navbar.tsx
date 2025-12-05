@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
               key={item.label} 
               href={item.href}
               onClick={(e) => handleSmoothScroll(e, item.href)}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </a>
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
           <a 
             href="#contact" 
             onClick={(e) => handleSmoothScroll(e, '#contact')}
-            className="px-6 py-2 bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm"
+            className="px-6 py-2 bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105"
           >
             Get Automation Plan
           </a>
@@ -106,6 +106,7 @@ const Navbar: React.FC = () => {
                 href={item.href}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
+                whileHover={{ scale: 1.05, x: 10, color: "#00f0ff" }}
                 transition={{ delay: index * 0.1 }}
                 className="text-2xl font-display font-medium text-gray-300 hover:text-primary py-2 border-b border-white/5"
                 onClick={(e) => handleSmoothScroll(e, item.href)}
@@ -116,6 +117,7 @@ const Navbar: React.FC = () => {
             <motion.a 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              whileTap={{ scale: 0.95 }}
               transition={{ delay: 0.3 }}
               href="#contact"
               onClick={(e) => handleSmoothScroll(e, '#contact')}

@@ -36,7 +36,13 @@ const Footer: React.FC = () => {
                 </ul>
             </div>
 
-          
+            <div>
+                <h4 className="font-bold text-white mb-6">Legal</h4>
+                <ul className="space-y-4 text-sm text-gray-400">
+                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
 
             <div>
                 <h4 className="font-bold text-white mb-6">Social</h4>

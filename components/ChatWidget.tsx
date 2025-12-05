@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Bot, Loader2, ChevronDown, Sparkles } from "lucide-react";
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageSquare, X, Send, Bot, Loader2, ChevronDown, Sparkles } from 'lucide-react';
+import { GoogleGenAI, Chat } from "@google/genai";
 
-// We keep your Message type and roles
 interface Message {
-  role: "user" | "model";
+  role: 'user' | 'model';
   text: string;
 }
 
@@ -33,63 +33,15 @@ Guidelines
 • Never assume what they need before asking at least one clarifying question
 • Always stay warm, helpful, and concise`;
 
-// Read from .env.local (Vite style)
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY as string | undefined;
-
-// Helper that calls OpenAI (gpt-4.1-mini)
-async function getAssistantReply(conversation: Message[]): Promise<string> {
-  if (!OPENAI_API_KEY) {
-    console.error("Missing VITE_OPENAI_API_KEY in .env.local");
-    throw new Error("Missing API key");
-  }
-
-  // Convert your conversation format to OpenAI's messages
-  const apiMessages = [
-    { role: "system", content: SYSTEM_INSTRUCTION },
-    ...conversation.map((m) => ({
-      role: m.role === "user" ? "user" : ("assistant" as const),
-      content: m.text,
-    })),
-  ];
-
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4.1-mini",
-      messages: apiMessages,
-      temperature: 0.6,
-    }),
-  });
-
-  if (!res.ok) {
-    console.error("OpenAI API error:", await res.text());
-    throw new Error("OpenAI API error");
-  }
-
-  const data = await res.json();
-  const text =
-    data.choices?.[0]?.message?.content?.trim() ??
-    "I am not sure how to answer that. Could you rephrase it?";
-
-  return text;
-}
-
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "model",
-      text:
-        "Hi there! 👋 Welcome to AI Anchor. What part of your business are you looking to automate or improve today?",
-    },
+    { role: 'model', text: "Hi there! 👋 Welcome to AI Anchor. What part of your business are you looking to automate or improve today?" }
   ]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatSession = useRef<Chat | null>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -99,34 +51,54 @@ const ChatWidget: React.FC = () => {
     scrollToBottom();
   }, [messages, isOpen]);
 
+  const initChat = () => {
+      const apiKey = process.env.API_KEY;
+      if (!apiKey) return;
+
+      const ai = new GoogleGenAI({ apiKey });
+      chatSession.current = ai.chats.create({
+        model: 'gemini-3-pro-preview',
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+        },
+        history: [
+            {
+                role: 'model',
+                parts: [{ text: "Hi there! 👋 Welcome to AI Anchor. What part of your business are you looking to automate or improve today?" }]
+            }
+        ]
+      });
+  };
+
+  useEffect(() => {
+      // Initialize chat when opened if not already initialized
+      if (isOpen && !chatSession.current) {
+          initChat();
+      }
+  }, [isOpen]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
     const userMsg = input.trim();
-    setInput("");
-
-    // Add user message to the conversation
-    const updatedMessages: Message[] = [
-      ...messages,
-      { role: "user", text: userMsg },
-    ];
-    setMessages(updatedMessages);
+    setInput('');
+    setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
     try {
-      const replyText = await getAssistantReply(updatedMessages);
-      setMessages((prev) => [...prev, { role: "model", text: replyText }]);
+      if (!chatSession.current) initChat();
+      
+      const result = await chatSession.current!.sendMessage({
+        message: userMsg
+      });
+      
+      const responseText = result.text;
+      setMessages(prev => [...prev, { role: 'model', text: responseText }]);
+
     } catch (error) {
       console.error("Chat error:", error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "model",
-          text:
-            "I'm having a bit of trouble connecting to our systems right now. Could you try asking that again?",
-        },
-      ]);
+      setMessages(prev => [...prev, { role: 'model', text: "I'm having a bit of trouble connecting to our systems right now. Could you try asking that again?" }]);
     } finally {
       setIsLoading(false);
     }
@@ -144,6 +116,7 @@ const ChatWidget: React.FC = () => {
             className="fixed bottom-24 right-6 z-50 w-[90vw] md:w-[380px] h-[600px] max-h-[70vh] flex flex-col"
           >
             <div className="flex-1 bg-[#050507]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col">
+              
               {/* Header */}
               <div className="p-4 border-b border-white/10 bg-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -151,19 +124,16 @@ const ChatWidget: React.FC = () => {
                     <Bot className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-white text-sm">
-                      AI Anchor Assistant
-                    </h3>
+                    <h3 className="font-display font-bold text-white text-sm">AI Anchor Assistant</h3>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-[10px] text-gray-400">Online</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-[10px] text-gray-400">Online</span>
                     </div>
                   </div>
                 </div>
-                <button
+                <button 
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white"
-                  title="Close chat"
                 >
                   <ChevronDown size={20} />
                 </button>
@@ -172,17 +142,15 @@ const ChatWidget: React.FC = () => {
               {/* Chat Area */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
                 {messages.map((msg, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex ${
-                      msg.role === "user" ? "justify-end" : "justify-start"
-                    }`}
+                  <div 
+                    key={idx} 
+                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
-                    <div
+                    <div 
                       className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed ${
-                        msg.role === "user"
-                          ? "bg-primary text-black rounded-tr-none font-medium"
-                          : "bg-white/10 text-gray-100 rounded-tl-none border border-white/5"
+                        msg.role === 'user' 
+                          ? 'bg-primary text-black rounded-tr-none font-medium' 
+                          : 'bg-white/10 text-gray-100 rounded-tl-none border border-white/5'
                       }`}
                     >
                       {msg.text}
@@ -191,12 +159,10 @@ const ChatWidget: React.FC = () => {
                 ))}
                 {isLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none border border-white/5 flex items-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin text-primary" />
-                      <span className="text-xs text-gray-400">
-                        Thinking...
-                      </span>
-                    </div>
+                     <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none border border-white/5 flex items-center gap-2">
+                        <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                        <span className="text-xs text-gray-400">Thinking...</span>
+                     </div>
                   </div>
                 )}
                 <div ref={messagesEndRef} />
@@ -216,15 +182,15 @@ const ChatWidget: React.FC = () => {
                     type="submit"
                     disabled={!input.trim() || isLoading}
                     className="absolute right-2 top-2 bottom-2 aspect-square flex items-center justify-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-black transition-all disabled:opacity-50 disabled:hover:bg-primary/10 disabled:hover:text-primary disabled:cursor-not-allowed"
-                    title="Send message"
                   >
                     <Send size={16} />
                   </button>
                 </form>
                 <div className="text-[10px] text-center text-gray-400 mt-2">
-                  AI can make mistakes. Please verify critical info.
+                    AI can make mistakes. Please verify critical info.
                 </div>
               </div>
+
             </div>
           </motion.div>
         )}
@@ -235,15 +201,13 @@ const ChatWidget: React.FC = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-300 ${
-          isOpen
-            ? "bg-gray-800 text-white border border-white/10"
-            : "bg-gradient-to-tr from-primary to-secondary text-white"
+            isOpen ? 'bg-gray-800 text-white border border-white/10' : 'bg-gradient-to-tr from-primary to-secondary text-white'
         }`}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
-
+        
         {!isOpen && (
-          <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-[#050507]" />
+            <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-[#050507]" />
         )}
       </motion.button>
     </>

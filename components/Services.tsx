@@ -150,10 +150,10 @@ const ServiceCard: React.FC<{ service: typeof servicesData[0], index: number }> 
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-32 bg-[#0b0c15] relative scroll-mt-20 overflow-hidden">
+    <section id="services" className="py-32 bg-[#0b0c15] relative scroll-mt-20 overflow-visible">
       
-      {/* Cyber Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      {/* Cyber Grid Background with Fade Out Mask */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -184,12 +184,12 @@ const Services: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Wave to Process (#050507) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px] rotate-180">
-           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#050507"></path>
-        </svg>
-      </div>
+       {/* Bottom Wave to Services (#0b0c15) */}
+<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px]">
+<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#0b0c15"></path>
+</svg>
+</div>
     </section>
   );
 };

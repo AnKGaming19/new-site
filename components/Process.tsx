@@ -11,7 +11,6 @@ const Process: React.FC = () => {
   });
 
   // Map scroll progress so the line fills completely when the section is halfway through the viewport
-  // This ensures the connection between Pilot (2) and Scale (3) is visible while the user is reading the section.
   const scaleX = useTransform(scrollYProgress, [0.1, 0.6], [0, 1]);
 
   const steps = [
@@ -60,27 +59,12 @@ const Process: React.FC = () => {
   };
 
   return (
-    <section id="process" ref={containerRef} className="py-32 bg-[#050507] relative overflow-hidden scroll-mt-20">
-
-      {/* Dynamic Background with Cursor Spotlight */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Interactive Cursor Spotlight - Exclusive to Hero (made more discreet) */}
-        <div 
-            className="absolute w-[220px] h-[220px] rounded-full blur-[30px] transition-all duration-300 pointer-events-none"
-            style={{
-                left: mousePosition.x,
-                top: mousePosition.y,
-                transform: 'translate(-50%, -50%)',
-                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.14) 0%, rgba(112, 0, 255, 0.08) 45%, transparent 60%)',
-                opacity: isHovering ? 0.32 : 0,
-                mixBlendMode: 'normal'
-            }}
-        />
+    <section id="process" ref={containerRef} className="py-32 bg-[#050507] relative overflow-visible scroll-mt-20">
       
       <ParticleBackground />
 
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      {/* Background Grid with Fade Mask */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_80%,transparent_100%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
@@ -174,13 +158,29 @@ const Process: React.FC = () => {
         </motion.div>
 
       </div>
+ {/*Top Smooth Wave (Fills next section color #0b0c15) */}
+<div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    className="block w-full h-[60px] md:h-[100px]"
+  >
+    <path
+      d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+      fill="#0b0c15"
+    />
+  </svg>
+</div>
 
-      {/* Bottom Wave to VoiceAgent (#0b0c15) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px] rotate-180">
-           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#0b0c15"></path>
-        </svg>
-      </div>
+
+      {/* Bottom Wave to Services (#0b0c15) */}
+<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="block w-full h-[60px] md:h-[100px] rotate-180">
+<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#0b0c15"></path>
+</svg>
+</div>
     </section>
   );
 };

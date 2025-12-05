@@ -76,6 +76,23 @@ const ParticleBackground: React.FC = () => {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
       
+      // Draw Discreet Spotlight
+      if (mouse.x !== -9999) {
+          ctx.save();
+          ctx.globalCompositeOperation = 'screen';
+          // Increased radius (300) but drastically reduced opacity for "Discreet" look
+          const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 300);
+          gradient.addColorStop(0, 'rgba(0, 240, 255, 0.1)'); // Very subtle cyan
+          gradient.addColorStop(0.4, 'rgba(112, 0, 255, 0.05)'); // Very subtle purple
+          gradient.addColorStop(1, 'transparent');
+          
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, 300, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+      }
+
       particles.forEach(p => {
         p.update();
         p.draw();
@@ -106,7 +123,8 @@ const ParticleBackground: React.FC = () => {
     const handleMouseMove = (e: MouseEvent) => {
         if (!canvas) return;
         const rect = canvas.getBoundingClientRect();
-        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+        // Check if mouse is strictly within the element's bounds
+        if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
              mouse.x = e.clientX - rect.left;
              mouse.y = e.clientY - rect.top;
         } else {
@@ -116,6 +134,8 @@ const ParticleBackground: React.FC = () => {
     };
 
     window.addEventListener('resize', handleResize);
+    // Use window listener to ensure smooth tracking even if moving fast, 
+    // but the bounds check above ensures we only draw when inside this specific section.
     window.addEventListener('mousemove', handleMouseMove);
 
     init();
