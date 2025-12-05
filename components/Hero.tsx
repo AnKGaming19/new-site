@@ -68,17 +68,18 @@ const Hero: React.FC = () => {
         onMouseLeave={handleMouseLeave}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32 bg-[#050507]"
     >
-      {/* Dynamic Background with Cursor Spotlight */}
+    {/* Dynamic Background with Cursor Spotlight */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Interactive Cursor Spotlight - Exclusive to Hero */}
+        {/* Interactive Cursor Spotlight - Exclusive to Hero (made more discreet) */}
         <div 
-            className="absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-500 pointer-events-none mix-blend-screen"
+            className="absolute w-[220px] h-[220px] rounded-full blur-[30px] transition-all duration-300 pointer-events-none"
             style={{
                 left: mousePosition.x,
                 top: mousePosition.y,
                 transform: 'translate(-50%, -50%)',
-                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.4) 0%, rgba(112, 0, 255, 0.15) 50%, transparent 70%)',
-                opacity: isHovering ? 0.8 : 0
+                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.14) 0%, rgba(112, 0, 255, 0.08) 45%, transparent 60%)',
+                opacity: isHovering ? 0.32 : 0,
+                mixBlendMode: 'normal'
             }}
         />
 
