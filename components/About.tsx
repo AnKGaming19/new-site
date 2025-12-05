@@ -1,9 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ParticleBackground from './ParticleBackground';
 
 const About: React.FC = () => {
   return (
     <section id="about" className="py-32 bg-black relative scroll-mt-20 overflow-hidden">
+      
+       <ParticleBackground />
+      
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -65,6 +69,7 @@ const About: React.FC = () => {
 
         </div>
       </div>
+     
 
        {/* Bottom Wave to Contact (#0b0c15) */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
