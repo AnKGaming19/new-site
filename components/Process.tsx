@@ -10,6 +10,10 @@ const Process: React.FC = () => {
     offset: ["start end", "end start"]
   });
 
+  // Map scroll progress so the line fills completely when the section is halfway through the viewport
+  // This ensures the connection between Pilot (2) and Scale (3) is visible while the user is reading the section.
+  const scaleX = useTransform(scrollYProgress, [0.1, 0.6], [0, 1]);
+
   const steps = [
     {
       id: 1,
@@ -83,7 +87,7 @@ const Process: React.FC = () => {
           <div className="hidden lg:block absolute top-[60px] left-0 w-full h-[2px] bg-white/10">
             <motion.div 
               className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-primary"
-              style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
+              style={{ scaleX: scaleX, transformOrigin: "0%" }}
             />
           </div>
 
