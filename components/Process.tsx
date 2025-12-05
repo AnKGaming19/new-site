@@ -61,6 +61,21 @@ const Process: React.FC = () => {
 
   return (
     <section id="process" ref={containerRef} className="py-32 bg-[#050507] relative overflow-hidden scroll-mt-20">
+
+      {/* Dynamic Background with Cursor Spotlight */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Interactive Cursor Spotlight - Exclusive to Hero (made more discreet) */}
+        <div 
+            className="absolute w-[220px] h-[220px] rounded-full blur-[30px] transition-all duration-300 pointer-events-none"
+            style={{
+                left: mousePosition.x,
+                top: mousePosition.y,
+                transform: 'translate(-50%, -50%)',
+                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.14) 0%, rgba(112, 0, 255, 0.08) 45%, transparent 60%)',
+                opacity: isHovering ? 0.32 : 0,
+                mixBlendMode: 'normal'
+            }}
+        />
       
       <ParticleBackground />
 
