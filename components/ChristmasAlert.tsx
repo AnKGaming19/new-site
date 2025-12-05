@@ -54,7 +54,6 @@ const ChristmasAlert: React.FC = () => {
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors z-10"
-                title="Close Christmas alert"
               >
                 <X size={20} />
               </button>
@@ -113,7 +112,4 @@ const ChristmasAlert: React.FC = () => {
   );
 };
 
-
 export default ChristmasAlert;
-
-
