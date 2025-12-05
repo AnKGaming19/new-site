@@ -3,8 +3,6 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, Cpu, Activity } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 
-import { useEffect } from 'react';
-
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -63,37 +61,26 @@ const Hero: React.FC = () => {
     }
   };
 
-  // Effect to update left/top via JS for spotlight position
-  useEffect(() => {
-    const spotlight = containerRef.current?.querySelector('.hero-spotlight-position') as HTMLDivElement | null;
-    if (spotlight) {
-      spotlight.style.setProperty('--spotlight-x', `${mousePosition.x}px`);
-      spotlight.style.setProperty('--spotlight-y', `${mousePosition.y}px`);
-    }
-  }, [mousePosition]);
-
   return (
-    <>
-      <div 
-        className={`absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-500 pointer-events-none mix-blend-screen hero-spotlight ${isHovering ? 'hero-spotlight--active' : ''} hero-spotlight-position`}
-        data-x={mousePosition.x}
-        data-y={mousePosition.y}
-      />
-      {/* Main Hero Section */}
-      <section
+    <section 
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32 bg-[#050507]"
-      >
-    {/* Dynamic Background with Cursor Spotlight */}
+    >
+      {/* Dynamic Background with Cursor Spotlight */}
       <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Interactive Cursor Spotlight - Exclusive to Hero */}
         <div 
-            className={`absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-500 pointer-events-none mix-blend-screen hero-spotlight ${isHovering ? 'hero-spotlight--active' : ''} hero-spotlight-position`}
-            data-x={mousePosition.x}
-            data-y={mousePosition.y}
+            className="absolute w-[500px] h-[500px] rounded-full blur-[80px] transition-opacity duration-500 pointer-events-none mix-blend-screen"
+            style={{
+                left: mousePosition.x,
+                top: mousePosition.y,
+                transform: 'translate(-50%, -50%)',
+                background: 'radial-gradient(circle at center, rgba(0, 240, 255, 0.4) 0%, rgba(112, 0, 255, 0.15) 50%, transparent 70%)',
+                opacity: isHovering ? 0.8 : 0
+            }}
         />
-      
 
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
@@ -190,7 +177,7 @@ const Hero: React.FC = () => {
              </div>
 
              {/* Content */}
-             <div className="p-8 relative h-full flex flex-col justify-between">
+             <div className="p-8 relative h-full flex flex-col justify-between" style={{ transform: "translateZ(20px)" }}>
                 {/* Grid Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-20 pointer-events-none" />
 
@@ -272,7 +259,6 @@ const Hero: React.FC = () => {
         </svg>
       </div>
     </section>
-    </>
   );
 };
 
