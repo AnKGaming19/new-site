@@ -45,7 +45,7 @@ const ChristmasAlert: React.FC = () => {
             >
               {/* Hanging Cartoon Santa Hat Image */}
               <img 
-                src="/Santa_hat.svg.png" 
+                src="new site/Santa_hat.svg.png" 
                 alt="Santa Hat" 
                 className="absolute -top-16 -left-24 w-44 h-auto z-20 transform -rotate-[25deg] filter drop-shadow-xl pointer-events-none"
               />
@@ -112,5 +112,6 @@ const ChristmasAlert: React.FC = () => {
     </AnimatePresence>
   );
 };
+
 
 export default ChristmasAlert;
