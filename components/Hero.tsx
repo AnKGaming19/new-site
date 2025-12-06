@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
 
       {/* Main Content - Now outside absolute background to allow Flexbox centering */}
       <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="max-w-3xl pointer-events-none lg:pointer-events-auto">
+        <div className="max-w-3xl">
           <motion.div 
             initial={{ opacity: 0, width: 0 }}
             animate={{ opacity: 1, width: "auto" }}
