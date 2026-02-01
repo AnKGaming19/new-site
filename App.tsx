@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import ChatWidget from './components/ChatWidget';
-import ChristmasAlert from './components/ChristmasAlert';
+
 
 const App: React.FC = () => {
   return (
