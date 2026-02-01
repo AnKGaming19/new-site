@@ -28,7 +28,7 @@ const App: React.FC = () => {
       <Footer />
       <CookieConsent />
       <ChatWidget />
-      <ChristmasAlert />
+      
     </div>
   );
 };
