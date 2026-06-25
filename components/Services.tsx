@@ -5,11 +5,13 @@ import { PhoneOff, Clock, Search, Zap, CheckCircle2, AlertTriangle, ArrowRight, 
 const servicesData = [
   {
     id: "01",
-    title: "Lead Management",
-    problemTitle: "Missed Opportunities",
-    problem: "Prospects go unanswered, calls go to voicemail, and your pipeline leaks value every hour you're offline.",
-    solution: "Deploy AI Voice Agents & Scheduling Systems that respond instantly 24/7, qualify leads using natural conversation, and book meetings directly into your calendar.",
-    result: "Zero missed calls, instant lead capture, and a calendar filled with qualified prospects.",
+    title: "Lead Capture System",
+    problemTitle: "Missed Leads",
+    problem: "Calls, messages, and inquiries get lost when your team is busy, offline, or switching between tools.",
+    impact: "IMPACT: Lost revenue and slower response times",
+    solutionTitle: "Lead Capture System",
+    solution: "We build systems that capture new leads instantly, qualify them, and route them to the right place before opportunities go cold.",
+    result: "Every lead captured, organized, and ready for follow-up.",
     icon: PhoneOff,
     solutionIcon: Bot,
     color: "from-red-500/20 to-orange-500/20",
@@ -18,11 +20,13 @@ const servicesData = [
   },
   {
     id: "02",
-    title: "Workflow Automation",
-    problemTitle: "Operational Drag",
-    problem: "Your team burns 30-50% of their day on data entry, repetitive emails, and manual handovers between disconnected tools.",
-    solution: "Architect end-to-end custom automation pipelines that sync your CRM, forms, and communication channels in real-time without human input.",
-    result: "Team focuses on high-value strategy while admin tasks run on autopilot.",
+    title: "Automation Workflows",
+    problemTitle: "Too Much Manual Work",
+    problem: "Your team spends time on repetitive admin tasks, follow-ups, updates, and handovers that could be automated.",
+    impact: "IMPACT: Less time for sales, service, and growth",
+    solutionTitle: "Automation Workflows",
+    solution: "We connect your tools and automate repetitive processes across forms, calendars, CRMs, email, and internal systems.",
+    result: "Less manual work, fewer mistakes, and faster daily operations.",
     icon: Clock,
     solutionIcon: Zap,
     color: "from-blue-500/20 to-indigo-500/20",
@@ -31,11 +35,13 @@ const servicesData = [
   },
   {
     id: "03",
-    title: "Business Intelligence",
-    problemTitle: "Data Blindness",
-    problem: "Decision paralysis caused by scattered data. You can't scale what you can't see, and manual reporting is always outdated.",
-    solution: "Implement live AI-powered dashboards that aggregate data across all departments to visualize KPIs, cash flow, and bottlenecks instantly.",
-    result: "Crystal clear operational visibility and data-backed growth decisions.",
+    title: "Dashboards & Reporting",
+    problemTitle: "Scattered Business Data",
+    problem: "Important information is spread across spreadsheets, inboxes, notes, apps, and disconnected platforms.",
+    impact: "IMPACT: Poor visibility and slower decisions",
+    solutionTitle: "Dashboards & Reporting",
+    solution: "We build dashboards that bring your key numbers, workflows, leads, clients, and performance into one clear view.",
+    result: "Clear visibility into what is happening and what needs attention.",
     icon: Search,
     solutionIcon: BarChart3,
     color: "from-purple-500/20 to-pink-500/20",
@@ -79,7 +85,7 @@ const ServiceCard: React.FC<{ service: typeof servicesData[0], index: number }> 
                     <div className="p-2 bg-red-500/10 rounded-lg text-red-500 border border-red-500/20">
                         <service.icon size={20} />
                     </div>
-                    <span className="font-mono text-xs text-red-400 uppercase tracking-widest">System_Error_0{index+1}</span>
+                    <span className="font-mono text-xs text-red-400 uppercase tracking-widest">BUSINESS GAP 0{index+1}</span>
                 </div>
                 <AlertTriangle className="text-red-500/40 animate-pulse" size={20} />
             </div>
@@ -91,7 +97,7 @@ const ServiceCard: React.FC<{ service: typeof servicesData[0], index: number }> 
             
             <div className="inline-flex items-center gap-2 text-xs font-mono text-red-400 opacity-70 relative z-10">
                 <ShieldAlert size={12} />
-                IMPACT: HIGH SEVERITY
+              {service.impact}
             </div>
         </div>
 
@@ -119,14 +125,14 @@ const ServiceCard: React.FC<{ service: typeof servicesData[0], index: number }> 
                         <div className="p-2 bg-primary/10 rounded-lg text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,240,255,0.15)]">
                             <service.solutionIcon size={20} />
                         </div>
-                        <span className="font-mono text-xs text-primary uppercase tracking-widest">AI_Protocol_Active</span>
+                        <span className="font-mono text-xs text-primary uppercase tracking-widest">SOLUTION</span>
                     </div>
                     <div className="h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#00f0ff]" />
                   </div>
 
                   {/* Solution Content */}
                   <div className="mb-8">
-                      <h4 className="text-xl font-bold text-white mb-3">AI Intervention</h4>
+                      <h4 className="text-xl font-bold text-white mb-3">{service.solutionTitle}</h4>
                       <p className="text-gray-100 text-lg leading-relaxed font-light">
                         {service.solution}
                       </p>
@@ -136,7 +142,7 @@ const ServiceCard: React.FC<{ service: typeof servicesData[0], index: number }> 
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10 flex items-start gap-4">
                     <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5 shrink-0" />
                     <div>
-                        <span className="block text-xs font-bold text-green-400 uppercase tracking-wider mb-1">Target Outcome</span>
+                      <span className="block text-xs font-bold text-green-400 uppercase tracking-wider mb-1">OUTCOME</span>
                         <p className="text-white font-medium text-sm">{service.result}</p>
                     </div>
                   </div>
@@ -164,7 +170,7 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-1.5 border border-primary/30 rounded-full bg-primary/5 text-primary text-xs font-mono mb-6"
           >
-            SYSTEM DIAGNOSTICS & OPTIMIZATION
+            BUSINESS GAPS & SOLUTIONS
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -172,9 +178,11 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-display font-bold mb-6"
           >
-            Identifying The <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Bottleneck</span>.<br />
-            Deploying The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Solution</span>.
+            Find the gaps. Build the system.
           </motion.h2>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+            We turn missed leads, manual work, and scattered data into custom software systems that make your business easier to run.
+          </p>
         </div>
 
         <div className="space-y-12">

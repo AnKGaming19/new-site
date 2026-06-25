@@ -5,10 +5,10 @@ import { NavItem } from '../types';
 
 const navItems: NavItem[] = [
   { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#voice-agent' },
   { label: 'Process', href: '#process' },
-  { label: 'Solutions', href: '#voice-agent' },
   { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Resources', href: '#contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             onClick={(e) => handleSmoothScroll(e, '#contact')}
             className="px-6 py-2 bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105"
           >
-            Get Automation Plan
+            Book a Strategy Call
           </a>
         </div>
 
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
               onClick={(e) => handleSmoothScroll(e, '#contact')}
               className="mt-4 px-6 py-4 bg-primary text-black font-bold text-center rounded-lg hover:bg-white transition-colors"
             >
-              Get Automation Plan
+              Book a Strategy Call
             </motion.a>
           </motion.div>
         )}

@@ -22,10 +22,10 @@ const About: React.FC = () => {
                 </h2>
                 
                 <p className="text-xl md:text-3xl text-gray-300 font-light leading-relaxed mb-12">
-                    AIAnchor is an AI consulting agency that builds <strong className="text-white font-semibold">AI Tailored Solutions</strong> and <strong className="text-white font-semibold">AI Tailored Infrastructures</strong> to help businesses operate with speed, accuracy, and consistency. 
+                  AIAnchor is a custom software development studio that builds <strong className="text-white font-semibold">web apps</strong>, <strong className="text-white font-semibold">CRMs</strong>, <strong className="text-white font-semibold">dashboards</strong>, <strong className="text-white font-semibold">client portals</strong>, and <strong className="text-white font-semibold">AI-enhanced systems</strong> for modern service businesses.
                 </p>
                 <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                    We eliminate slow responses, repetitive work, and lost opportunities. We create intelligent ecosystems that perform even when your team isn't online.
+                  Software development first. Automation second. AI when it creates real business value.
                 </p>
             </motion.div>
 
@@ -42,7 +42,7 @@ const About: React.FC = () => {
                         <span className="w-8 h-[2px] bg-primary" /> Our Mission
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold text-white leading-tight">
-                       To bridge the gap between technology and execution, giving modern companies the clarity and systems they need to grow confidently.
+                        To build the systems modern businesses actually need, so they can manage leads, clients, bookings, workflows, and operations in one place.
                     </p>
                 </motion.div>
 
@@ -54,14 +54,14 @@ const About: React.FC = () => {
                 >
                     <div className="p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 flex items-center gap-6">
                         <div className="text-4xl font-bold text-white">30-50%</div>
-                        <div className="text-gray-300 text-sm">Time savings achieved by typical clients within the first quarter.</div>
+                      <div className="text-gray-300 text-sm">Less time spent on manual admin after replacing disconnected tools with one system.</div>
                     </div>
                     <div className="p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 flex items-center gap-6">
-                        <div className="text-4xl font-bold text-white">14 Days</div>
-                        <div className="text-gray-300 text-sm">Average time to Go-Live for our tailored automation pilots.</div>
+                      <div className="text-4xl font-bold text-white">2-4 Weeks</div>
+                      <div className="text-gray-300 text-sm">Typical time to launch a focused pilot or first production-ready system.</div>
                     </div>
                     <div className="p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-blue-600/10 border border-primary/20 flex items-center justify-center text-center">
-                        <span className="text-primary font-medium">Measurable ROI within the first month.</span>
+                      <span className="text-primary font-medium">Measurable ROI as the system replaces repetitive work.</span>
                     </div>
                 </motion.div>
             </div>

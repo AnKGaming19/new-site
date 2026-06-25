@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                 </span>
                 </a>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                Pioneering the next generation of artificial intelligence solutions for forward-thinking enterprises.
+                Custom software studio building web apps, CRMs, dashboards, portals, and AI-enhanced business systems.
                 </p>
             </div>
 
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="border-t border-white/5 pt-8 text-center text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} AI Anchor Consulting. All rights reserved.
+            &copy; {new Date().getFullYear()} AI Anchor Studio. All rights reserved.
             </div>
         </motion.div>
       </div>
