@@ -16,31 +16,31 @@ const Process: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Discovery",
+      title: "Map",
       icon: Search,
-      desc: "We analyze your operations and map inefficiencies, identifying the highest ROI use cases for automation.",
-      deliverables: "Process map, automation roadmap, ROI forecast.",
-      timeline: "2-3 days",
+      desc: "We understand your workflow, tools, users, bottlenecks, and the system your business needs.",
+      deliverables: "Workflow map, feature scope, system roadmap.",
+      timeline: "2–3 days",
       color: "text-blue-400",
       bg: "bg-blue-500"
     },
     {
       id: 2,
-      title: "Pilot",
+      title: "Build",
       icon: Rocket,
-      desc: "We build a focused automation pilot to validate performance and demonstrate measurable results.",
-      deliverables: "Working AI system, KPI dashboard, optimization insights.",
-      timeline: "7-14 days",
+      desc: "We design and develop the first version of your CRM, dashboard, portal, automation, or custom web app.",
+      deliverables: "Core system, clean interface, database, integrations.",
+      timeline: "7–14 days",
       color: "text-purple-400",
       bg: "bg-purple-500"
     },
     {
       id: 3,
-      title: "Scale & Maintain",
+      title: "Launch & Improve",
       icon: TrendingUp,
-      desc: "Once validated, we scale your infrastructure across departments with full support and optimization.",
-      deliverables: "Enterprise rollout, training, continuous improvement.",
-      timeline: "2-4 weeks",
+      desc: "We test, launch, support, and improve the system based on real business use and feedback.",
+      deliverables: "Launch support, fixes, improvements, ongoing updates.",
+      timeline: "Ongoing",
       color: "text-primary",
       bg: "bg-primary"
     }
@@ -75,9 +75,9 @@ const Process: React.FC = () => {
           className="mb-24 text-center"
         >
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">Our Process</h2>
-          <p className="text-2xl text-white mb-4">From Discovery to Deployment. Done with You, Not for You.</p>
+          <p className="text-2xl text-white mb-4">From idea to working system. Clear, practical, and built around your business.</p>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Our B2B consulting framework ensures your automation rollout is precise, measurable, and aligned with business goals.
+            We keep every project focused on the right features, smooth delivery, and a system your team can actually use.
           </p>
         </motion.div>
 
@@ -143,8 +143,7 @@ const Process: React.FC = () => {
           className="mt-20 bg-gradient-to-r from-blue-900/20 to-primary/20 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm"
         >
            <p className="text-xl text-gray-200">
-             Average go-live: <span className="text-white font-bold bg-white/10 px-2 py-1 rounded">14 days</span>. 
-             Clients experience <span className="text-white font-bold bg-white/10 px-2 py-1 rounded">25-40% faster lead response</span> and measurable ROI within the first month.
+             Average first version: <span className="text-white font-bold bg-white/10 px-2 py-1 rounded">14 days</span>. Built around your workflow, not generic templates.
            </p>
            <div className="mt-8">
               <a 
@@ -152,7 +151,7 @@ const Process: React.FC = () => {
                 onClick={(e) => handleSmoothScroll(e, '#contact')}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-primary transition-colors"
               >
-                 Get Your Automation Plan <ChevronRight size={20} />
+                 Book a Strategy Call <ChevronRight size={20} />
               </a>
            </div>
         </motion.div>

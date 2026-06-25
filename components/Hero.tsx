@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.4, duration: 1 }}
             className="text-xl text-gray-300 mb-10 leading-relaxed max-w-lg border-l-2 border-primary/30 pl-6"
           >
-            AI Anchor builds consulting-grade AI infrastructures designed around your exact workflows. We eliminate slow responses, repetitive work, and lost opportunities.
+            AI Anchor builds consulting-grade AI infrastructures, custom CRM apps, and web apps designed around your exact workflows. We eliminate slow responses, repetitive work, and lost opportunities.
           </motion.p>
 
           <motion.div 

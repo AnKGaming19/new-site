@@ -25,31 +25,33 @@ const AIDemo: React.FC = () => {
       const ai = new GoogleGenAI({ apiKey });
       
       const systemInstruction = `
-        You are "Anchor AI", the senior strategic AI consultant for the agency 'AI Anchor'.
+        You are "Anchor AI", the strategic product advisor for AI Anchor.
         
-        AGENCY CONTEXT:
+        COMPANY CONTEXT:
         - Name: AI Anchor
         - Website: www.aianchor.online
         - Contact Email: info@aianchor.online
-        - Mission: We build AI Tailored Solutions and Infrastructures to help businesses operate with speed, accuracy, and consistency.
+        - Mission: We build custom business software, CRMs, dashboards, client portals, and AI-enhanced systems to help service businesses manage operations in one place.
         
         OUR SERVICES:
-        1. AI Receptionist / Voice Agents: Instant call pickup, lead qualification, smart scheduling.
-        2. Process Automation: Fixing repetitive admin, CRM syncing, email automations.
-        3. Operational Visibility: AI dashboards and analytics.
+        1. Custom Web Applications: Tailored platforms, internal tools, admin panels, booking systems.
+        2. Custom CRMs: Lead, client, appointment, and follow-up management.
+        3. Dashboards & Analytics: Revenue, bookings, and performance visibility.
+        4. Client Portals: Secure client access, files, requests, and reports.
+        5. Workflow Automations: Lead capture, follow-ups, CRM updates, and reporting.
+        6. AI-Enhanced Systems: AI agents, chatbots, summaries, and automated reports.
         
         OUR PROCESS:
-        1. Discovery (2-3 days): Map inefficiencies, ROI forecast.
-        2. Pilot (7-14 days): Build focused automation pilot.
-        3. Scale & Maintain (2-4 weeks): Enterprise rollout.
-        
-        TECH STACK:
-        Airtable, Google Sheets, Google Calendar, Cal.com, Outlook, HubSpot.
+        1. Discovery Call: Understand the business, workflow, tools, and bottlenecks.
+        2. System Mapping: Map the CRM, dashboard, portal, automation, or web app.
+        3. Design & Development: Build a clean, secure, scalable system.
+        4. Testing & Launch: Connect integrations, fix issues, and prepare for use.
+        5. Support & Improvements: Ongoing support, small improvements, and future features.
         
         YOUR ROLE:
         Answer the user's question based on the above information.
-        If they ask how to get started or get an automation, direct them to book a discovery call or email info@aianchor.online.
-        Keep answers professional, concise (under 100 words), and visionary.
+        If they ask how to get started, direct them to book a strategy call or email info@aianchor.online.
+        Keep answers professional, concise (under 100 words), and clear.
       `;
 
       // Use generateContent for a single-turn "Audit" feel
@@ -96,13 +98,13 @@ const AIDemo: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-xs font-semibold mb-4">
               <Sparkles className="w-3 h-3" />
-              Live Demo
+              Example Systems
             </div>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-              Ask Our <span className="gradient-text">Virtual Strategist</span>
+              Systems We Can <span className="gradient-text">Build</span>
             </h2>
             <p className="text-gray-400">
-              Ask questions about our services, how to get started, or tell us about a bottleneck you're facing for instant strategic advice.
+              Ask about a system you want to build, how it should work, or what problem you need to solve.
             </p>
           </motion.div>
 
@@ -117,11 +119,11 @@ const AIDemo: React.FC = () => {
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                         className="text-gray-500 text-center"
                     >
-                      <p className="mb-2">Try asking:</p>
+                      <p className="mb-2">Try asking about:</p>
                       <div className="flex flex-wrap justify-center gap-2">
-                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("How do I get an automation?")}>"How do I get an automation?"</span>
-                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("What is your timeline for a pilot?")}>"Timeline for a pilot"</span>
-                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("Do you work with HubSpot?")}>"Do you work with HubSpot?"</span>
+                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("Can you build a CRM for my business?")}>"Can you build a CRM?"</span>
+                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("What should a client portal include?")}>"What should a client portal include?"</span>
+                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs cursor-pointer hover:bg-white/10 transition" onClick={() => setInput("What would a booking dashboard include?")}>"What should a dashboard include?"</span>
                       </div>
                     </motion.div>
                   )}
@@ -131,7 +133,7 @@ const AIDemo: React.FC = () => {
                         className="flex flex-col items-center gap-3 text-primary"
                     >
                         <Loader2 className="w-8 h-8 animate-spin" />
-                        <span className="text-sm font-mono">Analyzing Parameters...</span>
+                        <span className="text-sm font-mono">Reviewing your system...</span>
                     </motion.div>
                   )}
                   {loading === LoadingState.SUCCESS && response && (
@@ -161,7 +163,7 @@ const AIDemo: React.FC = () => {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about our services or your business needs..."
+                  placeholder="Ask about a CRM, portal, dashboard, or automation system..."
                   className="w-full bg-dark-800 border border-white/10 rounded-xl py-4 pl-6 pr-16 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                 />
                 <button
