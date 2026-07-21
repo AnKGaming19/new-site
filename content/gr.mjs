@@ -104,10 +104,10 @@ export default {
       },
     ],
     shots: {
-      revenue: { file: 'portal-revenue-pipeline.png', alt: 'Κάρτα dashboard με το pipeline εσόδων και τη συνολική αξία σε ευρώ', label: 'Pipeline εσόδων' },
-      voice: { file: 'portal-voice-agent-sentiment.png', alt: 'Κάρτα voice agent με ζωντανή κλήση, ανάλυση συναισθήματος και αποτέλεσμα', label: 'Voice agent + συναίσθημα' },
-      calls: { file: 'portal-calls-list.png', alt: 'Λίστα κλήσεων με αυτόματες περιλήψεις από το AI', label: 'Κλήσεις με περιλήψεις' },
-      hours: { file: 'portal-hours-saved.png', alt: 'Κάρτες με ώρες και κόστος εργασίας που εξοικονομήθηκαν, υπολογισμένες από πραγματικές διάρκειες κλήσεων', label: 'Ώρες & κόστος' },
+      revenue: { file: 'portal-revenue-pipeline.webp', alt: 'Κάρτα dashboard με το pipeline εσόδων και τη συνολική αξία σε ευρώ', label: 'Pipeline εσόδων' },
+      voice: { file: 'portal-voice-agent-sentiment.webp', alt: 'Κάρτα voice agent με ζωντανή κλήση, ανάλυση συναισθήματος και αποτέλεσμα', label: 'Voice agent + συναίσθημα' },
+      calls: { file: 'portal-calls-list.webp', alt: 'Λίστα κλήσεων με αυτόματες περιλήψεις από το AI', label: 'Κλήσεις με περιλήψεις' },
+      hours: { file: 'portal-hours-saved.webp', alt: 'Κάρτες με ώρες και κόστος εργασίας που εξοικονομήθηκαν, υπολογισμένες από πραγματικές διάρκειες κλήσεων', label: 'Ώρες & κόστος' },
     },
   },
 

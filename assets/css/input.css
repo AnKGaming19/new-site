@@ -16,8 +16,19 @@
     @apply sr-only fixed left-4 top-4 z-[100] rounded-lg bg-primary px-4 py-2 font-semibold text-dark-900 focus:not-sr-only;
   }
 
-  .mobile-menu.is-open {
-    @apply flex;
+  /* Ported from the original design's index.css */
+  .gradient-text {
+    background: linear-gradient(to right, #00f0ff, #7000ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .faq-chevron.is-open {
@@ -29,5 +40,172 @@
   }
   .pricing-toggle-btn[aria-pressed="false"] {
     @apply bg-transparent text-gray-300;
+  }
+
+  /* --- Nav: scroll-aware blur (ported behavior from Navbar.tsx) --- */
+  .site-nav {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+  }
+  .site-nav.is-scrolled {
+    background-color: rgba(5, 5, 7, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* --- Mobile menu: full-screen slide-in overlay (ported from Navbar.tsx AnimatePresence) --- */
+  .mobile-menu {
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0s linear 0.35s;
+  }
+  .mobile-menu.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0s linear 0s;
+  }
+  .mobile-menu-link {
+    opacity: 0;
+    transform: translateX(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .mobile-menu.is-open .mobile-menu-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(1) { transition-delay: 40ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(2) { transition-delay: 80ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(3) { transition-delay: 120ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(4) { transition-delay: 160ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(5) { transition-delay: 200ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(6) { transition-delay: 240ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(7) { transition-delay: 280ms; }
+  .mobile-menu.is-open .mobile-menu-link:nth-child(8) { transition-delay: 320ms; }
+
+  /* --- Scroll reveals: hidden only once JS confirms it can animate them back in --- */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .js .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger > .reveal:nth-child(2) { transition-delay: 70ms; }
+  .reveal-stagger > .reveal:nth-child(3) { transition-delay: 140ms; }
+  .reveal-stagger > .reveal:nth-child(4) { transition-delay: 210ms; }
+  .reveal-stagger > .reveal:nth-child(5) { transition-delay: 280ms; }
+  .reveal-stagger > .reveal:nth-child(6) { transition-delay: 350ms; }
+  .reveal-stagger > .reveal:nth-child(7) { transition-delay: 420ms; }
+  .reveal-stagger > .reveal:nth-child(8) { transition-delay: 490ms; }
+  .reveal-stagger > .reveal:nth-child(9) { transition-delay: 560ms; }
+  .reveal-stagger > .reveal:nth-child(10) { transition-delay: 630ms; }
+
+  /* --- Hero: CSS-only load-in (above the fold, so no JS/observer needed) --- */
+  .hero-load {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-load-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes hero-load-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-visual-load {
+    opacity: 0;
+    animation: hero-visual-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 300ms;
+  }
+  @keyframes hero-visual-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* --- Hero visual: mouse-tilt card (transform set by motion.js; CSS provides the easing) --- */
+  .tilt-card {
+    transform: perspective(2000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+  }
+
+  /* --- Process/How-it-works: scroll-linked connector fill (ported from Process.tsx) --- */
+  .connector-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .connector-fill {
+    transform: scaleX(var(--progress, 1));
+    transform-origin: left center;
+    background: linear-gradient(to right, #00f0ff, #7000ff);
+    transition: transform 0.1s linear;
+  }
+
+  /* --- Voice/mic orb equalizer accent (ported from VoiceAgent.tsx) --- */
+  .mic-orb-ring {
+    animation: mic-ping 3s ease-in-out infinite;
+  }
+  @keyframes mic-ping {
+    0% { transform: scale(1); opacity: 0.6; }
+    70%, 100% { transform: scale(1.4); opacity: 0; }
+  }
+  .eq-bar {
+    transform-origin: bottom;
+    animation: eq-bounce 1s ease-in-out infinite;
+  }
+  .eq-bar:nth-child(1) { animation-delay: 0s; }
+  .eq-bar:nth-child(2) { animation-delay: 0.1s; }
+  .eq-bar:nth-child(3) { animation-delay: 0.2s; }
+  .eq-bar:nth-child(4) { animation-delay: 0.3s; }
+  .eq-bar:nth-child(5) { animation-delay: 0.4s; }
+  @keyframes eq-bounce {
+    0%, 100% { transform: scaleY(0.35); }
+    50% { transform: scaleY(1); }
+  }
+
+  /* --- Respect prefers-reduced-motion: neutralize every animation/transition added above --- */
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal,
+    .hero-load,
+    .hero-visual-load,
+    .mobile-menu,
+    .mobile-menu-link,
+    .tilt-card,
+    .connector-fill,
+    .eq-bar,
+    .mic-orb-ring,
+    .site-nav {
+      animation: none !important;
+      transition: none !important;
+    }
+    .js .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .hero-load,
+    .hero-visual-load {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .tilt-card {
+      transform: none !important;
+    }
+    .connector-fill {
+      transform: scaleX(1) !important;
+    }
+    .eq-bar {
+      transform: scaleY(0.7) !important;
+    }
+    .hero-motion-svg,
+    .hero-particles {
+      display: none !important;
+    }
   }
 }

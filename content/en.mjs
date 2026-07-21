@@ -104,10 +104,10 @@ export default {
       },
     ],
     shots: {
-      revenue: { file: 'portal-revenue-pipeline.png', alt: 'Revenue pipeline dashboard card showing lead value and pipeline total in euros', label: 'Revenue pipeline' },
-      voice: { file: 'portal-voice-agent-sentiment.png', alt: 'Voice agent card showing a live call with sentiment analysis and outcome tag', label: 'Voice agent + sentiment' },
-      calls: { file: 'portal-calls-list.png', alt: 'Calls list with automatic AI-generated summaries for each call', label: 'Calls with summaries' },
-      hours: { file: 'portal-hours-saved.png', alt: 'Hours saved and labor cost saved cards computed from real call durations', label: 'Hours & cost saved' },
+      revenue: { file: 'portal-revenue-pipeline.webp', alt: 'Revenue pipeline dashboard card showing lead value and pipeline total in euros', label: 'Revenue pipeline' },
+      voice: { file: 'portal-voice-agent-sentiment.webp', alt: 'Voice agent card showing a live call with sentiment analysis and outcome tag', label: 'Voice agent + sentiment' },
+      calls: { file: 'portal-calls-list.webp', alt: 'Calls list with automatic AI-generated summaries for each call', label: 'Calls with summaries' },
+      hours: { file: 'portal-hours-saved.webp', alt: 'Hours saved and labor cost saved cards computed from real call durations', label: 'Hours & cost saved' },
     },
   },
 

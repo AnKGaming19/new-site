@@ -37,6 +37,13 @@ export function renderHead({ title, description, canonical, urlPathByLang, ogIma
 
     <meta name="theme-color" content="#050507" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <!-- Ported brand typefaces (Inter + Space Grotesk). Preconnect + swap to keep first paint unblocked. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" /></noscript>
+
     <link rel="stylesheet" href="/assets/css/styles.css" />
 
     <!-- Search console verification: uncomment and paste real value when available -->
@@ -48,16 +55,16 @@ export function renderHead({ title, description, canonical, urlPathByLang, ogIma
 export function renderNav(content, lang, appUrl) {
   const other = lang === 'en' ? 'gr' : 'en';
   const home = `/${lang}/`;
-  return `<header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-dark-900/80 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-8xl items-center justify-between px-6 py-4" aria-label="Primary">
+  return `<header class="site-nav fixed top-0 inset-x-0 z-50">
+    <nav class="mx-auto flex max-w-8xl items-center justify-between px-6" aria-label="Primary">
       <a href="${home}" class="flex items-center gap-2 group">
         <span class="rounded-lg bg-gradient-to-tr from-primary to-secondary p-2 transition-shadow group-hover:shadow-[0_0_20px_rgba(0,240,255,0.45)]">
           ${iconMarkup('anchor', 'w-5 h-5 text-white')}
         </span>
-        <span class="font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
+        <span class="font-display font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
       </a>
 
-      <button id="nav-toggle" type="button" class="md:hidden p-2 text-white" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="nav-toggle" type="button" class="md:hidden p-2 text-white relative z-50" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Menu</span>
         ${iconMarkup('menu', 'w-6 h-6 nav-open-icon')}
         ${iconMarkup('close', 'w-6 h-6 nav-close-icon hidden')}
@@ -75,15 +82,15 @@ export function renderNav(content, lang, appUrl) {
       </div>
     </nav>
 
-    <div id="mobile-menu" class="mobile-menu hidden md:hidden flex-col gap-1 border-t border-white/5 bg-dark-900 px-6 py-4">
-      <a href="${home}#features" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.features}</a>
-      <a href="${home}#how-it-works" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.howItWorks}</a>
-      <a href="${home}#industries" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.industries}</a>
-      <a href="${home}#pricing" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.pricing}</a>
-      <a href="${home}#faq" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.faq}</a>
-      <a href="/${other}/" class="block py-3 text-gray-400 border-b border-white/5">${content.nav.langSwitchLabel}</a>
-      <a href="${appUrl}/auth" class="block py-3 text-gray-300 border-b border-white/5">${content.nav.clientLogin}</a>
-      <a href="${home}#pricing" class="mt-3 block rounded-full bg-primary px-5 py-3 text-center font-semibold text-dark-900">${content.nav.cta}</a>
+    <div id="mobile-menu" class="mobile-menu flex flex-col gap-1 fixed inset-0 z-40 bg-dark-900 px-8 pt-28 pb-10 md:hidden" aria-hidden="true">
+      <a href="${home}#features" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.features}</a>
+      <a href="${home}#how-it-works" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.howItWorks}</a>
+      <a href="${home}#industries" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.industries}</a>
+      <a href="${home}#pricing" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.pricing}</a>
+      <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
+      <a href="/${other}/" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-400">${content.nav.langSwitchLabel}</a>
+      <a href="${appUrl}/auth" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
+      <a href="${home}#pricing" class="mobile-menu-link mt-6 block rounded-full bg-primary px-5 py-4 text-center text-lg font-semibold text-dark-900">${content.nav.cta}</a>
     </div>
   </header>`;
 }
@@ -96,7 +103,7 @@ export function renderFooter(content, lang) {
       <div class="md:col-span-1">
         <div class="flex items-center gap-2">
           <span class="rounded-lg bg-gradient-to-tr from-primary to-secondary p-2">${iconMarkup('anchor', 'w-5 h-5 text-white')}</span>
-          <span class="font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
+          <span class="font-display font-bold tracking-wider text-white">AI <span class="text-primary">ANCHOR</span></span>
         </div>
         <p class="mt-4 text-sm text-gray-400">${f.tagline}</p>
         <div class="mt-5 flex gap-4 text-gray-400">
@@ -121,7 +128,7 @@ export function renderFooter(content, lang) {
           <li><a href="mailto:${f.contactEmail}" class="hover:text-white">${f.companyLinks.contact}</a></li>
           <li><a href="https://app.aianchor.online/auth" class="hover:text-white">${f.companyLinks.clientLogin}</a></li>
         </ul>
-        <div class="mt-6 space-y-1 text-xs text-gray-500">
+        <div class="mt-6 space-y-1 text-xs text-gray-400">
           ${f.companyDetails.lines.map((l) => `<p>${l}</p>`).join('\n          ')}
         </div>
       </div>
@@ -136,7 +143,7 @@ export function renderFooter(content, lang) {
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/5 py-6 text-center text-xs text-gray-500">${f.copyright(year)}</div>
+    <div class="border-t border-white/5 py-6 text-center text-xs text-gray-400">${f.copyright(year)}</div>
   </footer>`;
 }
 
