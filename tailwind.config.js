@@ -1,33 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./**/*.{js,ts,jsx,tsx}",
+    "./templates/**/*.mjs",
+    "./build.mjs",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
         primary: {
-          DEFAULT: '#00f0ff', // Cyberpunk cyan
+          DEFAULT: '#00f0ff',
           dark: '#00a3cc',
         },
         secondary: {
-          DEFAULT: '#7000ff', // Deep neon purple
+          DEFAULT: '#7000ff',
           dark: '#4a00b3',
         },
         dark: {
-          900: '#050507', // Almost black
+          900: '#050507',
           800: '#0a0a12',
           700: '#12121f',
+          600: '#1a1a2b',
         }
       },
       backgroundImage: {
-        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%)',
-        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)"
+        'hero-glow': 'radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.14) 0%, transparent 55%)',
+        'grid-pattern': "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)"
+      },
+      maxWidth: {
+        '8xl': '90rem',
       }
     },
   },

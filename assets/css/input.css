@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  ::selection {
+    @apply bg-primary text-dark-900;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only fixed left-4 top-4 z-[100] rounded-lg bg-primary px-4 py-2 font-semibold text-dark-900 focus:not-sr-only;
+  }
+
+  .mobile-menu.is-open {
+    @apply flex;
+  }
+
+  .faq-chevron.is-open {
+    transform: rotate(180deg);
+  }
+
+  .pricing-toggle-btn[aria-pressed="true"] {
+    @apply bg-primary text-dark-900;
+  }
+  .pricing-toggle-btn[aria-pressed="false"] {
+    @apply bg-transparent text-gray-300;
+  }
+}
