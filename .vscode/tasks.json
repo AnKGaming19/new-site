@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-and-serve",
+            "type": "shell",
+            "command": "npm run build && npx http-server dist -p 4173 -c-1",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^never matches$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^> aianchor-website@.*build",
+                    "endsPattern": "Available on:|Hit CTRL-C to stop the server"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

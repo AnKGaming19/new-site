@@ -1,18 +1,16 @@
 # Screenshot shot list
 
-Every file below already exists in this folder as a generated placeholder (dark
-gradient card with a "Screenshot placeholder — ..." label) so the site renders
-correctly today. To swap in a real screenshot, **replace the file with the same
-filename and same aspect ratio** — no HTML/CSS changes needed.
-
-| Filename | Used in | Exact pixel size | What it should show |
+| Filename | Used in | Exact pixel size | Status |
 |---|---|---|---|
-| `hero-dashboard.webp` | Hero, right-hand visual | 1280×800 (16:10) | Full client portal dashboard: calls, leads, revenue pipeline widgets visible at once. This is the first image a visitor sees — make it your best, most legible screenshot. |
-| `portal-revenue-pipeline.webp` | Portal section, card 1 | 900×620 (~3:2) | The revenue pipeline card: list of leads with valuations and a running pipeline total in euros. |
-| `portal-voice-agent-sentiment.webp` | Portal section, card 2 | 900×620 (~3:2) | A voice-agent/call detail view showing sentiment analysis and call outcome tag. |
-| `portal-calls-list.webp` | Portal section, card 3 | 900×620 (~3:2) | The calls list view with automatic AI-generated summaries per row. |
-| `portal-hours-saved.webp` | Portal section, card 4 | 900×620 (~3:2) | Hours-saved / labor-cost-saved stat cards. |
-| `industry-real-estate-lead-card.webp` | Industries → Real Estate (flagship) | 760×480 (~19:12) | A single lead card for a real-estate listing: property, valuation, booked viewing. |
+| `hero-dashboard.webp` | Hero, right-hand visual | 1280×800 (16:10) | **Real** — "AI Operations Overview" dashboard |
+| `portal-revenue-pipeline.webp` | Portal section, card 1 | 900×620 (~3:2) | **Real** — Leads/CRM table (valuations + pipeline) |
+| `portal-voice-agent-sentiment.webp` | Portal section, card 2 | 900×620 (~3:2) | **Real** — Voice Agent Performance (sentiment) |
+| `portal-calls-list.webp` | Portal section, card 3 | 900×620 (~3:2) | **Real** — Calls list (status/sentiment/duration) |
+| `portal-hours-saved.webp` | Portal section, card 4 | 900×620 (~3:2) | **Real, imperfect fit** — used the "Live Activity" feed screenshot here since no dedicated hours/cost-saved screen was supplied; it reads as "live proof" but doesn't show the hours/€ numbers this card's copy promises. Swap for a dedicated hours-saved screen if you have one. |
+| `industry-real-estate-lead-card.webp` | Industries → Real Estate (flagship) | 760×480 (~19:12) | Still a **generated placeholder** — none of the 5 supplied screenshots were a single-lead card view. Replace when you have one. |
+
+To swap any file, **replace it with the same filename and same aspect ratio** —
+no HTML/CSS changes needed.
 
 ## Notes for capture
 
