@@ -18,6 +18,7 @@ import {
   renderFaq,
   renderAbout,
   renderContact,
+  renderComingSoon,
 } from './templates/sections.mjs';
 import { renderLegalPage } from './templates/legal.mjs';
 import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScripts } from './templates/schema.mjs';
@@ -27,8 +28,12 @@ const DIST = path.join(__dirname, 'dist');
 
 const content = { en, gr };
 
+const comingSoonPath = (lang) => `/${lang}/coming-soon/`;
+
 function urlPathByLangFactory(kind, slug) {
-  return (lang) => (kind === 'home' ? `/${lang}/` : legalPath(lang, slug));
+  if (kind === 'home') return (lang) => `/${lang}/`;
+  if (kind === 'coming-soon') return (lang) => comingSoonPath(lang);
+  return (lang) => legalPath(lang, slug);
 }
 
 function writeFile(relPath, contents) {
@@ -106,6 +111,28 @@ function buildLegalPage(lang, slug) {
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
+function buildComingSoonPage(lang) {
+  const t = content[lang];
+  const other = lang === 'en' ? 'gr' : 'en';
+  const head = renderHead({
+    title: t.meta.comingSoon.title,
+    description: t.meta.comingSoon.description,
+    canonical: comingSoonPath(lang),
+    urlPathByLang: urlPathByLangFactory('coming-soon'),
+    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    locale: t.locale,
+    jsonLd: '',
+    // Transient utility page (a signup placeholder), so keep it out of the index while it stands in.
+    robots: 'noindex, follow',
+  });
+  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  ${renderNav(t, lang, APP_URL, urlPathByLangFactory('coming-soon')(other))}
+  ${renderComingSoon(t, lang)}
+  ${renderFooter(t, lang)}
+  <script src="/assets/js/main.js" defer></script>`;
+  return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
+}
+
 function buildRootPage() {
   // "/" serves the GR homepage as real, crawlable content (GR is the fallback language),
   // canonical points to /gr/ to avoid duplicate-content issues, and a tiny blocking script
@@ -161,6 +188,7 @@ fs.mkdirSync(DIST, { recursive: true });
 writeFile('index.html', buildRootPage());
 for (const lang of LANGS) {
   writeFile(`${lang}/index.html`, buildHomePage(lang));
+  writeFile(`${lang}/coming-soon/index.html`, buildComingSoonPage(lang));
   for (const slug of LEGAL_SLUGS) {
     writeFile(`${lang}/${slug}/index.html`, buildLegalPage(lang, slug));
   }

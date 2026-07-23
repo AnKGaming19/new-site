@@ -9,12 +9,12 @@ function hreflangTags(urlPathByLang, rootIsGr) {
   return tags.join('\n    ');
 }
 
-export function renderHead({ title, description, canonical, urlPathByLang, ogImage, locale, jsonLd, extraHead = '' }) {
+export function renderHead({ title, description, canonical, urlPathByLang, ogImage, locale, jsonLd, extraHead = '', robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }) {
   return `<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title}</title>
     <meta name="description" content="${description}" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content="${robots}" />
     <link rel="canonical" href="${SITE_URL}${canonical}" />
     ${hreflangTags(urlPathByLang, true)}
 

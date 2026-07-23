@@ -12,6 +12,18 @@ export default {
       description: 'AIAnchor builds custom CRM apps, web apps, automation workflows and AI voice systems that automate what slows your business down and scale what drives revenue — with a live portal that proves it.',
     },
     ...legalMetaEn,
+    comingSoon: {
+      title: 'Coming Soon | AIAnchor',
+      description: 'Self-serve signup is almost ready. Until then, book a free strategy call and we will set everything up for you.',
+    },
+  },
+
+  comingSoon: {
+    badge: 'Client portal',
+    heading: 'Coming soon',
+    body: 'Self-serve signup isn’t live just yet — we’re putting the finishing touches on the client portal. Until then, book a free strategy call and we’ll set your AI agent up for you, hands-on.',
+    ctaPrimary: 'Book a Strategy Call',
+    ctaSecondary: 'Back to plans',
   },
 
   skipLink: 'Skip to content',
