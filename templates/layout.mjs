@@ -87,7 +87,6 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
         <a href="${home}#pricing" class="nav-link text-gray-300 hover:text-white">${content.nav.pricing}</a>
         <a href="${home}#faq" class="nav-link text-gray-300 hover:text-white">${content.nav.faq}</a>
         <a href="${home}#about" class="nav-link text-gray-300 hover:text-white">${content.nav.about}</a>
-        <a href="${appUrl}/auth" class="link-hover text-gray-300 hover:text-white">${content.nav.clientLogin}</a>
         ${langSwitch('')}
         <a href="${home}#contact" class="btn-interactive rounded-full bg-primary px-4 py-2 font-semibold text-dark-900">${content.nav.cta}</a>
       </div>
@@ -100,7 +99,6 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
       <a href="${home}#pricing" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.pricing}</a>
       <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
       <a href="${home}#about" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.about}</a>
-      <a href="${appUrl}/auth" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
       <a href="${home}#contact" class="mobile-menu-link mt-6 block rounded-full bg-primary px-5 py-4 text-center text-lg font-semibold text-dark-900">${content.nav.cta}</a>
     </div>
   </header>`;
@@ -139,7 +137,6 @@ export function renderFooter(content, lang) {
         <ul class="mt-4 space-y-3 text-sm text-gray-400">
           <li><a href="/${lang}/#about" class="link-hover hover:text-white">${f.companyLinks.about}</a></li>
           <li><a href="/${lang}/#contact" class="link-hover hover:text-white">${f.companyLinks.contact}</a></li>
-          <li><a href="https://app.aianchor.online/auth" class="link-hover hover:text-white">${f.companyLinks.clientLogin}</a></li>
         </ul>
         <div class="mt-6 space-y-1 text-xs text-gray-400">
           ${f.companyDetails.lines.map((l) => `<p>${l}</p>`).join('\n          ')}
