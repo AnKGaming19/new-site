@@ -152,6 +152,16 @@
     transition: border-color var(--dur-fast) var(--ease-out);
   }
 
+  /*
+   * Coming-soon page: full-viewport centered layout. Authored here rather than via a
+   * Tailwind arbitrary class (min-h-[100dvh]) because that class doesn't reliably survive
+   * the content scan; vh first as a fallback, dvh to avoid the mobile browser-chrome jump.
+   */
+  .coming-soon-main {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
   /* --- Contact form submit spinner --- */
   .spin-loader {
     animation: spin-loader-rotate 0.8s linear infinite;

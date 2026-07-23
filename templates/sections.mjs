@@ -647,14 +647,14 @@ export function renderComparison(t) {
 // client portal launches. Same visual language as the hero; CSS-only entrance.
 export function renderComingSoon(t, lang) {
   const c = t.comingSoon;
-  return `<main id="main" class="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-hero-glow px-6 py-32 text-center">
-    <div class="absolute inset-0 bg-grid-pattern bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black,transparent)]"></div>
+  return `<main id="main" class="coming-soon-main relative flex flex-col items-center justify-center overflow-hidden bg-hero-glow px-6 py-40 text-center">
+    <div class="absolute inset-0 bg-grid-pattern bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,black,transparent)]"></div>
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
-    <div class="relative max-w-2xl">
+    <div class="relative flex max-w-2xl flex-col items-center">
       <p class="hero-load inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs uppercase text-primary backdrop-blur-sm" style="animation-delay:0ms"><span class="h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#00f0ff]"></span>${c.badge}</p>
-      <h1 class="hero-load mt-8 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl" style="animation-delay:120ms"><span class="gradient-text">${c.heading}</span></h1>
-      <p class="hero-load mx-auto mt-8 max-w-lg text-xl leading-relaxed text-gray-300" style="animation-delay:240ms">${c.body}</p>
-      <div class="hero-load mt-10 flex flex-col justify-center gap-5 sm:flex-row" style="animation-delay:360ms">
+      <h1 class="hero-load mt-10 font-display text-6xl font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl" style="animation-delay:120ms"><span class="gradient-text">${c.heading}</span></h1>
+      <p class="hero-load mt-10 max-w-lg text-xl leading-relaxed text-gray-300" style="animation-delay:240ms">${c.body}</p>
+      <div class="hero-load mt-14 flex flex-col justify-center gap-5 sm:flex-row" style="animation-delay:360ms">
         <a href="/${lang}/#contact" class="group flex skew-x-[-10deg] items-center justify-center gap-3 bg-white px-8 py-4 text-lg font-bold text-black transition-colors duration-300 hover:bg-primary active:scale-[0.98]">
           <span class="flex skew-x-[10deg] items-center gap-2">${c.ctaPrimary} ${iconMarkup('arrowRight', 'w-5 h-5 transition-transform group-hover:translate-x-1')}</span>
         </a>
