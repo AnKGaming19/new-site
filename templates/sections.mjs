@@ -647,7 +647,7 @@ export function renderComparison(t) {
 // client portal launches. Same visual language as the hero; CSS-only entrance.
 export function renderComingSoon(t, lang) {
   const c = t.comingSoon;
-  return `<main id="main" class="coming-soon-main relative flex flex-col items-center justify-center overflow-hidden bg-hero-glow px-6 py-40 text-center">
+  return `<main id="main" class="coming-soon-main relative flex flex-col items-center justify-center overflow-hidden bg-hero-glow px-6 pb-24 pt-32 text-center">
     <div class="absolute inset-0 bg-grid-pattern bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,black,transparent)]"></div>
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
     <div class="relative flex w-full max-w-2xl flex-col items-center">

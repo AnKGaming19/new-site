@@ -153,13 +153,20 @@
   }
 
   /*
-   * Coming-soon page: full-viewport centered layout. Authored here rather than via a
-   * Tailwind arbitrary class (min-h-[100dvh]) because that class doesn't reliably survive
-   * the content scan; vh first as a fallback, dvh to avoid the mobile browser-chrome jump.
+   * Coming-soon page layout: a full-viewport flex column so the content area fills the
+   * space between nav and footer (centering its content) while the footer sits at the
+   * bottom. Authored here rather than via Tailwind arbitrary classes (min-h-[100dvh],
+   * flex-1) because those don't reliably survive the content scan; vh first as a fallback,
+   * dvh to avoid the mobile browser-chrome jump.
    */
-  .coming-soon-main {
+  .coming-soon-page {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     min-height: 100dvh;
+  }
+  .coming-soon-main {
+    flex: 1 0 auto;
   }
 
   /* --- Contact form submit spinner --- */

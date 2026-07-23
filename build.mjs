@@ -125,10 +125,14 @@ function buildComingSoonPage(lang) {
     // Transient utility page (a signup placeholder), so keep it out of the index while it stands in.
     robots: 'noindex, follow',
   });
+  // Content + footer share one full-height flex column: the content fills the space
+  // between nav and footer, the footer stays pinned at the bottom.
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('coming-soon')(other))}
-  ${renderComingSoon(t, lang)}
-  ${renderFooter(t, lang)}
+  <div class="coming-soon-page">
+    ${renderComingSoon(t, lang)}
+    ${renderFooter(t, lang)}
+  </div>
   <script src="/assets/js/main.js" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
