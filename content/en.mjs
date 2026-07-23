@@ -1,3 +1,5 @@
+import { legalEn, legalMetaEn } from './legal-en.mjs';
+
 export default {
   lang: 'en',
   htmlLang: 'en',
@@ -6,51 +8,176 @@ export default {
 
   meta: {
     home: {
-      title: 'AIAnchor | AI Receptionists & Business Automation with a Live ROI Portal',
-      description: 'AI voice receptionists that answer every call in Greek & English, book real appointments, and feed a client portal that shows leads, bookings and revenue live. Book a free demo.',
+      title: 'AIAnchor | AI Tailored Solutions & Infrastructures for Business Automation',
+      description: 'AIAnchor builds custom CRM apps, web apps, automation workflows and AI voice systems that automate what slows your business down and scale what drives revenue — with a live portal that proves it.',
     },
-    terms: {
-      title: 'Terms of Service | AIAnchor',
-      description: 'Terms of Service for AIAnchor AI receptionist and business automation services.',
-    },
-    privacy: {
-      title: 'Privacy Policy | AIAnchor',
-      description: 'How AIAnchor collects, uses and protects your data and your callers’ data.',
-    },
-    gdpr: {
-      title: 'GDPR & Data Protection | AIAnchor',
-      description: 'AIAnchor’s GDPR compliance, call recording disclosure, and Data Processing Agreement information.',
-    },
-    cookies: {
-      title: 'Cookie Policy | AIAnchor',
-      description: 'How AIAnchor uses cookies on aianchor.online.',
-    },
+    ...legalMetaEn,
   },
 
   skipLink: 'Skip to content',
 
   nav: {
-    features: 'Features',
-    howItWorks: 'How it works',
-    industries: 'Industries',
+    services: 'Services',
+    process: 'Process',
+    voiceAgent: 'Voice Systems',
     pricing: 'Pricing',
     faq: 'FAQ',
+    about: 'About',
     clientLogin: 'Client Login',
-    cta: 'Start free',
+    cta: 'Book a Strategy Call',
+    // Accessible label for the compact lang-switch pill (visible text is just "GR"/"EN"):
     langSwitchLabel: 'Ελληνικά',
   },
 
   hero: {
-    eyebrow: 'AI receptionists + business automation',
-    headline: 'Never miss a call.',
-    headlineLine2: 'Never guess your ROI.',
-    subhead: 'AIAnchor builds AI receptionists and business automations for you — backed by a client portal that shows every lead, booking and euro of revenue pipeline live, so you never have to take our word for it.',
-    ctaPrimary: 'Book a free demo',
-    ctaPrimaryHref: 'mailto:info@aianchor.online?subject=Free%20demo%20request',
-    ctaPrimaryFlag: 'FLAG: swap for real booking link (Calendly/Cal.com) when ready',
-    ctaSecondary: 'See pricing',
-    trustLine: 'No contracts on Starter · Cancel anytime · Set up in days, not months',
-    visualAlt: 'AIAnchor client portal dashboard showing live call volume, revenue pipeline value and hours saved',
+    eyebrow: 'AI Tailored Infrastructures',
+    headlineLine1: 'Intelligent',
+    headlineLine2: 'Ecosystems',
+    headlineLine3: 'Built to Scale',
+    subhead: 'AIAnchor builds consulting-grade AI infrastructures, custom CRM apps, and web apps designed around your exact workflows. We eliminate slow responses, repetitive work, and lost opportunities.',
+    ctaPrimary: 'Get Your Plan',
+    ctaPrimaryHref: '#contact',
+    ctaSecondary: 'Explore Solutions',
+    ctaSecondaryHref: '#services',
+    visualAlt: 'AIAnchor client portal dashboard — a real example of the systems we build, showing live call volume, revenue pipeline value and hours saved',
+  },
+
+  services: {
+    eyebrow: 'Business Gaps & Solutions',
+    heading: 'Find the gaps. Build the system.',
+    subhead: 'We turn missed leads, manual work, and scattered data into custom CRM apps, web apps, and software systems that make your business easier to run.',
+    items: [
+      {
+        problemTag: 'Business Gap 01',
+        problemTitle: 'Missed Leads',
+        problem: 'Calls, messages, and inquiries get lost when your team is busy, offline, or switching between tools.',
+        impact: 'IMPACT: Lost revenue and slower response times',
+        solutionTitle: 'Lead Capture System',
+        solution: 'We build systems that capture new leads instantly, qualify them, and route them to the right place before opportunities go cold.',
+        result: 'Every lead captured, organized, and ready for follow-up.',
+        icon: 'phone',
+        solutionIcon: 'workflow',
+      },
+      {
+        problemTag: 'Business Gap 02',
+        problemTitle: 'Too Much Manual Work',
+        problem: 'Your team spends time on repetitive admin tasks, follow-ups, updates, and handovers that could be automated.',
+        impact: 'IMPACT: Less time for sales, service, and growth',
+        solutionTitle: 'Automation Workflows',
+        solution: 'We connect your tools and automate repetitive processes across forms, calendars, CRMs, email, and internal systems.',
+        result: 'Less manual work, fewer mistakes, and faster daily operations.',
+        icon: 'activity',
+        solutionIcon: 'shield',
+      },
+      {
+        problemTag: 'Business Gap 03',
+        problemTitle: 'Scattered Business Data',
+        problem: 'Important information is spread across spreadsheets, inboxes, notes, apps, and disconnected platforms.',
+        impact: 'IMPACT: Poor visibility and slower decisions',
+        solutionTitle: 'Dashboards & Reporting',
+        solution: 'We build dashboards that bring your key numbers, workflows, leads, clients, and performance into one clear view.',
+        result: 'Clear visibility into what is happening and what needs attention.',
+        icon: 'book',
+        solutionIcon: 'chart',
+      },
+    ],
+  },
+
+  process: {
+    heading: 'Our Process',
+    lead: 'From idea to working system. Clear, practical, and built around your business.',
+    subhead: 'We keep every project focused on the right features, smooth delivery, and a system your team can actually use.',
+    steps: [
+      {
+        n: '1',
+        title: 'Map',
+        desc: 'We understand your workflow, tools, users, bottlenecks, and the system your business needs.',
+        deliverables: 'Workflow map, feature scope, system roadmap.',
+        timeline: '2–3 days',
+      },
+      {
+        n: '2',
+        title: 'Build',
+        desc: 'We design and develop the first version of your CRM, dashboard, portal, automation, or custom web app.',
+        deliverables: 'Core system, clean interface, database, integrations.',
+        timeline: '7–14 days',
+      },
+      {
+        n: '3',
+        title: 'Launch & Improve',
+        desc: 'We test, launch, support, and improve the system based on real business use and feedback.',
+        deliverables: 'Launch support, fixes, improvements, ongoing updates.',
+        timeline: 'Ongoing',
+      },
+    ],
+    bannerHtml: 'Average first version: <strong>14 days</strong>. Built around your workflow, not generic templates.',
+    cta: 'Book a Strategy Call',
+  },
+
+  voiceSystems: {
+    eyebrow: 'AI-Powered',
+    heading: 'AI Voice Systems',
+    subhead: 'Intelligent voice automation that handles calls, answers questions, and drives real business outcomes — one capability inside the systems we build.',
+    features: [
+      { title: 'Instant Call Pickup', desc: 'Answers missed calls instantly and captures opportunities.' },
+      { title: 'Smart Discovery', desc: 'Asks the right questions and understands client needs.' },
+      { title: 'Appointment Booking', desc: 'Books appointments directly on your calendar automatically.' },
+      { title: 'CRM Sync & Follow-Up', desc: 'Syncs leads and triggers follow-ups so nothing falls through.' },
+    ],
+    stackHeading: 'Works with your stack',
+    stack: ['Airtable', 'Google Sheets', 'Google Calendar', 'Cal.com', 'Outlook', 'HubSpot'],
+    statusLine: 'Never miss a lead. 24/7 availability. Instant qualification.',
+  },
+
+  about: {
+    heading: 'Who We Are',
+    lead: 'AIAnchor is a custom software development studio that builds web apps, CRMs, dashboards, client portals, and AI-enhanced systems for modern service businesses.',
+    leadBoldWords: ['web apps', 'CRMs', 'dashboards', 'client portals', 'AI-enhanced systems'],
+    tagline: 'Software development first. Automation second. AI when it creates real business value.',
+    missionLabel: 'Our Mission',
+    mission: 'To build the systems modern businesses actually need, so they can manage leads, clients, bookings, workflows, and operations in one place.',
+    stats: [
+      { stat: '30-50%', desc: 'Less time spent on manual admin after replacing disconnected tools with one system.' },
+      { stat: '2-4 Weeks', desc: 'Typical time to launch a focused pilot or first production-ready system.' },
+    ],
+    statCallout: 'Measurable ROI as the system replaces repetitive work.',
+  },
+
+  contact: {
+    panelHeading: 'Ready to build a system that moves your business forward?',
+    panelSubhead: 'Book a free strategy call and let’s talk about the right solution for your business.',
+    panelCta: 'Book a Strategy Call',
+    formIntroHeading: 'Let’s plan the right build for your workflow.',
+    formIntroSubhead: 'Tell us what you need. We’ll help you shape a practical system your team can actually use.',
+    emailCard: { title: 'Email Us', value: 'info@aianchor.online' },
+    linkedinCard: { title: 'LinkedIn', desc: 'See our updates' },
+    instagramCard: { title: 'Instagram', desc: 'Behind the work' },
+    form: {
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      email: 'Email Address',
+      interest: 'Interest',
+      interestOptions: [
+        'Custom Web App',
+        'CRM / Business System',
+        'Dashboard / Analytics',
+        'Client Portal',
+        'Automation / Integrations',
+        'AI-Enhanced System',
+        'Other',
+      ],
+      message: 'Message',
+      submit: 'Send Message',
+      submitting: 'Sending...',
+      successTitle: 'Message Sent!',
+      successBody: 'We’ve received your inquiry and will be in touch shortly.',
+      sendAnother: 'Send another message',
+      errorMessage: 'Something went wrong. Please try again later.',
+      // FLAG: this is the original site's Formspree form ID — confirm it's still
+      // wired to the right inbox in your Formspree dashboard, or replace it with
+      // a new form's endpoint (https://formspree.io/f/YOUR_ID).
+      endpoint: 'https://formspree.io/f/xnnzezlo',
+    },
   },
 
   socialProof: {
@@ -85,35 +212,9 @@ export default {
     ],
   },
 
-  portal: {
-    eyebrow: 'The AIAnchor Portal',
-    heading: 'Your clients don’t trust promises. Show them numbers.',
-    subhead: 'This is what makes AIAnchor different from an answering service: every call, every lead and every saved hour is measured and shown back to you in plain numbers — not a vague “it’s working great.”',
-    bullets: [
-      {
-        title: 'Every call analyzed',
-        desc: 'Automatic summary, sentiment and outcome for every single call — searchable, not buried in a spreadsheet.',
-      },
-      {
-        title: 'Leads auto-created and valued',
-        desc: 'Leads are created automatically and priced against your own listings or services, so your pipeline shows real euros, not guesses.',
-      },
-      {
-        title: 'Hours and labor cost saved',
-        desc: 'Computed from actual call durations and your team’s hourly cost — a real ROI number you can put in front of a client or your own board.',
-      },
-    ],
-    shots: {
-      revenue: { file: 'portal-revenue-pipeline.webp', alt: 'Revenue pipeline dashboard card showing lead value and pipeline total in euros', label: 'Revenue pipeline' },
-      voice: { file: 'portal-voice-agent-sentiment.webp', alt: 'Voice agent card showing a live call with sentiment analysis and outcome tag', label: 'Voice agent + sentiment' },
-      calls: { file: 'portal-calls-list.webp', alt: 'Calls list with automatic AI-generated summaries for each call', label: 'Calls with summaries' },
-      hours: { file: 'portal-hours-saved.webp', alt: 'Hours saved and labor cost saved cards computed from real call durations', label: 'Hours & cost saved' },
-    },
-  },
-
   features: {
-    heading: 'Everything your front desk needs, none of the payroll',
-    subhead: 'One platform to answer, qualify, book and prove it.',
+    heading: 'Inside the AI voice & portal layer',
+    subhead: 'One part of what we build — a full front-desk layer that answers, qualifies, books and proves it.',
     items: [
       { icon: 'phone', title: 'AI voice receptionists (GR + EN)', desc: 'Natural, on-brand phone conversations in Greek and English, around the clock.' },
       { icon: 'calendar', title: 'Real bookings into your calendar', desc: 'Appointments land directly in the calendar you already use — no double-booking, no back-and-forth.' },
@@ -123,38 +224,6 @@ export default {
       { icon: 'book', title: 'Knowledge-base-grounded agents', desc: 'Your agent actually knows your listings, services and policies — it doesn’t improvise.' },
       { icon: 'activity', title: 'Live analytics & call recordings', desc: 'Full visibility into every conversation, with recordings available on request.' },
       { icon: 'shield', title: 'Spam filtering', desc: 'Robocalls and spam get filtered out before they waste your agent’s time — or yours.' },
-    ],
-  },
-
-  industries: {
-    heading: 'Built around how your industry actually books business',
-    subhead: 'Templates trained for your vertical, not a generic script.',
-    items: [
-      {
-        key: 'real-estate',
-        flagship: true,
-        title: 'Real Estate',
-        line: 'Agents that know every listing and book viewings while you’re on-site with another client.',
-        detail: 'Your AI agent answers with your active listings loaded in — price, availability, features — and books qualified viewings straight into your calendar, so no lead goes cold waiting for a callback.',
-      },
-      {
-        key: 'clinics',
-        title: 'Clinics',
-        line: 'Patients get appointment slots instantly, day or night, without tying up front-desk staff.',
-        detail: null,
-      },
-      {
-        key: 'services',
-        title: 'Service Businesses',
-        line: 'Quotes, callouts and bookings handled the moment the phone rings, not when someone gets back to the office.',
-        detail: null,
-      },
-      {
-        key: 'hospitality',
-        title: 'Restaurants & Hospitality',
-        line: 'Reservations and questions answered instantly, even at your busiest hour.',
-        detail: null,
-      },
     ],
   },
 
@@ -276,7 +345,7 @@ export default {
       },
       {
         q: 'Is this GDPR-compliant? Are calls recorded and disclosed?',
-        a: 'Yes. Callers are informed that the call may be recorded and handled by an AI system at the start of the call. All data is stored within the EU, and we provide a Data Processing Agreement (DPA) to business customers on request. See our GDPR page for full detail.',
+        a: 'Yes. Callers are informed at the start of the call that they are speaking with an AI system and that the call is recorded. We sign a Data Processing Agreement (DPA) with business customers; see our DPA, AI Disclosure and Trust &amp; Security pages in the footer for full detail.',
       },
       {
         q: 'How does pricing and overage actually work?',
@@ -297,23 +366,23 @@ export default {
     ],
   },
 
-  finalCta: {
-    heading: 'Stop losing calls to voicemail.',
-    subhead: 'Book a free demo and hear your AI receptionist live before you decide on anything.',
-    ctaPrimary: 'Book a free demo',
-    ctaSecondary: 'See pricing',
-  },
-
   footer: {
-    tagline: 'AI receptionists and business automation, with the ROI to prove it.',
+    tagline: 'Tailored AI systems and infrastructure — CRM apps, web apps, automation and AI voice systems — with the ROI to prove it.',
     columns: {
       product: 'Product',
       company: 'Company',
       legal: 'Legal',
     },
-    productLinks: { features: 'Features', pricing: 'Pricing', industries: 'Industries', faq: 'FAQ' },
-    companyLinks: { contact: 'Contact', clientLogin: 'Client Login' },
-    legalLinks: { terms: 'Terms of Service', privacy: 'Privacy Policy', gdpr: 'GDPR & DPA', cookies: 'Cookie Policy' },
+    productLinks: { services: 'Services', process: 'Process', voiceAgent: 'Voice Systems', pricing: 'Pricing', faq: 'FAQ' },
+    companyLinks: { about: 'About', contact: 'Contact', clientLogin: 'Client Login' },
+    legalLinks: {
+      terms: 'Terms of Service',
+      privacy: 'Privacy Policy',
+      dpa: 'Data Processing (DPA)',
+      cookies: 'Cookie Policy',
+      aiPolicy: 'AI Disclosure',
+      trust: 'Trust & Security',
+    },
     companyDetails: {
       heading: 'AIAnchor',
       lines: [
@@ -328,51 +397,5 @@ export default {
     copyright: (year) => `© ${year} AIAnchor. All rights reserved.`,
   },
 
-  legal: {
-    lastUpdated: 'Last updated: 20 July 2026',
-    placeholderNotice: 'PLACEHOLDER — replace with lawyer-reviewed text before this page goes live for real customers.',
-    terms: {
-      title: 'Terms of Service',
-      intro: 'These Terms of Service (“Terms”) govern your use of AIAnchor’s AI receptionist and business automation services (the “Services”). This is placeholder text and does not constitute legal advice or a binding agreement until reviewed and approved by qualified counsel.',
-      sections: [
-        { h: '1. Acceptance of Terms', p: 'By accessing or using the Services, you agree to be bound by these Terms. PLACEHOLDER — confirm acceptance mechanism (click-through, signed order form, etc.) with counsel.' },
-        { h: '2. Description of Services', p: 'AIAnchor provides AI-powered voice receptionist agents, lead capture, business automation workflows and a reporting portal, as further described in your order form or plan. PLACEHOLDER — add SLA and uptime commitments if any.' },
-        { h: '3. Fees & Billing', p: 'Fees are billed monthly or annually per the plan selected at signup, plus VAT and any applicable overage charges. PLACEHOLDER — add refund policy, late payment terms, and price-change notice period.' },
-        { h: '4. Customer Responsibilities', p: 'You are responsible for the accuracy of the information (services, pricing, policies) provided to train your AI agent. PLACEHOLDER — add acceptable use restrictions.' },
-        { h: '5. Termination', p: 'Either party may terminate as described in your plan terms. PLACEHOLDER — define notice period and data export/deletion process on termination.' },
-        { h: '6. Limitation of Liability', p: 'PLACEHOLDER — standard limitation-of-liability clause to be drafted by counsel.' },
-        { h: '7. Governing Law', p: 'PLACEHOLDER — specify governing law and jurisdiction (expected: Greece).' },
-      ],
-    },
-    privacy: {
-      title: 'Privacy Policy',
-      intro: 'This Privacy Policy explains what data AIAnchor collects — from you as a customer, and from callers who interact with your AI agent — and how it is used. This is placeholder text pending legal review.',
-      sections: [
-        { h: '1. What We Collect', p: 'Account and billing information you provide, and call data (audio, transcripts, summaries, metadata) generated when your AI agent handles a call. PLACEHOLDER — itemize full data categories with counsel.' },
-        { h: '2. How We Use It', p: 'To provide the Services, generate your portal analytics (call summaries, sentiment, lead valuation), and improve agent performance. PLACEHOLDER — confirm any use for model training and opt-out options.' },
-        { h: '3. Data Storage & Location', p: 'Data is stored on infrastructure located within the European Union. PLACEHOLDER — name specific sub-processors and hosting regions.' },
-        { h: '4. Data Retention', p: 'PLACEHOLDER — define retention periods for call recordings, transcripts and lead data, and how customers can request deletion.' },
-        { h: '5. Your Rights', p: 'Under GDPR you have the right to access, rectify, delete and port your data. See our GDPR page for details. PLACEHOLDER — add contact process for data subject requests.' },
-      ],
-    },
-    gdpr: {
-      title: 'GDPR & Data Protection',
-      intro: 'AIAnchor processes call data on behalf of its business customers. Here is a plain-language summary of how we handle that responsibly — full legal terms are pending counsel review.',
-      sections: [
-        { h: 'Caller disclosure', p: 'Every caller is informed at the start of the call that the conversation may be recorded and is being handled by an AI system, consistent with applicable law. PLACEHOLDER — confirm exact disclosure script per jurisdiction.' },
-        { h: 'Data location', p: 'All customer and call data is stored on servers located within the EU. PLACEHOLDER — confirm specific hosting provider and region for your compliance documentation.' },
-        { h: 'Data Processing Agreement (DPA)', p: 'A DPA is available on request for business customers who need one for their own compliance obligations. Contact us to request a copy. PLACEHOLDER — attach DPA template once finalized by counsel.' },
-        { h: 'Data subject requests', p: 'Callers or customers who wish to access, correct or delete their data can contact us at the email below. PLACEHOLDER — define internal SLA for responding to requests.' },
-      ],
-    },
-    cookies: {
-      title: 'Cookie Policy',
-      intro: 'This page explains how aianchor.online uses cookies. This is placeholder text pending legal review.',
-      sections: [
-        { h: 'Essential cookies', p: 'Used for basic site functionality (e.g. remembering your language preference). PLACEHOLDER — list exact cookies once analytics/marketing tools are finalized.' },
-        { h: 'Analytics cookies', p: 'PLACEHOLDER — name analytics provider (if any) once selected, and add a consent banner if non-essential cookies are used.' },
-        { h: 'Managing cookies', p: 'You can control or delete cookies through your browser settings at any time.' },
-      ],
-    },
-  },
+  legal: legalEn,
 };

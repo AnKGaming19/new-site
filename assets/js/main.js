@@ -42,17 +42,8 @@
     updateNav();
   }
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      var answer = document.getElementById(btn.getAttribute('aria-controls'));
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (answer) answer.classList.toggle('hidden', expanded);
-      var chevron = btn.querySelector('.faq-chevron');
-      if (chevron) chevron.classList.toggle('is-open', !expanded);
-    });
-  });
+  // FAQ accordion is native <details>/<summary> now (see input.css) - no JS needed,
+  // which also means it fully works with JS disabled.
 
   // Pricing monthly/annual toggle
   var pricingToggle = document.getElementById('pricing-toggle');
@@ -74,8 +65,67 @@
     });
   }
 
-  // Remember explicit language choice so "/" redirects consistently next visit
-  document.querySelectorAll('a[hreflang]').forEach(function (link) {
+  // Contact form (ported from Contact.tsx's Formspree fetch pattern)
+  var contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    var successPanel = document.querySelector('[data-form-success]');
+    var errorMsg = contactForm.querySelector('[data-form-error]');
+    var submitBtn = contactForm.querySelector('[data-submit-btn]');
+    var submitLabelEl = contactForm.querySelector('[data-submit-label-el]');
+    var submitSpinner = contactForm.querySelector('[data-submit-spinner]');
+    var sendAnotherBtn = successPanel && successPanel.querySelector('[data-send-another]');
+    var submitLabel = contactForm.getAttribute('data-submit-label');
+    var submittingLabel = contactForm.getAttribute('data-submitting-label');
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorMsg.classList.add('hidden');
+      submitBtn.disabled = true;
+      if (submitLabelEl) submitLabelEl.textContent = submittingLabel;
+      if (submitSpinner) submitSpinner.classList.remove('hidden');
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      })
+        .then(function (res) {
+          if (res.ok) {
+            contactForm.reset();
+            contactForm.classList.add('hidden');
+            if (successPanel) {
+              successPanel.classList.remove('hidden');
+              successPanel.classList.add('flex');
+            }
+          } else {
+            errorMsg.classList.remove('hidden');
+          }
+        })
+        .catch(function () {
+          errorMsg.classList.remove('hidden');
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          if (submitLabelEl) submitLabelEl.textContent = submitLabel;
+          if (submitSpinner) submitSpinner.classList.add('hidden');
+        });
+    });
+
+    if (sendAnotherBtn) {
+      sendAnotherBtn.addEventListener('click', function () {
+        successPanel.classList.add('hidden');
+        successPanel.classList.remove('flex');
+        contactForm.classList.remove('hidden');
+      });
+    }
+  }
+
+  // Language switch: preserve the current section (#hash) across languages, and
+  // remember the explicit choice so "/" redirects consistently next visit.
+  document.querySelectorAll('[data-lang-switch]').forEach(function (link) {
+    if (location.hash) {
+      link.setAttribute('href', link.getAttribute('href') + location.hash);
+    }
     link.addEventListener('click', function () {
       try {
         localStorage.setItem('aianchor-lang', link.getAttribute('hreflang') === 'en' ? 'en' : 'gr');
@@ -111,7 +161,7 @@
   // The heavier ambient-motion module (particle canvas, hero tilt, connector scroll-fill)
   // is only fetched when it has something to do and the user hasn't asked for less motion.
   var needsMotion =
-    document.querySelector('.hero-particles') || document.querySelector('[data-tilt]') || document.querySelector('[data-connector-fill]');
+    document.querySelector('.particle-bg') || document.querySelector('[data-tilt]') || document.querySelector('[data-connector-fill]');
   if (needsMotion && !reducedMotion) {
     var s = document.createElement('script');
     s.src = '/assets/js/motion.js';

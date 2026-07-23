@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(SCRATCH=\"C:/Users/akarn/AppData/Local/Temp/claude/c--Users-akarn-OneDrive---University-of-the-Peloponnese-Documents-AiAnchor-new-site/350f0f3f-d60f-4b70-85bd-b8fc8fcb5d32/scratchpad\" *)",
+      "Bash(powershell -Command \"Get-Process -Name http-server -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(taskkill //F //IM node.exe //FI \"WINDOWTITLE eq http-server*\")",
+      "Bash(git ls-tree *)",
+      "Bash(git status *)",
+      "Bash(npx --no-install lighthouse --version)",
+      "Bash(npx --no-install lighthouse http://localhost:5173/en/ --output=json --output-path=/tmp/lh-after.json --chrome-flags=\"--headless=new --no-sandbox\" --only-categories=performance,accessibility,best-practices,seo --quiet)",
+      "Bash(cygpath -w /tmp/lh-after.json)",
+      "Bash(npx --no-install lighthouse http://localhost:5173/en/ --output=json --output-path=/tmp/lh-after-desktop.json --chrome-flags=\"--headless=new --no-sandbox\" --preset=desktop --only-categories=performance,accessibility,best-practices,seo --quiet)",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('playwright ok'\\)}catch\\(e\\){console.log\\('no playwright'\\)}\")",
+      "Bash(node -e \"try{require.resolve\\('puppeteer'\\);console.log\\('puppeteer ok'\\)}catch\\(e\\){console.log\\('no puppeteer'\\)}\")",
+      "Bash(node --check assets/js/main.js)",
+      "Bash(node --check assets/js/motion.js)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 4173,5173 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { try { Stop-Process -Id $_ -Force -Confirm:$false } catch {} }; Get-NetTCPConnection -LocalPort 4173,5173 -State Listen -ErrorAction SilentlyContinue | Measure-Object | Select-Object -ExpandProperty Count)",
+      "Bash(ls \"c:/Users/akarn/.claude/skills\" 2>/dev/null; echo \"---project skills---\"; ls \"c:/Users/akarn/OneDrive - University of the Peloponnese/Documents/AiAnchor/new-site/.claude/skills\" 2>/dev/null || echo \"\\(none\\)\")",
+      "Read(//c/Users/akarn/.claude/skills/**)",
+      "WebSearch",
+      "WebFetch(domain:docs.retellai.com)",
+      "WebFetch(domain:leaseleads-reloaded.webflow.io)",
+      "WebFetch(domain:github.com)",
+      "Bash(ls \"c:/Users/akarn/.claude/skills/ui-ux-pro-max/scripts/\" 2>/dev/null && python --version 2>&1)",
+      "Read(//c/Users/akarn/.claude/skills/ui-ux-pro-max/scripts/**)"
+    ],
+    "additionalDirectories": [
+      "\\tmp\\lh"
+    ]
+  }
+}

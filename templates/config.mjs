@@ -7,7 +7,8 @@ export const APP_URL = 'https://app.aianchor.online';
 export const LANGS = ['en', 'gr'];
 export const DEFAULT_LANG = 'gr'; // fallback language for "/"
 
-export const LEGAL_SLUGS = ['terms', 'privacy', 'gdpr', 'cookies'];
+// 'gdpr' was replaced by the full 'dpa' page; a redirect in vercel.json keeps old links alive.
+export const LEGAL_SLUGS = ['terms', 'privacy', 'dpa', 'cookies', 'ai-policy', 'trust'];
 
 export const langPath = (lang, sub = '') => `/${lang}/${sub ? sub + '/' : ''}`;
 

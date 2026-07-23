@@ -193,7 +193,7 @@
     }
   }
 
-  document.querySelectorAll('.hero-particles').forEach(initParticles);
+  document.querySelectorAll('.particle-bg').forEach(initParticles);
   document.querySelectorAll('[data-tilt]').forEach(initTilt);
   document.querySelectorAll('[data-connector-section]').forEach(initConnector);
 })();

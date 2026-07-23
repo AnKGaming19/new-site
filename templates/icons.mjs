@@ -17,12 +17,17 @@ export const icons = {
   check: wrap('<path d="M20 6 9 17l-5-5"/>'),
   minus: wrap('<path d="M5 12h14"/>'),
   mail: wrap('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>'),
-  building: wrap('<rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M9 9h1M9 13h1M14 9h1M14 13h1"/>'),
-  stethoscope: wrap('<path d="M4.8 2.3A.3.3 0 1 0 5 3a.3.3 0 0 0-.2-.7M8 3v3a4 4 0 0 0 8 0V3M8 15a6 6 0 1 0 12 0v-3"/><circle cx="20" cy="10" r="2"/>'),
-  wrench: wrap('<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a2 2 0 0 0 3 3l6-6a4 4 0 0 0 5.4-5.4l-2.1 2.1-2.6-.7-.7-2.6z"/>'),
-  utensils: wrap('<path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2M5 12v10M15 2v20M20 2c-2 2-3 4-3 7s1 5 3 5"/>'),
   instagram: wrap('<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>'),
   linkedin: wrap('<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>'),
+  search: wrap('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>'),
+  clock: wrap('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
+  zap: wrap('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>'),
+  alertTriangle: wrap('<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/>'),
+  arrowRight: wrap('<path d="M5 12h14M12 5l7 7-7 7"/>'),
+  trendingUp: wrap('<path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>'),
+  rocket: wrap('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'),
+  bot: wrap('<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/>'),
+  cpu: wrap('<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/>'),
 };
 
 export const iconMarkup = (name, className = 'w-6 h-6') =>

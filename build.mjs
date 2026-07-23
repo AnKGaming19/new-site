@@ -8,15 +8,16 @@ import { SITE_URL, APP_URL, LANGS, LEGAL_SLUGS, legalPath } from './templates/co
 import { renderHead, renderNav, renderFooter, rootRedirectScript, htmlDocument } from './templates/layout.mjs';
 import {
   renderHero,
-  renderSocialProof,
   renderHowItWorks,
-  renderPortal,
+  renderServices,
+  renderProcess,
+  renderVoiceAgentFull,
   renderFeatures,
-  renderIndustries,
   renderPricing,
   renderComparison,
   renderFaq,
-  renderFinalCta,
+  renderAbout,
+  renderContact,
 } from './templates/sections.mjs';
 import { renderLegalPage } from './templates/legal.mjs';
 import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScripts } from './templates/schema.mjs';
@@ -44,8 +45,28 @@ function copyRecursive(src, destRel, { skipMarkdown = false } = {}) {
   });
 }
 
+// Section order (narrative arc): broad positioning -> gaps/solutions -> how we
+// build -> voice systems -> capability detail -> pricing -> comparison -> faq
+// -> about -> contact (doubles as the final CTA).
+function renderMain(t, lang) {
+  return `<main id="main">
+    ${renderHero(t, lang)}
+    ${renderHowItWorks(t)}
+    ${renderServices(t)}
+    ${renderProcess(t)}
+    ${renderVoiceAgentFull(t)}
+    ${renderFeatures(t)}
+    ${renderPricing(t)}
+    ${renderComparison(t)}
+    ${renderFaq(t)}
+    ${renderAbout(t)}
+    ${renderContact(t)}
+  </main>`;
+}
+
 function buildHomePage(lang) {
   const t = content[lang];
+  const other = lang === 'en' ? 'gr' : 'en';
   const jsonLd = jsonLdScripts([organizationSchema(t, lang), softwareApplicationSchema(t, lang), faqPageSchema(t)]);
   const head = renderHead({
     title: t.meta.home.title,
@@ -57,19 +78,8 @@ function buildHomePage(lang) {
     jsonLd,
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
-  ${renderNav(t, lang, APP_URL)}
-  <main id="main">
-    ${renderHero(t, lang)}
-    ${renderSocialProof(t)}
-    ${renderHowItWorks(t)}
-    ${renderPortal(t)}
-    ${renderFeatures(t)}
-    ${renderIndustries(t)}
-    ${renderPricing(t)}
-    ${renderComparison(t)}
-    ${renderFaq(t)}
-    ${renderFinalCta(t, lang)}
-  </main>
+  ${renderNav(t, lang, APP_URL, urlPathByLangFactory('home')(other))}
+  ${renderMain(t, lang)}
   ${renderFooter(t, lang)}
   <script src="/assets/js/main.js" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
@@ -78,6 +88,7 @@ function buildHomePage(lang) {
 function buildLegalPage(lang, slug) {
   const t = content[lang];
   const d = t.legal[slug];
+  const other = lang === 'en' ? 'gr' : 'en';
   const head = renderHead({
     title: t.meta[slug].title,
     description: t.meta[slug].description,
@@ -88,7 +99,7 @@ function buildLegalPage(lang, slug) {
     jsonLd: '',
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
-  ${renderNav(t, lang, APP_URL)}
+  ${renderNav(t, lang, APP_URL, urlPathByLangFactory('legal', slug)(other))}
   ${renderLegalPage(t, slug)}
   ${renderFooter(t, lang)}
   <script src="/assets/js/main.js" defer></script>`;
@@ -112,19 +123,8 @@ function buildRootPage() {
     extraHead: rootRedirectScript(),
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
-  ${renderNav(t, 'gr', APP_URL)}
-  <main id="main">
-    ${renderHero(t, 'gr')}
-    ${renderSocialProof(t)}
-    ${renderHowItWorks(t)}
-    ${renderPortal(t)}
-    ${renderFeatures(t)}
-    ${renderIndustries(t)}
-    ${renderPricing(t)}
-    ${renderComparison(t)}
-    ${renderFaq(t)}
-    ${renderFinalCta(t, 'gr')}
-  </main>
+  ${renderNav(t, 'gr', APP_URL, urlPathByLangFactory('home')('en'))}
+  ${renderMain(t, 'gr')}
   ${renderFooter(t, 'gr')}
   <script src="/assets/js/main.js" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });

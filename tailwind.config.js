@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['DM Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
         display: ['Space Grotesk', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
       colors: {
@@ -28,7 +28,7 @@ export default {
         }
       },
       backgroundImage: {
-        'hero-glow': 'radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.14) 0%, transparent 55%)',
+        'hero-glow': 'radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.07) 0%, transparent 55%)',
         'grid-pattern': "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)"
       },
       maxWidth: {

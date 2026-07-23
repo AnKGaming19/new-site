@@ -9,6 +9,24 @@
   ::selection {
     @apply bg-primary text-dark-900;
   }
+
+  /*
+   * Motion system tokens.
+   * - ease-out: strong entering curve (Kowalski/animations.dev) for buttons, toggles, hover states.
+   * - ease-in-out: on-screen movement/morphs (chevrons, accordions, tab-style state changes).
+   * - ease-out-soft: gentler entrance curve for scroll reveals / marketing motion (already in use pre-refactor).
+   * Durations follow the "UI interactions stay under ~250ms, entrances can run longer" rule.
+   */
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+    --dur-instant: 120ms;
+    --dur-fast: 180ms;
+    --dur-base: 240ms;
+    --dur-entrance: 700ms;
+    --stagger-step: 50ms;
+  }
 }
 
 @layer components {
@@ -31,15 +49,120 @@
     scrollbar-width: none;
   }
 
+  /*
+   * .btn-interactive: shared press/hover physics for every CTA and icon-button on the site.
+   * Kowalski: buttons must feel responsive - scale(0.97) on :active gives instant feedback
+   * that the interface heard the click. Hover lift is gated behind (hover:hover) so touch
+   * taps never get stuck in a simulated hover state.
+   */
+  .btn-interactive {
+    transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out), filter var(--dur-fast) var(--ease-out);
+  }
+  .btn-interactive:active {
+    transform: scale(0.97);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-interactive:hover {
+      transform: scale(1.03);
+    }
+    .btn-interactive:active:hover {
+      transform: scale(0.97);
+    }
+  }
+
+  /* .link-hover: plain text links (nav, footer) get a real transition instead of an instant color snap. */
+  .link-hover {
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  /* Desktop nav link: small underline that grows from the center on hover - cheap, motivated, restrained. */
+  .nav-link {
+    position: relative;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    color: theme('colors.primary.DEFAULT');
+    transform: translateX(-50%) scaleX(0);
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-link:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  /* FAQ: native <details>/<summary> so it works with zero JS; we only replace the default marker. */
+  details.faq-item > summary {
+    list-style: none;
+  }
+  details.faq-item > summary::-webkit-details-marker {
+    display: none;
+  }
   .faq-chevron.is-open {
     transform: rotate(180deg);
   }
+  /* Native <details> drives the FAQ now; chevron rotates off the browser's own [open] state. */
+  details.faq-item .faq-chevron,
+  details.faq-item[open] .faq-chevron {
+    transition: transform var(--dur-base) var(--ease-in-out);
+  }
+  details.faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+  /* Content itself still gets a soft entrance so the disclosure doesn't feel like a hard snap. */
+  details.faq-item[open] .faq-answer {
+    animation: faq-answer-in var(--dur-base) var(--ease-out-soft);
+  }
+  @keyframes faq-answer-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
+  .pricing-toggle-btn {
+    transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+  }
   .pricing-toggle-btn[aria-pressed="true"] {
     @apply bg-primary text-dark-900;
   }
   .pricing-toggle-btn[aria-pressed="false"] {
     @apply bg-transparent text-gray-300;
+  }
+
+  /* Comparison table: row highlight on hover aids scanning across the three columns. */
+  .comparison-row {
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .comparison-row:hover {
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  /* Form fields: focus-ring engages smoothly instead of snapping to the primary border color. */
+  .form-field {
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+
+  /* --- Contact form submit spinner --- */
+  .spin-loader {
+    animation: spin-loader-rotate 0.8s linear infinite;
+  }
+  @keyframes spin-loader-rotate {
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .spin-loader {
+      animation: none;
+    }
   }
 
   /* --- Nav: scroll-aware blur (ported behavior from Navbar.tsx) --- */
@@ -90,50 +213,237 @@
   .mobile-menu.is-open .mobile-menu-link:nth-child(7) { transition-delay: 280ms; }
   .mobile-menu.is-open .mobile-menu-link:nth-child(8) { transition-delay: 320ms; }
 
-  /* --- Scroll reveals: hidden only once JS confirms it can animate them back in --- */
+  /*
+   * Scroll reveals: hidden only once JS confirms it can animate them back in.
+   * Fade + rise + a light blur-to-sharp resolve (Kowalski: blur bridges two visual
+   * states into what reads as one continuous motion) - kept well under the 20px
+   * perf ceiling since it only ever runs once per element, never continuously.
+   */
   .js .reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(6px);
+    transition: opacity var(--dur-entrance) var(--ease-out-soft), transform var(--dur-entrance) var(--ease-out-soft),
+      filter var(--dur-entrance) var(--ease-out-soft);
   }
   .js .reveal.in-view {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
-  .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
-  .reveal-stagger > .reveal:nth-child(2) { transition-delay: 70ms; }
-  .reveal-stagger > .reveal:nth-child(3) { transition-delay: 140ms; }
-  .reveal-stagger > .reveal:nth-child(4) { transition-delay: 210ms; }
-  .reveal-stagger > .reveal:nth-child(5) { transition-delay: 280ms; }
-  .reveal-stagger > .reveal:nth-child(6) { transition-delay: 350ms; }
-  .reveal-stagger > .reveal:nth-child(7) { transition-delay: 420ms; }
-  .reveal-stagger > .reveal:nth-child(8) { transition-delay: 490ms; }
-  .reveal-stagger > .reveal:nth-child(9) { transition-delay: 560ms; }
-  .reveal-stagger > .reveal:nth-child(10) { transition-delay: 630ms; }
+  /*
+   * Reveal variants. All hidden states live under `.js` so content is fully visible
+   * with JS disabled; `.in-view` (set once by the IntersectionObserver, never removed)
+   * returns every element to its natural state, so nothing re-triggers on scroll.
+   */
+  /* Frame that only fades (no transform/blur) so its children can carry the choreography. */
+  .js .reveal.reveal-frame {
+    transform: none;
+    filter: none;
+  }
+  /* Directional arrivals: voice-system cards slide in toward the orb from their side. */
+  .js .reveal.reveal-from-left {
+    transform: translateX(-24px);
+  }
+  .js .reveal.reveal-from-right {
+    transform: translateX(24px);
+  }
+  .js .reveal.reveal-from-left.in-view,
+  .js .reveal.reveal-from-right.in-view {
+    transform: translateX(0);
+  }
+
+  /* Services: the problem panel lands first, the solution panel resolves in after it. */
+  .js .reveal .svc-problem,
+  .js .reveal .svc-solution {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-entrance) var(--ease-out-soft), transform var(--dur-entrance) var(--ease-out-soft);
+  }
+  .js .reveal .svc-solution {
+    transition-delay: 240ms;
+  }
+  .js .reveal.in-view .svc-problem,
+  .js .reveal.in-view .svc-solution {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Process: numbered badges pop to scale after their card has arrived. */
+  .step-badge {
+    transform: translate(-50%, -50%);
+  }
+  .js .reveal .step-badge {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+    transition: opacity var(--dur-base) var(--ease-out) 250ms, transform var(--dur-base) var(--ease-out) 250ms;
+  }
+  .js .reveal.in-view .step-badge {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* Voice orb: settles from a slightly smaller size while its glow blooms on. */
+  .orb-glow {
+    box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+  }
+  .js .reveal.voice-orb {
+    transform: scale(0.92);
+  }
+  .js .reveal.voice-orb.in-view {
+    transform: scale(1);
+  }
+  .js .reveal.voice-orb .orb-glow {
+    box-shadow: 0 0 0 rgba(0, 240, 255, 0);
+    transition: box-shadow 900ms var(--ease-out-soft) 250ms;
+  }
+  .js .reveal.voice-orb.in-view .orb-glow {
+    box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+  }
+
+  /* Comparison table: rows cascade in behind the container's reveal. */
+  .js .reveal .comparison-row {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity var(--dur-entrance) var(--ease-out-soft), transform var(--dur-entrance) var(--ease-out-soft),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+  .js .reveal.in-view .comparison-row {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .js .reveal.in-view .comparison-row:nth-child(1) { transition-delay: 0ms; }
+  .js .reveal.in-view .comparison-row:nth-child(2) { transition-delay: 40ms; }
+  .js .reveal.in-view .comparison-row:nth-child(3) { transition-delay: 80ms; }
+  .js .reveal.in-view .comparison-row:nth-child(4) { transition-delay: 120ms; }
+  .js .reveal.in-view .comparison-row:nth-child(5) { transition-delay: 160ms; }
+  .js .reveal.in-view .comparison-row:nth-child(6) { transition-delay: 200ms; }
+  .js .reveal.in-view .comparison-row:nth-child(7) { transition-delay: 240ms; }
+  .js .reveal.in-view .comparison-row:nth-child(8) { transition-delay: 280ms; }
+  .js .reveal.in-view .comparison-row:nth-child(9) { transition-delay: 320ms; }
+  .js .reveal.in-view .comparison-row:nth-child(10) { transition-delay: 360ms; }
+  .js .reveal.in-view .comparison-row:nth-child(11) { transition-delay: 400ms; }
+  .js .reveal.in-view .comparison-row:nth-child(12) { transition-delay: 440ms; }
+
+  /* Pricing cards: hover lift with accent border (desktop pointers only). */
+  .card-lift {
+    transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out), opacity var(--dur-entrance) var(--ease-out-soft),
+      filter var(--dur-entrance) var(--ease-out-soft);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-lift:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 12px 40px rgba(0, 240, 255, 0.08);
+    }
+  }
+
+  /* "Most popular" tier: a slow light pass along the border. Decorative, one card only. */
+  .card-featured::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(115deg, transparent 30%, rgba(0, 240, 255, 0.7) 50%, transparent 70%);
+    background-size: 250% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: border-shimmer 4s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes border-shimmer {
+    from { background-position: 250% 0; }
+    to { background-position: -150% 0; }
+  }
+
+  /* Contact form: success check pops in when the panel is shown. */
+  .success-pop {
+    animation: success-pop-in 0.4s var(--ease-out);
+  }
+  @keyframes success-pop-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* FAQ: progressive enhancement - browsers with interpolate-size animate open/close height. */
+  @supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+    details.faq-item::details-content {
+      block-size: 0;
+      overflow: hidden;
+      transition: block-size var(--dur-base) var(--ease-in-out), content-visibility var(--dur-base) allow-discrete;
+    }
+    details.faq-item[open]::details-content {
+      block-size: auto;
+    }
+  }
+
+  /* Stagger cascade: 50ms/item keeps grouped reveals feeling like one cascading gesture, not a slow drip. */
+  .reveal-stagger > .reveal:nth-child(1) { transition-delay: calc(var(--stagger-step) * 0); }
+  .reveal-stagger > .reveal:nth-child(2) { transition-delay: calc(var(--stagger-step) * 1); }
+  .reveal-stagger > .reveal:nth-child(3) { transition-delay: calc(var(--stagger-step) * 2); }
+  .reveal-stagger > .reveal:nth-child(4) { transition-delay: calc(var(--stagger-step) * 3); }
+  .reveal-stagger > .reveal:nth-child(5) { transition-delay: calc(var(--stagger-step) * 4); }
+  .reveal-stagger > .reveal:nth-child(6) { transition-delay: calc(var(--stagger-step) * 5); }
+  .reveal-stagger > .reveal:nth-child(7) { transition-delay: calc(var(--stagger-step) * 6); }
+  .reveal-stagger > .reveal:nth-child(8) { transition-delay: calc(var(--stagger-step) * 7); }
+  .reveal-stagger > .reveal:nth-child(9) { transition-delay: calc(var(--stagger-step) * 8); }
+  .reveal-stagger > .reveal:nth-child(10) { transition-delay: calc(var(--stagger-step) * 9); }
 
   /* --- Hero: CSS-only load-in (above the fold, so no JS/observer needed) --- */
   .hero-load {
     opacity: 0;
     transform: translateY(20px);
-    animation: hero-load-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: hero-load-in 0.8s var(--ease-out-soft) forwards;
   }
   @keyframes hero-load-in {
     to { opacity: 1; transform: translateY(0); }
   }
+  /* Headline choreography: the three lines rise one after another (90ms apart via inline
+     delays), guiding the eye down the headline in reading order. */
+  .hero-line {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: hero-load-in 0.7s var(--ease-out-soft) forwards;
+  }
   .hero-visual-load {
     opacity: 0;
-    animation: hero-visual-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: hero-visual-in 1s var(--ease-out-soft) forwards;
     animation-delay: 300ms;
   }
   @keyframes hero-visual-in {
+    /* Never scale in from 0 - nothing in the real world appears from nothing. */
     from { opacity: 0; transform: scale(0.92); }
     to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Hero mockup: floating workflow nodes drift gently (ported from the original Hero.tsx y-oscillation). */
+  .hero-float-a {
+    animation: hero-float 4s ease-in-out infinite;
+  }
+  .hero-float-b {
+    animation: hero-float-down 5s ease-in-out infinite 1s;
+  }
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes hero-float-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
   }
 
   /* --- Hero visual: mouse-tilt card (transform set by motion.js; CSS provides the easing) --- */
   .tilt-card {
     transform: perspective(2000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-    transition: transform 0.15s ease-out;
+    transition: transform var(--dur-fast) var(--ease-out);
     will-change: transform;
   }
 
@@ -181,13 +491,20 @@
     .connector-fill,
     .eq-bar,
     .mic-orb-ring,
-    .site-nav {
+    .site-nav,
+    .animate-pulse,
+    .btn-interactive,
+    .btn-interactive:active,
+    .nav-link::after,
+    details.faq-item[open] .faq-answer,
+    details.faq-item .faq-chevron {
       animation: none !important;
       transition: none !important;
     }
     .js .reveal {
       opacity: 1 !important;
       transform: none !important;
+      filter: none !important;
     }
     .hero-load,
     .hero-visual-load {
@@ -204,8 +521,59 @@
       transform: scaleY(0.7) !important;
     }
     .hero-motion-svg,
-    .hero-particles {
+    .particle-bg {
       display: none !important;
+    }
+    .btn-interactive:active,
+    .btn-interactive:hover {
+      transform: none !important;
+    }
+    .nav-link::after {
+      transform: translateX(-50%) scaleX(0) !important;
+    }
+
+    /* New motion classes from the animation pass: everything lands in its final state. */
+    .hero-float-a,
+    .hero-float-b,
+    .hero-line,
+    .js .reveal .svc-problem,
+    .js .reveal .svc-solution,
+    .js .reveal .step-badge,
+    .js .reveal.voice-orb,
+    .js .reveal.voice-orb .orb-glow,
+    .js .reveal .comparison-row,
+    .card-lift,
+    .success-pop {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+    }
+    .hero-line {
+      transform: none !important;
+    }
+    .js .reveal .svc-problem,
+    .js .reveal .svc-solution,
+    .js .reveal .comparison-row {
+      transform: none !important;
+    }
+    .js .reveal.voice-orb {
+      transform: scale(1) !important;
+    }
+    .js .reveal .step-badge {
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+    .js .reveal.voice-orb .orb-glow {
+      box-shadow: 0 0 60px rgba(0, 240, 255, 0.3) !important;
+    }
+    .card-lift:hover {
+      transform: none !important;
+    }
+    .card-featured::after {
+      animation: none !important;
+      background: linear-gradient(115deg, transparent 30%, rgba(0, 240, 255, 0.35) 50%, transparent 70%) !important;
+    }
+    details.faq-item::details-content {
+      transition: none !important;
     }
   }
 }

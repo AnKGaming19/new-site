@@ -2,6 +2,10 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/en/gdpr/", "destination": "/en/dpa/", "permanent": true },
+    { "source": "/gr/gdpr/", "destination": "/gr/dpa/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
