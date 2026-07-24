@@ -138,9 +138,13 @@ export function renderFooter(content, lang) {
           <li><a href="/${lang}/#about" class="link-hover hover:text-white">${f.companyLinks.about}</a></li>
           <li><a href="/${lang}/#contact" class="link-hover hover:text-white">${f.companyLinks.contact}</a></li>
         </ul>
-        <div class="mt-6 space-y-1 text-xs text-gray-400">
+        ${
+          f.companyDetails.lines.length
+            ? `<div class="mt-6 space-y-1 text-xs text-gray-400">
           ${f.companyDetails.lines.map((l) => `<p>${l}</p>`).join('\n          ')}
-        </div>
+        </div>`
+            : ''
+        }
       </div>
 
       <div class="reveal">

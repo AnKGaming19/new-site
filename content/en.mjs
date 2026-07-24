@@ -397,12 +397,8 @@ export default {
     },
     companyDetails: {
       heading: 'AIAnchor',
-      lines: [
-        'PLACEHOLDER — Registered company name',
-        'ΓΕΜΗ (GEMI): PLACEHOLDER',
-        'ΑΦΜ (VAT No.): PLACEHOLDER',
-        'Registered address: PLACEHOLDER, Greece',
-      ],
+      // Registration details hidden until confirmed. Repopulate this array to show them again.
+      lines: [],
     },
     contactEmail: 'info@aianchor.online',
     socials: { instagram: 'https://www.instagram.com/aianchor_/', linkedin: 'https://linkedin.com/company/aianchor' },

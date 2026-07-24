@@ -394,12 +394,8 @@ export default {
     },
     companyDetails: {
       heading: 'AIAnchor',
-      lines: [
-        'PLACEHOLDER — Επίσημη επωνυμία εταιρείας',
-        'ΓΕΜΗ: PLACEHOLDER',
-        'ΑΦΜ: PLACEHOLDER',
-        'Έδρα: PLACEHOLDER, Ελλάδα',
-      ],
+      // Στοιχεία μητρώου κρυμμένα μέχρι να επιβεβαιωθούν. Ξαναγεμίστε τον πίνακα για να εμφανιστούν.
+      lines: [],
     },
     contactEmail: 'info@aianchor.online',
     socials: { instagram: 'https://www.instagram.com/aianchor_/', linkedin: 'https://linkedin.com/company/aianchor' },
