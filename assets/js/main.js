@@ -133,6 +133,20 @@
     });
   });
 
+  // Features bento: cursor-spotlight glow follows the pointer across each tile.
+  // Purely decorative, so it's skipped for reduced-motion and non-hover (touch) devices;
+  // the CSS glow still centres itself there, and everything degrades to static with JS off.
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canHover && !reducedMotion) {
+    document.querySelectorAll('.spotlight-card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', e.clientX - r.left + 'px');
+        card.style.setProperty('--my', e.clientY - r.top + 'px');
+      });
+    });
+  }
+
   // Scroll-triggered reveals (ported whileInView behavior from the original Framer Motion sections)
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {

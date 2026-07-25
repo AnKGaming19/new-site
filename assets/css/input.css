@@ -475,6 +475,57 @@
     transition: transform 0.1s linear;
   }
 
+  /*
+   * Features bento: cursor-spotlight tiles. A soft radial glow tracks the pointer
+   * (position set by main.js via --mx/--my; defaults to centre so it still works with
+   * JS off) and the border brightens on hover. Pointer-gated so touch never sticks.
+   */
+  .spotlight-card {
+    transition: border-color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+  }
+  .spotlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 240, 255, 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-out);
+    pointer-events: none;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .spotlight-card:hover {
+      border-color: rgba(0, 240, 255, 0.28);
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+  }
+
+  /* Live-agent waveform (featured + analytics tiles). Bars breathe on a staggered loop. */
+  .wave-bar {
+    width: 3px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: linear-gradient(to top, #00f0ff, #7000ff);
+    align-self: stretch;
+    transform: scaleY(0.28);
+    transform-origin: bottom;
+    animation: feature-wave 1.2s ease-in-out infinite;
+  }
+  @keyframes feature-wave {
+    0%, 100% { transform: scaleY(0.28); }
+    50% { transform: scaleY(1); }
+  }
+  /* Live indicator ping (featured tile). */
+  .live-ping {
+    animation: live-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  @keyframes live-ping {
+    0% { transform: scale(1); opacity: 0.7; }
+    75%, 100% { transform: scale(2.2); opacity: 0; }
+  }
+
   /* --- Voice/mic orb equalizer accent (ported from VoiceAgent.tsx) --- */
   .mic-orb-ring {
     animation: mic-ping 3s ease-in-out infinite;
@@ -508,8 +559,11 @@
     .connector-fill,
     .eq-bar,
     .mic-orb-ring,
+    .wave-bar,
+    .live-ping,
     .site-nav,
     .animate-pulse,
+    .animate-ping,
     .btn-interactive,
     .btn-interactive:active,
     .nav-link::after,
@@ -536,6 +590,9 @@
     }
     .eq-bar {
       transform: scaleY(0.7) !important;
+    }
+    .wave-bar {
+      transform: scaleY(0.55) !important;
     }
     .hero-motion-svg,
     .particle-bg {

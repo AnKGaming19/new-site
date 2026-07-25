@@ -186,7 +186,7 @@ export function renderServices(t) {
     </div>
   </div>`;
 
-  return `<section id="services" class="relative py-24 md:py-32">
+  return `<section id="services" class="relative overflow-hidden py-24 md:py-32">
     <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"></div>
     <div class="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[150px]"></div>
     <div class="relative mx-auto max-w-8xl px-6">
@@ -514,31 +514,63 @@ export function renderHowItWorks(t) {
 
 export function renderFeatures(t) {
   const f = t.features;
+  const featured = f.items[0]; // AI voice receptionists — the signature "live agent" tile
+  const rest = f.items.slice(1);
+  const wideIdx = 5; // "Live analytics & call recordings" within `rest` — gets the wide slot + mini-waveform
+
+  const waveBars = (count) =>
+    Array.from({ length: count })
+      .map((_, i) => `<span class="wave-bar" style="animation-delay:${(i % 7) * 90}ms"></span>`)
+      .join('');
+
+  // Signature tile: a live-call visual (mic orb + equalizer waveform + GR/EN + live pulse).
+  const featuredCard = `<article class="spotlight-card reveal relative col-span-1 overflow-hidden rounded-2xl border border-white/10 bg-dark-800/60 p-8 sm:col-span-2 lg:row-span-2">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(420px 300px at 15% 0%, rgba(0,240,255,0.10), transparent 70%), radial-gradient(360px 280px at 100% 100%, rgba(112,0,255,0.12), transparent 70%)"></div>
+    <div class="relative flex h-full flex-col">
+      <div class="flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 rounded-full border border-green-400/20 bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-400"><span class="relative flex h-2 w-2"><span class="live-ping absolute inline-flex h-full w-full rounded-full bg-green-400/70"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span></span>Live</span>
+        <div class="flex gap-2">
+          <span class="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[11px] text-gray-300">GR</span>
+          <span class="rounded-md border border-primary/30 bg-primary/10 px-2 py-1 font-mono text-[11px] text-primary">EN</span>
+        </div>
+      </div>
+      <div class="my-10 flex flex-1 flex-col items-center justify-center">
+        <div class="relative mb-8 flex h-24 w-24 items-center justify-center">
+          <span class="mic-orb-ring absolute inset-0 rounded-full border-2 border-primary/40"></span>
+          <span class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary p-[2px] shadow-[0_0_50px_rgba(0,240,255,0.35)]"><span class="flex h-full w-full items-center justify-center rounded-full bg-dark-900">${iconMarkup('phone', 'w-8 h-8 text-white')}</span></span>
+        </div>
+        <div class="feature-wave flex h-12 items-end gap-[3px]" aria-hidden="true">${waveBars(28)}</div>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl font-bold text-white">${featured.title}</h3>
+        <p class="mt-2 max-w-md text-gray-400">${featured.desc}</p>
+      </div>
+    </div>
+  </article>`;
+
+  const tile = (item, idx) => {
+    const isWide = idx === wideIdx;
+    const span = isWide ? ' sm:col-span-2 lg:col-span-2' : '';
+    return `<article class="spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6${span}">
+      <div class="relative flex items-start justify-between gap-4">
+        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-secondary/10 text-primary">${iconMarkup(item.icon, 'w-5 h-5')}</div>
+        ${isWide ? `<div class="feature-wave flex h-8 flex-1 items-end justify-end gap-[3px] opacity-70" aria-hidden="true">${waveBars(20)}</div>` : ''}
+      </div>
+      <h3 class="relative mt-4 font-semibold text-white">${item.title}</h3>
+      <p class="relative mt-2 text-sm text-gray-400">${item.desc}</p>
+    </article>`;
+  };
+
+  // Bento: featured 2x2 + one wide 2x1 + six 1x1 = 12 cells = a gapless 4x3 grid on desktop.
   return `<section id="features" class="py-24 md:py-32">
     <div class="mx-auto max-w-8xl px-6">
       <div class="reveal max-w-2xl">
         <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${f.heading}</h2>
         <p class="mt-4 text-lg text-gray-400">${f.subhead}</p>
       </div>
-      <!-- Asymmetric bento: featured lead tile (2 cols) + 7 tiles = 9 cells = 3 exact rows at lg;
-           the last tile spans 2 at sm so the 2-col layout stays gapless too. -->
-      <div class="reveal-stagger mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        ${f.items
-          .map((i, idx) => {
-            const isFeatured = idx === 0;
-            const isLast = idx === f.items.length - 1;
-            const span = isFeatured ? ' sm:col-span-2' : isLast ? ' sm:col-span-2 lg:col-span-1' : '';
-            return `<div class="reveal rounded-2xl border border-white/5 bg-white/[0.03] transition-colors hover:bg-white/[0.06] ${isFeatured ? 'p-8' : 'p-6'}${span}">
-          ${
-            i.icon === 'phone'
-              ? micOrbAccent()
-              : `<div class="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-tr from-primary/20 to-secondary/20 text-primary">${iconMarkup(i.icon, 'w-5 h-5')}</div>`
-          }
-          <h3 class="mt-4 ${isFeatured ? 'font-display text-2xl font-bold' : 'font-semibold'} text-white">${i.title}</h3>
-          <p class="mt-2 ${isFeatured ? 'max-w-xl text-base' : 'text-sm'} text-gray-400">${i.desc}</p>
-        </div>`;
-          })
-          .join('\n        ')}
+      <div class="reveal-stagger mt-14 grid grid-flow-row-dense gap-4 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-4">
+        ${featuredCard}
+        ${rest.map(tile).join('\n        ')}
       </div>
     </div>
   </section>`;
