@@ -87,8 +87,8 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
         <a href="${home}#pricing" class="nav-link text-gray-300 hover:text-white">${content.nav.pricing}</a>
         <a href="${home}#faq" class="nav-link text-gray-300 hover:text-white">${content.nav.faq}</a>
         <a href="${home}#about" class="nav-link text-gray-300 hover:text-white">${content.nav.about}</a>
+        <a href="${home}coming-soon/" class="nav-link text-gray-300 hover:text-white">${content.nav.clientLogin}</a>
         ${langSwitch('')}
-        <a href="${home}#contact" class="btn-interactive rounded-full bg-primary px-4 py-2 font-semibold text-dark-900">${content.nav.cta}</a>
       </div>
     </nav>
 
@@ -99,7 +99,7 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
       <a href="${home}#pricing" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.pricing}</a>
       <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
       <a href="${home}#about" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.about}</a>
-      <a href="${home}#contact" class="mobile-menu-link mt-6 block rounded-full bg-primary px-5 py-4 text-center text-lg font-semibold text-dark-900">${content.nav.cta}</a>
+      <a href="${home}coming-soon/" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
     </div>
   </header>`;
 }

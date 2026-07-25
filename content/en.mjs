@@ -241,7 +241,7 @@ export default {
 
   pricing: {
     heading: 'Simple pricing, real ROI',
-    subhead: 'Prices shown are before VAT. Switch to annual for roughly 20% off.',
+    subhead: 'Every plan pairs AI voice agents with automations and CRM — one platform, not two tools. Prices shown are before VAT; switch to annual for roughly 20% off.',
     toggle: { monthly: 'Monthly', annual: 'Annual', save: 'Save ~20%' },
     vatSuffix: '+ VAT',
     perMonth: '/mo',
@@ -255,14 +255,24 @@ export default {
         name: 'Starter',
         priceMonthly: 99,
         priceAnnual: 79,
-        tagline: 'For solo operators dipping a toe in.',
-        features: [
-          '1 AI agent (template wizard)',
-          '150 minutes / month',
-          '1 phone number',
-          'Call summaries & sentiment',
-          'Basic dashboard',
-          'Knowledge base up to 20 entries',
+        tagline: 'AI voice plus a starter dashboard and knowledge base, for solo operators.',
+        featureGroups: [
+          {
+            label: 'Voice',
+            items: [
+              '1 AI agent (template wizard)',
+              '150 minutes / month',
+              '1 phone number',
+              'Call summaries & sentiment',
+            ],
+          },
+          {
+            label: 'Automations & CRM',
+            items: [
+              'Basic dashboard',
+              'Knowledge base up to 20 entries',
+            ],
+          },
         ],
         overage: '€0.60 / min',
       },
@@ -271,16 +281,25 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
-        cta: 'Try free for 7 days',
-        tagline: 'Start with a 7-day free trial, then scale with full pipeline visibility.',
-        features: [
-          '2 AI agents',
-          '400 minutes / month',
-          'CRM with auto-created & valued leads',
-          'Revenue pipeline dashboard',
-          'Listings / PDF import',
-          'Booking integration',
-          '2 automation templates',
+        tagline: 'Voice agents, automations and full revenue-pipeline visibility as you scale.',
+        featureGroups: [
+          {
+            label: 'Voice',
+            items: [
+              '2 AI agents',
+              '400 minutes / month',
+              'Booking integration',
+            ],
+          },
+          {
+            label: 'Automations & CRM',
+            items: [
+              'CRM with auto-created & valued leads',
+              'Revenue pipeline dashboard',
+              'Listings / PDF import',
+              '2 automation templates (missed-call text-back, follow-up sequences)',
+            ],
+          },
         ],
         overage: '€0.45 / min',
       },
@@ -288,13 +307,25 @@ export default {
         name: 'Pro',
         priceMonthly: 549,
         priceAnnual: 449,
-        tagline: 'For businesses running the whole front desk on AI.',
-        features: [
-          '5 AI agents',
-          '1,000 minutes / month',
-          'Full ROI suite',
-          'Up to 6 custom automations',
-          'Multilingual support',
+        tagline: 'Voice, custom automations and the full ROI suite for the whole front desk.',
+        featureGroups: [
+          {
+            label: 'Voice',
+            items: [
+              '5 AI agents',
+              '1,000 minutes / month',
+              'Multilingual support',
+            ],
+          },
+          {
+            label: 'Automations & CRM',
+            items: [
+              'Full ROI suite',
+              'Up to 6 custom automations (text-back, follow-up sequences, review requests)',
+            ],
+          },
+        ],
+        extras: [
           'Priority support',
           'Guided onboarding',
         ],
@@ -328,6 +359,8 @@ export default {
       { label: 'Creates & values leads automatically', aianchor: true, human: false, basic: false },
       { label: 'Shows a live ROI dashboard', aianchor: true, human: false, basic: false },
       { label: 'Custom automations (follow-ups, text-back)', aianchor: true, human: false, basic: false },
+      { label: 'Automates repetitive admin work', aianchor: true, human: false, basic: false },
+      { label: 'Connects your existing tools (calendar, CRM, email)', aianchor: true, human: false, basic: false },
       { label: 'Monthly cost', aianchor: '€99–549+', human: '€800–1,500', basic: '€150–400' },
     ],
   },

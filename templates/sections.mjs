@@ -578,6 +578,20 @@ export function renderFeatures(t) {
 
 export function renderPricing(t) {
   const p = t.pricing;
+  const featureItem = (f) => `<li class="flex gap-2"><span class="mt-0.5 text-primary">${iconMarkup('check', 'w-4 h-4')}</span><span>${f}</span></li>`;
+  // Tiers group their features under labelled pillars (Voice / Automations & CRM) so the
+  // value reads as two product areas. `extras` holds cross-cutting items (support, onboarding).
+  const featureGroups = (tier) => `<div class="mt-6 flex-1 space-y-5">
+            ${tier.featureGroups.map((g) => `<div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-primary/70">${g.label}</p>
+              <ul class="mt-2.5 space-y-3 text-sm text-gray-300">
+                ${g.items.map(featureItem).join('\n                ')}
+              </ul>
+            </div>`).join('\n            ')}
+            ${tier.extras ? `<ul class="space-y-3 border-t border-white/10 pt-4 text-sm text-gray-300">
+              ${tier.extras.map(featureItem).join('\n              ')}
+            </ul>` : ''}
+          </div>`;
   const tierCard = (tier) => `<div class="reveal card-lift ${tier.mostPopular ? 'card-featured border-primary/60 bg-gradient-to-b from-primary/10 to-dark-800/60' : 'border-white/10 bg-dark-800/40'} relative flex flex-col rounded-2xl border p-8">
           ${tier.mostPopular ? `<span class="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-dark-900">${p.mostPopular}</span>` : ''}
           <h3 class="text-lg font-semibold text-white">${tier.name}</h3>
@@ -586,9 +600,7 @@ export function renderPricing(t) {
             <span class="price-monthly"><span class="font-display text-4xl font-bold text-white">€${tier.priceMonthly}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
             <span class="price-annual hidden"><span class="font-display text-4xl font-bold text-white">€${tier.priceAnnual}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
           </p>
-          <ul class="mt-6 flex-1 space-y-3 text-sm text-gray-300">
-            ${tier.features.map((f) => `<li class="flex gap-2"><span class="mt-0.5 text-primary">${iconMarkup('check', 'w-4 h-4')}</span><span>${f}</span></li>`).join('\n            ')}
-          </ul>
+          ${featureGroups(tier)}
           <p class="mt-6 text-xs text-gray-400">${p.overageLabel}: ${tier.overage}</p>
           <a href="/${t.lang}/coming-soon/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${tier.cta || p.ctaTier}</a>
         </div>`;
