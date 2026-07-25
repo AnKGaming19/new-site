@@ -397,14 +397,14 @@ export function renderContact(t) {
               </div>
             </a>
             <div class="grid gap-4 sm:grid-cols-2">
-              <a href="${t.footer.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="btn-interactive group flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-primary/40 hover:bg-primary/5">
+              <a href="${t.footer.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-no-fill group flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-primary/40 hover:bg-primary/5">
                 <div class="rounded-lg bg-[#0077b5]/10 p-2.5 text-[#0077b5] transition-transform group-hover:scale-105">${iconMarkup('linkedin', 'w-5 h-5')}</div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">${c.linkedinCard.title}</h4>
                   <p class="text-xs text-gray-300 transition-colors group-hover:text-white">${c.linkedinCard.desc}</p>
                 </div>
               </a>
-              <a href="${t.footer.socials.instagram}" target="_blank" rel="noopener noreferrer" class="btn-interactive group flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-primary/40 hover:bg-primary/5">
+              <a href="${t.footer.socials.instagram}" target="_blank" rel="noopener noreferrer" class="btn-interactive btn-no-fill group flex items-center gap-3.5 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-primary/40 hover:bg-primary/5">
                 <div class="rounded-lg bg-[#E1306C]/10 p-2.5 text-[#E1306C] transition-transform group-hover:scale-105">${iconMarkup('instagram', 'w-5 h-5')}</div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">${c.instagramCard.title}</h4>
@@ -590,7 +590,7 @@ export function renderPricing(t) {
             ${tier.features.map((f) => `<li class="flex gap-2"><span class="mt-0.5 text-primary">${iconMarkup('check', 'w-4 h-4')}</span><span>${f}</span></li>`).join('\n            ')}
           </ul>
           <p class="mt-6 text-xs text-gray-400">${p.overageLabel}: ${tier.overage}</p>
-          <a href="/${t.lang}/coming-soon/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${p.ctaTier}</a>
+          <a href="/${t.lang}/coming-soon/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${tier.cta || p.ctaTier}</a>
         </div>`;
 
   const scaleCard = `<div class="reveal card-lift flex flex-col rounded-2xl border border-white/10 bg-dark-800/40 p-8">

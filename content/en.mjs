@@ -271,7 +271,8 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
-        tagline: 'For teams ready to see the pipeline, not just the calls.',
+        cta: 'Try free for 7 days',
+        tagline: 'Start with a 7-day free trial, then scale with full pipeline visibility.',
         features: [
           '2 AI agents',
           '400 minutes / month',

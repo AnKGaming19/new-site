@@ -268,7 +268,8 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
-        tagline: 'Για ομάδες που θέλουν να βλέπουν το pipeline, όχι μόνο τις κλήσεις.',
+        cta: 'Δωρεάν δοκιμή 7 ημερών',
+        tagline: 'Ξεκινήστε με δωρεάν δοκιμή 7 ημερών και μετά κλιμακώστε με πλήρη εικόνα του pipeline.',
         features: [
           '2 AI agents',
           '400 λεπτά / μήνα',
