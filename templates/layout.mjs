@@ -9,7 +9,7 @@ function hreflangTags(urlPathByLang, rootIsGr) {
   return tags.join('\n    ');
 }
 
-export function renderHead({ title, description, canonical, urlPathByLang, ogImage, locale, jsonLd, extraHead = '', robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }) {
+export function renderHead({ title, description, canonical, urlPathByLang, ogImage, locale, jsonLd, extraHead = '', robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1', assetVersion = '' }) {
   return `<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${title}</title>
@@ -44,7 +44,7 @@ export function renderHead({ title, description, canonical, urlPathByLang, ogIma
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" /></noscript>
 
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css${assetVersion ? `?v=${assetVersion}` : ''}" />
 
     <!-- Search console verification: uncomment and paste real value when available -->
     <!-- <meta name="google-site-verification" content="REPLACE_ME" /> -->

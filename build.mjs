@@ -25,6 +25,7 @@ import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScr
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, 'dist');
+const ASSET_VERSION = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA || Date.now().toString()).slice(0, 12);
 
 const content = { en, gr };
 
@@ -81,12 +82,13 @@ function buildHomePage(lang) {
     ogImage: `/assets/img/og/og-image-${lang}.png`,
     locale: t.locale,
     jsonLd,
+    assetVersion: ASSET_VERSION,
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('home')(other))}
   ${renderMain(t, lang)}
   ${renderFooter(t, lang)}
-  <script src="/assets/js/main.js" defer></script>`;
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -102,12 +104,13 @@ function buildLegalPage(lang, slug) {
     ogImage: `/assets/img/og/og-image-${lang}.png`,
     locale: t.locale,
     jsonLd: '',
+    assetVersion: ASSET_VERSION,
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('legal', slug)(other))}
   ${renderLegalPage(t, slug)}
   ${renderFooter(t, lang)}
-  <script src="/assets/js/main.js" defer></script>`;
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -122,6 +125,7 @@ function buildComingSoonPage(lang) {
     ogImage: `/assets/img/og/og-image-${lang}.png`,
     locale: t.locale,
     jsonLd: '',
+    assetVersion: ASSET_VERSION,
     // Transient utility page (a signup placeholder), so keep it out of the index while it stands in.
     robots: 'noindex, follow',
   });
@@ -133,7 +137,7 @@ function buildComingSoonPage(lang) {
     ${renderComingSoon(t, lang)}
     ${renderFooter(t, lang)}
   </div>
-  <script src="/assets/js/main.js" defer></script>`;
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -151,13 +155,14 @@ function buildRootPage() {
     ogImage: `/assets/img/og/og-image-gr.png`,
     locale: t.locale,
     jsonLd,
+    assetVersion: ASSET_VERSION,
     extraHead: rootRedirectScript(),
   });
   const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
   ${renderNav(t, 'gr', APP_URL, urlPathByLangFactory('home')('en'))}
   ${renderMain(t, 'gr')}
   ${renderFooter(t, 'gr')}
-  <script src="/assets/js/main.js" defer></script>`;
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
