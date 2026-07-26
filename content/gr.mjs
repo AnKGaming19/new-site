@@ -278,6 +278,7 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
+        cta: 'Δωρεάν δοκιμή 7 ημερών',
         tagline: 'Φωνητικοί agents, αυτοματισμοί και πλήρης εικόνα του pipeline εσόδων καθώς κλιμακώνετε.',
         featureGroups: [
           {

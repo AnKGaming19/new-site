@@ -281,6 +281,7 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
+        cta: 'Try free for 7 days',
         tagline: 'Voice agents, automations and full revenue-pipeline visibility as you scale.',
         featureGroups: [
           {
