@@ -4,7 +4,7 @@ export function organizationSchema(content, lang) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'AIAnchor',
+    name: 'AiAnchor',
     url: SITE_URL,
     logo: `${SITE_URL}/assets/img/og/og-image-${lang}.png`,
     email: content.footer.contactEmail,
@@ -34,7 +34,7 @@ export function softwareApplicationSchema(content, lang) {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'AIAnchor',
+    name: 'AiAnchor’s Command Hub',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     url: `${SITE_URL}/${lang}/`,

@@ -26,7 +26,7 @@ export function renderHead({ title, description, canonical, urlPathByLang, ogIma
     <meta property="og:image" content="${SITE_URL}${ogImage}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="AIAnchor" />
+    <meta property="og:site_name" content="AiAnchor" />
     <meta property="og:locale" content="${locale}" />
 
     <!-- Twitter -->

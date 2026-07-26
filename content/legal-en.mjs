@@ -50,28 +50,28 @@ const SUBPROCESSORS_TABLE = {
 
 export const legalMetaEn = {
   terms: {
-    title: 'Terms of Service | AIAnchor',
-    description: 'Terms of Service for AIAnchor AI voice agents, automations and client portal: plans, billing, acceptable use, liability and governing law.',
+    title: 'Terms of Service | AiAnchor',
+    description: 'Terms of Service for AiAnchor AI voice agents, automations and client portal: plans, billing, acceptable use, liability and governing law.',
   },
   privacy: {
-    title: 'Privacy Policy | AIAnchor',
-    description: 'How AIAnchor collects and protects data from website visitors, client accounts and callers, including subprocessors, transfers and your GDPR rights.',
+    title: 'Privacy Policy | AiAnchor',
+    description: 'How AiAnchor collects and protects data from website visitors, client accounts and callers, including subprocessors, transfers and your GDPR rights.',
   },
   dpa: {
-    title: 'Data Processing Agreement (DPA) | AIAnchor',
-    description: 'AIAnchor’s processor terms under Art. 28 GDPR: scope, security measures, subprocessors, breach notification, audits and international transfers.',
+    title: 'Data Processing Agreement (DPA) | AiAnchor',
+    description: 'AiAnchor’s processor terms under Art. 28 GDPR: scope, security measures, subprocessors, breach notification, audits and international transfers.',
   },
   cookies: {
-    title: 'Cookie Policy | AIAnchor',
+    title: 'Cookie Policy | AiAnchor',
     description: 'aianchor.online sets no cookies. What we store locally, third-party requests, and how to manage them.',
   },
   'ai-policy': {
-    title: 'AI Disclosure Policy | AIAnchor',
-    description: 'How AIAnchor voice agents disclose that callers are talking to an AI (EU AI Act Article 50), human escalation, model data practices and limitations.',
+    title: 'AI Disclosure Policy | AiAnchor',
+    description: 'How AiAnchor voice agents disclose that callers are talking to an AI (EU AI Act Article 50), human escalation, model data practices and limitations.',
   },
   trust: {
-    title: 'Trust & Security | AIAnchor',
-    description: 'AIAnchor’s security posture in plain language: tenant isolation, encryption, access control, webhooks, logging, subprocessors and vulnerability reporting.',
+    title: 'Trust & Security | AiAnchor',
+    description: 'AiAnchor’s security posture in plain language: tenant isolation, encryption, access control, webhooks, logging, subprocessors and vulnerability reporting.',
   },
 };
 
@@ -85,13 +85,13 @@ export const legalEn = {
     title: 'Privacy Policy',
     updated: 'Last updated: 24 July 2026',
     intro:
-      'This policy explains what personal data AIAnchor collects, why, and what rights you have. It covers three groups: visitors to this website, people who hold a client account, and callers who speak with an AI voice agent we operate for one of our clients.',
+      'This policy explains what personal data AiAnchor collects, why, and what rights you have. It covers three groups: visitors to this website, people who hold a client account, and callers who speak with an AI voice agent we operate for one of our clients.',
     sections: [
       {
         id: 'controller',
         h: '1. Who we are',
         ps: [
-          'AIAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ no., ΑΦΜ/VAT no., registered address, Greece) builds AI voice agents, workflow automations and custom CRM/web systems for businesses. You can reach us about anything in this policy at <a class="link-hover text-primary hover:text-white" href="mailto:' +
+          'AiAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ no., ΑΦΜ/VAT no., registered address, Greece) builds AI voice agents, workflow automations and custom CRM/web systems for businesses. You can reach us about anything in this policy at <a class="link-hover text-primary hover:text-white" href="mailto:' +
             PRIVACY_EMAIL +
             '">' +
             PRIVACY_EMAIL +
@@ -102,8 +102,8 @@ export const legalEn = {
         id: 'roles',
         h: '2. Our two roles: controller and processor',
         ps: [
-          'For this website and for client accounts (signup, billing, portal logins), AIAnchor is the <strong class="text-gray-200">controller</strong>: we decide why and how that data is processed.',
-          'For calls handled by an AI voice agent, our client (the business whose phone line the agent answers) is the controller of its callers’ data, and AIAnchor is a <strong class="text-gray-200">processor</strong> acting on the client’s documented instructions under our <a class="link-hover text-primary hover:text-white" href="/en/dpa/">Data Processing Agreement</a>. Callers who want to exercise rights over call data should contact the business they called; we assist that business in responding.',
+          'For this website and for client accounts (signup, billing, portal logins), AiAnchor is the <strong class="text-gray-200">controller</strong>: we decide why and how that data is processed.',
+          'For calls handled by an AI voice agent, our client (the business whose phone line the agent answers) is the controller of its callers’ data, and AiAnchor is a <strong class="text-gray-200">processor</strong> acting on the client’s documented instructions under our <a class="link-hover text-primary hover:text-white" href="/en/dpa/">Data Processing Agreement</a>. Callers who want to exercise rights over call data should contact the business they called; we assist that business in responding.',
         ],
       },
       {
@@ -255,20 +255,20 @@ export const legalEn = {
     title: 'Terms of Service',
     updated: 'Last updated: 24 July 2026',
     intro:
-      'These Terms govern the services AIAnchor provides to business clients: AI voice agents, workflow automations, custom CRM/web systems and the client portal. By signing an order form or subscribing to a plan, you accept them.',
+      'These Terms govern the services AiAnchor provides to business clients: AI voice agents, workflow automations, custom CRM/web systems and the client portal. By signing an order form or subscribing to a plan, you accept them.',
     sections: [
       {
         id: 'parties',
         h: '1. Parties and acceptance',
         ps: [
-          'The agreement is between AIAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ, ΑΦΜ, registered address, Greece) and the business identified on the order form or account (“Client”). The services are offered to businesses, not consumers. These Terms, the order form, and the <a class="link-hover text-primary hover:text-white" href="/en/dpa/">Data Processing Agreement</a> together form the agreement.',
+          'The agreement is between AiAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ, ΑΦΜ, registered address, Greece) and the business identified on the order form or account (“Client”). The services are offered to businesses, not consumers. These Terms, the order form, and the <a class="link-hover text-primary hover:text-white" href="/en/dpa/">Data Processing Agreement</a> together form the agreement.',
         ],
       },
       {
         id: 'services',
         h: '2. The services',
         ps: [
-          'AIAnchor provides: (a) AI voice agents that answer the Client’s inbound calls, book appointments and capture leads; (b) automation workflows; (c) custom CRM and web systems where agreed; and (d) a client portal showing calls, transcripts, recordings, leads and ROI metrics. Scope per plan is described at <a class="link-hover text-primary hover:text-white" href="/en/#pricing">Pricing</a> and in the order form.',
+          'AiAnchor provides: (a) AI voice agents that answer the Client’s inbound calls, book appointments and capture leads; (b) automation workflows; (c) custom CRM and web systems where agreed; and (d) a client portal showing calls, transcripts, recordings, leads and ROI metrics. Scope per plan is described at <a class="link-hover text-primary hover:text-white" href="/en/#pricing">Pricing</a> and in the order form.',
         ],
       },
       {
@@ -340,7 +340,7 @@ export const legalEn = {
         id: 'ip',
         h: '9. Intellectual property',
         ps: [
-          'AIAnchor retains all rights in its platform, agents, workflows and know-how. The Client retains all rights in its business data, caller data and content. Custom deliverables (e.g. bespoke CRM code) are licensed or assigned as stated in the order form. PLACEHOLDER: default position on custom-build IP.',
+          'AiAnchor retains all rights in its platform, agents, workflows and know-how. The Client retains all rights in its business data, caller data and content. Custom deliverables (e.g. bespoke CRM code) are licensed or assigned as stated in the order form. PLACEHOLDER: default position on custom-build IP.',
         ],
       },
       {
@@ -385,13 +385,13 @@ export const legalEn = {
     title: 'Data Processing Agreement (DPA)',
     updated: 'Last updated: 24 July 2026',
     intro:
-      'This DPA forms part of the service agreement between AIAnchor (“Processor”) and the Client (“Controller”) and governs our processing of personal data, in particular caller data, on the Client’s behalf under Article 28 GDPR. A countersigned copy is available on request at info@aianchor.online.',
+      'This DPA forms part of the service agreement between AiAnchor (“Processor”) and the Client (“Controller”) and governs our processing of personal data, in particular caller data, on the Client’s behalf under Article 28 GDPR. A countersigned copy is available on request at info@aianchor.online.',
     sections: [
       {
         id: 'scope',
         h: '1. Scope and roles',
         ps: [
-          'The Client is the controller of personal data processed through its voice agent, automations and portal workspace. AIAnchor processes that data only as processor, on the Client’s documented instructions, for the purposes in section 2. AIAnchor is separately a controller for its own account and billing data, covered by the <a class="link-hover text-primary hover:text-white" href="/en/privacy/">Privacy Policy</a>.',
+          'The Client is the controller of personal data processed through its voice agent, automations and portal workspace. AiAnchor processes that data only as processor, on the Client’s documented instructions, for the purposes in section 2. AiAnchor is separately a controller for its own account and billing data, covered by the <a class="link-hover text-primary hover:text-white" href="/en/privacy/">Privacy Policy</a>.',
         ],
       },
       {
@@ -499,13 +499,13 @@ export const legalEn = {
     title: 'AI Disclosure Policy',
     updated: 'Last updated: 24 July 2026',
     intro:
-      'Callers interacting with an AIAnchor voice agent are talking to software, not a person. This page documents how we disclose that, how humans stay in the loop, what the AI does with call data, and its limits.',
+      'Callers interacting with an AiAnchor voice agent are talking to software, not a person. This page documents how we disclose that, how humans stay in the loop, what the AI does with call data, and its limits.',
     sections: [
       {
         id: 'what-it-is',
         h: '1. What our voice agents are',
         ps: [
-          'An AIAnchor agent is an AI system built on Retell AI’s conversational voice platform. It answers a business’s inbound phone line, understands natural speech, answers questions from that business’s approved knowledge base, books appointments and records lead details. After the call, the recording is transcribed and analysed (using Retell post-call analysis and the Anthropic Claude API) to produce the summary and metrics the business sees in its portal.',
+          'An AiAnchor agent is an AI system built on Retell AI’s conversational voice platform. It answers a business’s inbound phone line, understands natural speech, answers questions from that business’s approved knowledge base, books appointments and records lead details. After the call, the recording is transcribed and analysed (using Retell post-call analysis and the Anthropic Claude API) to produce the summary and metrics the business sees in its portal.',
         ],
       },
       {
@@ -521,7 +521,7 @@ export const legalEn = {
         id: 'oversight',
         h: '3. Human oversight',
         ps: [
-          'Agents operate within scopes their business owner configures and approves: what they may answer, what they must not discuss, and where they hand off. Businesses review calls, transcripts and summaries in their portal and can correct the agent’s knowledge base at any time. AIAnchor monitors deployed agents for failures. PLACEHOLDER: describe the concrete review cadence/alerting once confirmed.',
+          'Agents operate within scopes their business owner configures and approves: what they may answer, what they must not discuss, and where they hand off. Businesses review calls, transcripts and summaries in their portal and can correct the agent’s knowledge base at any time. AiAnchor monitors deployed agents for failures. PLACEHOLDER: describe the concrete review cadence/alerting once confirmed.',
         ],
       },
       {
@@ -544,7 +544,7 @@ export const legalEn = {
         list: [
           'Anthropic (Claude API, used for call analysis): under its commercial terms, API inputs and outputs are <strong class="text-gray-200">not used to train</strong> Anthropic’s models.',
           'Retell AI (voice platform): recordings, transcripts and logs are retained per the configured retention policy (configurable from 1 day to 2 years). PLACEHOLDER: Retell’s public documentation does not state a no-training commitment; we must verify this in Retell’s DPA before asserting it here.',
-          'AIAnchor does not use caller data to train any models of its own.',
+          'AiAnchor does not use caller data to train any models of its own.',
         ],
       },
       {
@@ -599,7 +599,7 @@ export const legalEn = {
         h: '3. Access control',
         list: [
           'Client portal access is authenticated (Supabase Auth) and scoped to your workspace and role.',
-          'Internal access to production data is limited to authorised AIAnchor personnel on a least-privilege basis, for support and operations. PLACEHOLDER: confirm MFA enforcement and the current access list process.',
+          'Internal access to production data is limited to authorised AiAnchor personnel on a least-privilege basis, for support and operations. PLACEHOLDER: confirm MFA enforcement and the current access list process.',
         ],
       },
       {
@@ -630,7 +630,7 @@ export const legalEn = {
         list: [
           'GDPR: we sign a <a class="link-hover text-primary hover:text-white" href="/en/dpa/">DPA</a> with every client that needs one; SCCs cover non-EEA transfers.',
           'EU AI Act: our agents disclose AI interaction in-call; see the <a class="link-hover text-primary hover:text-white" href="/en/ai-policy/">AI Disclosure Policy</a>.',
-          'Our vendors hold SOC 2 attestations (Retell: Type I &amp; II; Supabase: Type II). AIAnchor itself does not yet hold its own certification; we say so honestly rather than implying otherwise.',
+          'Our vendors hold SOC 2 attestations (Retell: Type I &amp; II; Supabase: Type II). AiAnchor itself does not yet hold its own certification; we say so honestly rather than implying otherwise.',
         ],
       },
       {

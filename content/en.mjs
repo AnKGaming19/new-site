@@ -8,21 +8,21 @@ export default {
 
   meta: {
     home: {
-      title: 'AIAnchor | AI Tailored Solutions & Infrastructures for Business Automation',
-      description: 'AIAnchor builds custom CRM apps, web apps, automation workflows and AI voice systems that automate what slows your business down and scale what drives revenue — with a live portal that proves it.',
+      title: 'AiAnchor — AI growth systems for service businesses',
+      description: 'We answer your calls, capture and qualify your leads, and automate your follow-ups — with every euro of value proven live in AiAnchor’s Command Hub.',
     },
     ...legalMetaEn,
     comingSoon: {
-      title: 'Coming Soon | AIAnchor',
-      description: 'Self-serve signup is almost ready. Until then, book a free strategy call and we will set everything up for you.',
+      title: 'Coming Soon | AiAnchor',
+      description: 'Self-serve signup is almost ready. Until then, book a free demo and we will set everything up for you.',
     },
   },
 
   comingSoon: {
-    badge: 'Client portal',
+    badge: 'Command Hub',
     heading: 'Coming soon',
-    body: 'Self-serve signup isn’t live just yet — we’re putting the finishing touches on the client portal. Until then, book a free strategy call and we’ll set your AI agent up for you, hands-on.',
-    ctaPrimary: 'Book a Strategy Call',
+    body: 'Self-serve signup isn’t live just yet — we’re putting the finishing touches on AiAnchor’s Command Hub, the platform you log into. Until then, book a free demo and we’ll set your AI agent up and running for you, hands-on.',
+    ctaPrimary: 'Book a demo',
     ctaSecondary: 'Back to plans',
   },
 
@@ -36,37 +36,37 @@ export default {
     faq: 'FAQ',
     about: 'About',
     clientLogin: 'Client Login',
-    cta: 'Book a Strategy Call',
+    cta: 'Book a demo',
     // Accessible label for the compact lang-switch pill (visible text is just "GR"/"EN"):
     langSwitchLabel: 'Ελληνικά',
   },
 
   hero: {
-    eyebrow: 'AI Tailored Infrastructures',
-    headlineLine1: 'Intelligent',
-    headlineLine2: 'Ecosystems',
-    headlineLine3: 'Built to Scale',
-    subhead: 'AIAnchor builds consulting-grade AI infrastructures, custom CRM apps, and web apps designed around your exact workflows. We eliminate slow responses, repetitive work, and lost opportunities.',
-    ctaPrimary: 'Get Your Plan',
+    eyebrow: 'AI Growth Systems',
+    headlineLine1: 'We Answer.',
+    headlineLine2: 'We Book.',
+    headlineLine3: 'You Grow.',
+    subhead: 'AI-powered growth systems for service businesses. We answer your calls, capture and qualify your leads, and automate your follow-ups — and you see every euro of value live in AiAnchor’s Command Hub.',
+    ctaPrimary: 'Book a demo',
     ctaPrimaryHref: '#contact',
-    ctaSecondary: 'Explore Solutions',
-    ctaSecondaryHref: '#services',
-    visualAlt: 'AIAnchor client portal dashboard — a real example of the systems we build, showing live call volume, revenue pipeline value and hours saved',
+    ctaSecondary: 'See how we prove it',
+    ctaSecondaryHref: '#features',
+    visualAlt: 'AiAnchor’s Command Hub — the live dashboard clients log into, showing call volume, revenue pipeline value and hours saved in real time',
   },
 
   services: {
     eyebrow: 'Business Gaps & Solutions',
-    heading: 'Find the gaps. Build the system.',
-    subhead: 'We turn missed leads, manual work, and scattered data into custom CRM apps, web apps, and software systems that make your business easier to run.',
+    heading: 'Find the gaps. We run the fix.',
+    subhead: 'Missed leads, manual follow-ups and scattered numbers are work we take off your team — and every fix shows up in AiAnchor’s Command Hub in real numbers.',
     items: [
       {
         problemTag: 'Business Gap 01',
         problemTitle: 'Missed Leads',
         problem: 'Calls, messages, and inquiries get lost when your team is busy, offline, or switching between tools.',
         impact: 'IMPACT: Lost revenue and slower response times',
-        solutionTitle: 'Lead Capture System',
-        solution: 'We build systems that capture new leads instantly, qualify them, and route them to the right place before opportunities go cold.',
-        result: 'Every lead captured, organized, and ready for follow-up.',
+        solutionTitle: 'We Answer & Qualify',
+        solution: 'We answer every call and inquiry for you — 24/7, in Greek and English — ask the qualifying questions, book the appointment, and route the lead to the right person before it goes cold.',
+        result: 'Every lead answered, qualified and visible in Command Hub the moment it lands.',
         icon: 'phone',
         solutionIcon: 'workflow',
       },
@@ -75,9 +75,9 @@ export default {
         problemTitle: 'Too Much Manual Work',
         problem: 'Your team spends time on repetitive admin tasks, follow-ups, updates, and handovers that could be automated.',
         impact: 'IMPACT: Less time for sales, service, and growth',
-        solutionTitle: 'Automation Workflows',
-        solution: 'We connect your tools and automate repetitive processes across forms, calendars, CRMs, email, and internal systems.',
-        result: 'Less manual work, fewer mistakes, and faster daily operations.',
+        solutionTitle: 'We Run the Follow-Ups',
+        solution: 'Missed-call text-backs, follow-up sequences, reminders and review requests run for you across your calendar, CRM, email and internal tools — no one on your team has to remember.',
+        result: 'Less manual work, fewer mistakes, and every action logged in Command Hub.',
         icon: 'activity',
         solutionIcon: 'shield',
       },
@@ -86,9 +86,9 @@ export default {
         problemTitle: 'Scattered Business Data',
         problem: 'Important information is spread across spreadsheets, inboxes, notes, apps, and disconnected platforms.',
         impact: 'IMPACT: Poor visibility and slower decisions',
-        solutionTitle: 'Dashboards & Reporting',
-        solution: 'We build dashboards that bring your key numbers, workflows, leads, clients, and performance into one clear view.',
-        result: 'Clear visibility into what is happening and what needs attention.',
+        solutionTitle: 'We Prove It in Command Hub',
+        solution: 'Every call we answer, lead we qualify, booking we make and euro of pipeline lands in AiAnchor’s Command Hub as it happens — no spreadsheets to reconcile, no reporting to chase.',
+        result: 'One live view of what we’re doing and exactly what it’s worth.',
         icon: 'book',
         solutionIcon: 'chart',
       },
@@ -96,9 +96,9 @@ export default {
   },
 
   process: {
-    heading: 'Our Process',
-    lead: 'From idea to working system. Clear, practical, and built around your business.',
-    subhead: 'We keep every project focused on the right features, smooth delivery, and a system your team can actually use.',
+    heading: 'Need something bespoke? We build it too.',
+    lead: 'Most businesses go live on a standard plan in days. When your operation needs custom integrations or a system built from scratch, that’s the Scale path — and this is how it runs.',
+    subhead: 'Same team, same Command Hub proof layer — with the build scoped, delivered and supported around your workflow.',
     steps: [
       {
         n: '1',
@@ -110,7 +110,7 @@ export default {
       {
         n: '2',
         title: 'Build',
-        desc: 'We design and develop the first version of your CRM, dashboard, portal, automation, or custom web app.',
+        desc: 'We design and develop the first version of your bespoke system — custom integrations, CRM, internal tools or web app — wired into Command Hub.',
         deliverables: 'Core system, clean interface, database, integrations.',
         timeline: '7–14 days',
       },
@@ -123,13 +123,13 @@ export default {
       },
     ],
     bannerHtml: 'Average first version: <strong>14 days</strong>. Built around your workflow, not generic templates.',
-    cta: 'Book a Strategy Call',
+    cta: 'Book a demo',
   },
 
   voiceSystems: {
     eyebrow: 'AI-Powered',
     heading: 'AI Voice Systems',
-    subhead: 'Intelligent voice automation that handles calls, answers questions, and drives real business outcomes — one capability inside the systems we build.',
+    subhead: 'The voice layer we run for you: it picks up, answers questions, qualifies the caller and books the appointment — and every conversation is scored and logged in Command Hub.',
     features: [
       { title: 'Instant Call Pickup', desc: 'Answers missed calls instantly and captures opportunities.' },
       { title: 'Smart Discovery', desc: 'Asks the right questions and understands client needs.' },
@@ -143,24 +143,24 @@ export default {
 
   about: {
     heading: 'Who We Are',
-    lead: 'AIAnchor is a custom software development studio that builds web apps, CRMs, dashboards, client portals, and AI-enhanced systems for modern service businesses.',
-    leadBoldWords: ['web apps', 'CRMs', 'dashboards', 'client portals', 'AI-enhanced systems'],
-    tagline: 'Software development first. Automation second. AI when it creates real business value.',
+    lead: 'AiAnchor runs your calls, leads, bookings and follow-ups — and proves the value live through AiAnchor’s Command Hub.',
+    leadBoldWords: ['calls, leads, bookings and follow-ups', 'AiAnchor’s Command Hub'],
+    tagline: 'We don’t hand you a tool and wish you luck. We run the front desk and the busywork, and we show you what it earned.',
     missionLabel: 'Our Mission',
-    mission: 'To build the systems modern businesses actually need, so they can manage leads, clients, bookings, workflows, and operations in one place.',
+    mission: 'To give service businesses a front desk that never misses — and live proof of exactly what it’s worth.',
     stats: [
-      { stat: '30-50%', desc: 'Less time spent on manual admin after replacing disconnected tools with one system.' },
-      { stat: '2-4 Weeks', desc: 'Typical time to launch a focused pilot or first production-ready system.' },
+      { stat: '24/7', desc: 'Calls answered, leads qualified and appointments booked — nights, weekends and holidays included.' },
+      { stat: 'Live', desc: 'Every call, lead, booking and euro of pipeline visible in Command Hub the moment it happens.' },
     ],
-    statCallout: 'Measurable ROI as the system replaces repetitive work.',
+    statCallout: 'The ROI is on screen, not in a slide deck.',
   },
 
   contact: {
-    panelHeading: 'Ready to build a system that moves your business forward?',
-    panelSubhead: 'Book a free strategy call and let’s talk about the right solution for your business.',
-    panelCta: 'Book a Strategy Call',
-    formIntroHeading: 'Let’s plan the right build for your workflow.',
-    formIntroSubhead: 'Tell us what you need. We’ll help you shape a practical system your team can actually use.',
+    panelHeading: 'Ready to stop missing calls, leads and bookings?',
+    panelSubhead: 'Book a free demo — hear the agent handle a real call for your business, and see what Command Hub reports back.',
+    panelCta: 'Book a demo',
+    formIntroHeading: 'Tell us what’s slipping through.',
+    formIntroSubhead: 'Missed calls, slow follow-ups, no visibility on what any of it is worth — tell us where it hurts and we’ll show you the fix running.',
     emailCard: { title: 'Email Us', value: 'info@aianchor.online' },
     linkedinCard: { title: 'LinkedIn', desc: 'See our updates' },
     instagramCard: { title: 'Instagram', desc: 'Behind the work' },
@@ -170,12 +170,12 @@ export default {
       email: 'Email Address',
       interest: 'Interest',
       interestOptions: [
-        'Custom Web App',
-        'CRM / Business System',
-        'Dashboard / Analytics',
-        'Client Portal',
-        'Automation / Integrations',
-        'AI-Enhanced System',
+        'AI call answering',
+        'Lead capture & qualification',
+        'Appointment booking',
+        'Follow-up automation',
+        'Command Hub / ROI reporting',
+        'Bespoke build (Scale)',
         'Other',
       ],
       message: 'Message',
@@ -194,7 +194,7 @@ export default {
 
   socialProof: {
     heading: 'Trusted by businesses across Greece',
-    sub: 'Real estate agencies, clinics and service businesses run their front desk on AIAnchor.',
+    sub: 'Real estate agencies, clinics and service businesses run their front desk on AiAnchor.',
     testimonials: [
       { quote: 'PLACEHOLDER — drop in a real client quote here.', name: 'Client name', role: 'Owner', company: 'Company name' },
       { quote: 'PLACEHOLDER — drop in a real client quote here.', name: 'Client name', role: 'Manager', company: 'Company name' },
@@ -208,8 +208,8 @@ export default {
     steps: [
       {
         n: '01',
-        title: 'We build your AI agents & automations',
-        desc: 'Or you spin one up yourself with our template wizard in minutes. Either way, your agent is trained on your services, pricing, availability and policies before it ever picks up.',
+        title: 'We set up and run your AI agents & automations',
+        desc: 'Done for you — your agent is trained on your services, pricing, availability and policies before it ever picks up, and we keep tuning it once it’s live.',
       },
       {
         n: '02',
@@ -218,15 +218,15 @@ export default {
       },
       {
         n: '03',
-        title: 'You watch results and ROI live in your portal',
-        desc: 'Every call, lead and booking lands in your dashboard the moment it happens — with the numbers to prove what it’s worth.',
+        title: 'You watch results and ROI live in AiAnchor’s Command Hub',
+        desc: 'Command Hub is the platform you log into — every call, lead and booking lands there the moment it happens, with the numbers to prove what it’s worth.',
       },
     ],
   },
 
   features: {
-    heading: 'Inside the AI voice & portal layer',
-    subhead: 'One part of what we build — a full front-desk layer that answers, qualifies, books and proves it.',
+    heading: 'How we prove it: AiAnchor’s Command Hub',
+    subhead: 'Every service we run for you shows up here in real numbers — the calls answered, the leads qualified, the bookings made and what they’re worth.',
     items: [
       { icon: 'phone', title: 'AI voice receptionists (GR + EN)', desc: 'Natural, on-brand phone conversations in Greek and English, around the clock.' },
       { icon: 'calendar', title: 'Real bookings into your calendar', desc: 'Appointments land directly in the calendar you already use — no double-booking, no back-and-forth.' },
@@ -241,7 +241,7 @@ export default {
 
   pricing: {
     heading: 'Simple pricing, real ROI',
-    subhead: 'Every plan pairs AI voice agents with automations and CRM — one platform, not two tools. Prices shown are before VAT; switch to annual for roughly 20% off.',
+    subhead: 'Every plan is done-for-you service — the agents we set up and run, the minutes, the automations — with AiAnchor’s Command Hub included at every tier to prove what it returns. Prices shown are before VAT; switch to annual for roughly 20% off.',
     toggle: { monthly: 'Monthly', annual: 'Annual', save: 'Save ~20%' },
     vatSuffix: '+ VAT',
     perMonth: '/mo',
@@ -255,7 +255,7 @@ export default {
         name: 'Starter',
         priceMonthly: 99,
         priceAnnual: 79,
-        tagline: 'AI voice plus a starter dashboard and knowledge base, for solo operators.',
+        tagline: 'We answer your calls and log every lead — for solo operators.',
         featureGroups: [
           {
             label: 'Voice',
@@ -269,7 +269,7 @@ export default {
           {
             label: 'Automations & CRM',
             items: [
-              'Basic dashboard',
+              'Command Hub — starter dashboard',
               'Knowledge base up to 20 entries',
             ],
           },
@@ -281,8 +281,7 @@ export default {
         priceMonthly: 249,
         priceAnnual: 199,
         mostPopular: true,
-        cta: 'Try free for 7 days',
-        tagline: 'Voice agents, automations and full revenue-pipeline visibility as you scale.',
+        tagline: 'We answer, qualify, book and follow up — with the full revenue pipeline in view.',
         featureGroups: [
           {
             label: 'Voice',
@@ -296,7 +295,7 @@ export default {
             label: 'Automations & CRM',
             items: [
               'CRM with auto-created & valued leads',
-              'Revenue pipeline dashboard',
+              'Command Hub — revenue pipeline dashboard',
               'Listings / PDF import',
               '2 automation templates (missed-call text-back, follow-up sequences)',
             ],
@@ -308,7 +307,7 @@ export default {
         name: 'Pro',
         priceMonthly: 549,
         priceAnnual: 449,
-        tagline: 'Voice, custom automations and the full ROI suite for the whole front desk.',
+        tagline: 'We run your whole front desk — multilingual, with custom automations and the full ROI suite.',
         featureGroups: [
           {
             label: 'Voice',
@@ -321,7 +320,7 @@ export default {
           {
             label: 'Automations & CRM',
             items: [
-              'Full ROI suite',
+              'Command Hub — full ROI suite',
               'Up to 6 custom automations (text-back, follow-up sequences, review requests)',
             ],
           },
@@ -336,7 +335,7 @@ export default {
     scale: {
       name: 'Scale',
       priceFrom: 'from €1,200',
-      tagline: 'Multi-location and custom-integration businesses.',
+      tagline: 'Multi-location operations — and bespoke builds when you need something custom.',
       features: [
         'Multi-location support',
         'Unlimited automations',
@@ -349,16 +348,16 @@ export default {
   },
 
   comparison: {
-    heading: 'AIAnchor vs. the alternatives',
+    heading: 'AiAnchor vs. the alternatives',
     subhead: 'See what you’re actually comparing before you decide.',
-    cols: { feature: '', aianchor: 'AIAnchor', human: 'Human receptionist', basic: 'Basic AI answering service' },
+    cols: { feature: '', aianchor: 'AiAnchor', human: 'Human receptionist', basic: 'Basic AI answering service' },
     rows: [
       { label: 'Available 24/7', aianchor: true, human: false, basic: true },
       { label: 'Books real appointments', aianchor: true, human: true, basic: false },
       { label: 'Knows your listings / services', aianchor: true, human: true, basic: false },
       { label: 'Analyzes every call (summary, sentiment)', aianchor: true, human: false, basic: false },
       { label: 'Creates & values leads automatically', aianchor: true, human: false, basic: false },
-      { label: 'Shows a live ROI dashboard', aianchor: true, human: false, basic: false },
+      { label: 'Live ROI dashboard in Command Hub', aianchor: true, human: false, basic: false },
       { label: 'Custom automations (follow-ups, text-back)', aianchor: true, human: false, basic: false },
       { label: 'Automates repetitive admin work', aianchor: true, human: false, basic: false },
       { label: 'Connects your existing tools (calendar, CRM, email)', aianchor: true, human: false, basic: false },
@@ -388,7 +387,7 @@ export default {
       },
       {
         q: 'Can I listen to the calls it takes?',
-        a: 'Yes — every call gets an automatic summary and sentiment tag in your portal, and full recordings are available on request, subject to the retention settings on your account.',
+        a: 'Yes — every call gets an automatic summary and sentiment tag in Command Hub, and full recordings are available on request, subject to the retention settings on your account.',
       },
       {
         q: 'Is this GDPR-compliant? Are calls recorded and disclosed?',
@@ -400,7 +399,7 @@ export default {
       },
       {
         q: 'Is there a trial?',
-        a: 'You can book a free demo to hear the agent live on a real call flow for your business before you commit to a plan.',
+        a: 'There’s no self-serve free trial right now. Instead, book a free demo — we’ll run the agent live on a real call flow for your business so you hear exactly what you’d be paying for before you commit to a plan.',
       },
       {
         q: 'How long does setup take?',
@@ -408,13 +407,13 @@ export default {
       },
       {
         q: 'How is this different from a regular phone menu (IVR)?',
-        a: 'An IVR makes callers press buttons and follow a script. AIAnchor has a real conversation, understands intent, answers questions from your actual knowledge base, and books appointments — no menus, no dead ends.',
+        a: 'An IVR makes callers press buttons and follow a script. AiAnchor has a real conversation, understands intent, answers questions from your actual knowledge base, and books appointments — no menus, no dead ends.',
       },
     ],
   },
 
   footer: {
-    tagline: 'Tailored AI systems and infrastructure — CRM apps, web apps, automation and AI voice systems — with the ROI to prove it.',
+    tagline: 'We answer your calls, qualify your leads and automate your follow-ups — with every euro of value proven live in AiAnchor’s Command Hub.',
     columns: {
       product: 'Product',
       company: 'Company',
@@ -431,13 +430,13 @@ export default {
       trust: 'Trust & Security',
     },
     companyDetails: {
-      heading: 'AIAnchor',
+      heading: 'AiAnchor',
       // Registration details hidden until confirmed. Repopulate this array to show them again.
       lines: [],
     },
     contactEmail: 'info@aianchor.online',
     socials: { instagram: 'https://www.instagram.com/aianchor_/', linkedin: 'https://linkedin.com/company/aianchor' },
-    copyright: (year) => `© ${year} AIAnchor. All rights reserved.`,
+    copyright: (year) => `© ${year} AiAnchor. All rights reserved.`,
   },
 
   legal: legalEn,
