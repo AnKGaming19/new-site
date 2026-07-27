@@ -79,7 +79,7 @@ export const legalEn = {
   lastUpdated: 'Last updated: 24 July 2026',
   tocLabel: 'On this page',
   draftNotice:
-    'DRAFT — pending legal review. This page is a working draft prepared for review by qualified counsel. It is not final and does not constitute legal advice.',
+    'DRAFT: pending legal review. This page is a working draft prepared for review by qualified counsel. It is not final and does not constitute legal advice.',
 
   privacy: {
     title: 'Privacy Policy',

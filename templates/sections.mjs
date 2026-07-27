@@ -100,6 +100,26 @@ function heroMockup() {
   </div>`;
 }
 
+// The headline takes 2 or 3 lines depending on the language. The last line always
+// carries the accent gradient + underline swoosh; any middle line gets the white->gray
+// fade, so a two-line headline reads as statement + payoff without a blank row.
+function headlineLines(h) {
+  const lines = [h.headlineLine1, h.headlineLine2, h.headlineLine3].filter(Boolean);
+  const swoosh = '<svg class="absolute bottom-1 left-0 h-3 w-full text-primary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" /></svg>';
+  return lines
+    .map((line, i) => {
+      const delay = 100 + i * 90;
+      if (i === lines.length - 1) {
+        return `<span class="hero-line gradient-text relative" style="animation-delay:${delay}ms">${line}${swoosh}</span>`;
+      }
+      if (i === 0) {
+        return `<span class="hero-line" style="animation-delay:${delay}ms">${line}</span>`;
+      }
+      return `<span class="hero-line bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent" style="animation-delay:${delay}ms">${line}</span>`;
+    })
+    .join('<br />');
+}
+
 export function renderHero(t, lang) {
   const h = t.hero;
   return `<section class="relative overflow-hidden bg-hero-glow pt-36 pb-20 md:pt-44 md:pb-28">
@@ -108,8 +128,8 @@ export function renderHero(t, lang) {
     <div class="relative mx-auto grid max-w-8xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
       <div class="max-w-3xl">
         <p class="hero-load inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs uppercase text-primary backdrop-blur-sm" style="animation-delay:0ms"><span class="h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#00f0ff]"></span>${h.eyebrow} // V.2.0</p>
-        <h1 class="mt-8 font-display text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-          <span class="hero-line" style="animation-delay:100ms">${h.headlineLine1}</span><br /><span class="hero-line bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent" style="animation-delay:190ms">${h.headlineLine2}</span><br /><span class="hero-line gradient-text relative" style="animation-delay:280ms">${h.headlineLine3}<svg class="absolute bottom-1 left-0 h-3 w-full text-primary opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" /></svg></span>
+        <h1 class="mt-8 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          ${headlineLines(h)}
         </h1>
         <p class="hero-load mt-8 max-w-lg border-l-2 border-primary/30 pl-6 text-xl leading-relaxed text-gray-300" style="animation-delay:240ms">${h.subhead}</p>
         <div class="hero-load mt-10 flex flex-col gap-5 sm:flex-row" style="animation-delay:360ms">
@@ -135,9 +155,15 @@ export function renderServices(t) {
   // Per-card icon pairs, matching the original Services.tsx data (problem icon / solution icon).
   const problemIcons = ['phone', 'clock', 'search'];
   const solutionIcons = ['bot', 'zap', 'chart'];
+  // Greek runs ~20% longer than English at the same size. On the shared
+  // lg:leading-loose the Greek problem cards outgrow their solution partners and
+  // start driving the row height, which only moves the empty space to the other
+  // side. Greek keeps the identical font sizes and steps line-height down one
+  // notch instead, so both languages share one scale.
+  const quoteLeading = t.lang === 'gr' ? 'lg:leading-relaxed' : 'lg:leading-loose';
   const card = (item, idx) => `<div class="reveal reveal-frame group relative transition-transform duration-500 ease-out lg:hover:scale-[1.02]">
     <div class="grid items-stretch gap-0 lg:grid-cols-12 lg:gap-8">
-      <div class="svc-problem relative overflow-hidden rounded-t-2xl border border-red-500/20 bg-dark-800 p-8 transition-all duration-500 group-hover:border-red-500/60 group-hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] lg:col-span-5 lg:rounded-l-2xl lg:rounded-tr-none">
+      <div class="svc-problem relative flex flex-col overflow-hidden rounded-t-2xl border border-red-500/20 bg-dark-800 p-8 transition-all duration-500 group-hover:border-red-500/60 group-hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] lg:col-span-5 lg:rounded-l-2xl lg:rounded-tr-none">
         <div class="absolute left-0 top-0 z-10 h-full w-1 bg-red-500/50"></div>
         <div class="relative z-10 mb-8 flex items-start justify-between">
           <div class="flex items-center gap-3">
@@ -146,9 +172,14 @@ export function renderServices(t) {
           </div>
           ${iconMarkup('alertTriangle', 'w-5 h-5 text-red-500/40 animate-pulse')}
         </div>
-        <h3 class="relative z-10 mb-4 font-display text-2xl font-bold text-white">${item.problemTitle}</h3>
-        <p class="relative z-10 mb-6 border-l-2 border-red-500/20 pl-4 text-sm leading-relaxed text-gray-300">"${item.problem}"</p>
-        <div class="relative z-10 inline-flex items-center gap-2 font-mono text-xs text-red-400/70">${iconMarkup('shield', 'w-3 h-3')} ${item.impact}</div>
+        <!-- The tag row stays pinned top so it lines up with the solution card's SOLUTION
+             row; the rest of the block centres in whatever height the (taller) solution
+             card sets, so leftover space sits evenly above and below instead of pooling. -->
+        <div class="relative z-10 flex flex-1 flex-col justify-center">
+          <h3 class="mb-4 font-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">${item.problemTitle}</h3>
+          <p class="mb-6 border-l-2 border-red-500/20 pl-4 text-base leading-relaxed text-gray-300 lg:text-lg ${quoteLeading}">"${item.problem}"</p>
+          <div class="inline-flex items-center gap-2 self-start font-mono text-xs text-red-400/70 lg:text-sm">${iconMarkup('shield', 'w-3 h-3')} ${item.impact}</div>
+        </div>
       </div>
 
       <div class="relative flex items-center justify-center py-4 lg:col-span-1 lg:flex-col lg:py-0">
