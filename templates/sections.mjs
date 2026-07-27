@@ -127,8 +127,7 @@ export function renderHero(t, lang) {
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
     <div class="relative mx-auto grid max-w-8xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
       <div class="max-w-3xl">
-        <p class="hero-load inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs uppercase text-primary backdrop-blur-sm" style="animation-delay:0ms"><span class="h-2 w-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#00f0ff]"></span>${h.eyebrow} // V.2.0</p>
-        <h1 class="mt-8 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+        <h1 class="mt-2 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
           ${headlineLines(h)}
         </h1>
         <p class="hero-load mt-8 max-w-lg border-l-2 border-primary/30 pl-6 text-xl leading-relaxed text-gray-300" style="animation-delay:240ms">${h.subhead}</p>
@@ -558,14 +557,7 @@ export function renderFeatures(t) {
   const featuredCard = `<article class="spotlight-card reveal relative col-span-1 overflow-hidden rounded-2xl border border-white/10 bg-dark-800/60 p-8 sm:col-span-2 lg:row-span-2">
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(420px 300px at 15% 0%, rgba(0,240,255,0.10), transparent 70%), radial-gradient(360px 280px at 100% 100%, rgba(112,0,255,0.12), transparent 70%)"></div>
     <div class="relative flex h-full flex-col">
-      <div class="flex items-center justify-between">
-        <span class="inline-flex items-center gap-2 rounded-full border border-green-400/20 bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-400"><span class="relative flex h-2 w-2"><span class="live-ping absolute inline-flex h-full w-full rounded-full bg-green-400/70"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span></span>Live</span>
-        <div class="flex gap-2">
-          <span class="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[11px] text-gray-300">GR</span>
-          <span class="rounded-md border border-primary/30 bg-primary/10 px-2 py-1 font-mono text-[11px] text-primary">EN</span>
-        </div>
-      </div>
-      <div class="my-10 flex flex-1 flex-col items-center justify-center">
+      <div class="my-8 flex flex-1 flex-col items-center justify-center">
         <div class="relative mb-8 flex h-24 w-24 items-center justify-center">
           <span class="mic-orb-ring absolute inset-0 rounded-full border-2 border-primary/40"></span>
           <span class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary p-[2px] shadow-[0_0_50px_rgba(0,240,255,0.35)]"><span class="flex h-full w-full items-center justify-center rounded-full bg-dark-900">${iconMarkup('phone', 'w-8 h-8 text-white')}</span></span>
