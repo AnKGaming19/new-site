@@ -21,6 +21,7 @@ import {
   renderComingSoon,
 } from './templates/sections.mjs';
 import { renderLegalPage } from './templates/legal.mjs';
+import { renderBookDemo } from './templates/demo.mjs';
 import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScripts } from './templates/schema.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,10 +31,12 @@ const ASSET_VERSION = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_S
 const content = { en, gr };
 
 const comingSoonPath = (lang) => `/${lang}/coming-soon/`;
+const bookDemoPath = (lang) => `/${lang}/book-demo/`;
 
 function urlPathByLangFactory(kind, slug) {
   if (kind === 'home') return (lang) => `/${lang}/`;
   if (kind === 'coming-soon') return (lang) => comingSoonPath(lang);
+  if (kind === 'book-demo') return (lang) => bookDemoPath(lang);
   return (lang) => legalPath(lang, slug);
 }
 
@@ -141,6 +144,27 @@ function buildComingSoonPage(lang) {
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
+function buildBookDemoPage(lang) {
+  const t = content[lang];
+  const other = lang === 'en' ? 'gr' : 'en';
+  const head = renderHead({
+    title: t.meta.bookDemo.title,
+    description: t.meta.bookDemo.description,
+    canonical: bookDemoPath(lang),
+    urlPathByLang: urlPathByLangFactory('book-demo'),
+    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    locale: t.locale,
+    jsonLd: '',
+    assetVersion: ASSET_VERSION,
+  });
+  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  ${renderNav(t, lang, APP_URL, urlPathByLangFactory('book-demo')(other))}
+  ${renderBookDemo(t, lang)}
+  ${renderFooter(t, lang)}
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
+}
+
 function buildRootPage() {
   // "/" serves the GR homepage as real, crawlable content (GR is the fallback language),
   // canonical points to /gr/ to avoid duplicate-content issues, and a tiny blocking script
@@ -182,6 +206,7 @@ function buildSitemap() {
   const urls = [`${SITE_URL}/`];
   for (const lang of LANGS) {
     urls.push(`${SITE_URL}/${lang}/`);
+    urls.push(`${SITE_URL}${bookDemoPath(lang)}`);
     for (const slug of LEGAL_SLUGS) urls.push(`${SITE_URL}${legalPath(lang, slug)}`);
   }
   const entries = urls
@@ -198,6 +223,7 @@ writeFile('index.html', buildRootPage());
 for (const lang of LANGS) {
   writeFile(`${lang}/index.html`, buildHomePage(lang));
   writeFile(`${lang}/coming-soon/index.html`, buildComingSoonPage(lang));
+  writeFile(`${lang}/book-demo/index.html`, buildBookDemoPage(lang));
   for (const slug of LEGAL_SLUGS) {
     writeFile(`${lang}/${slug}/index.html`, buildLegalPage(lang, slug));
   }

@@ -16,6 +16,10 @@ export default {
       title: 'Έρχεται Σύντομα | AiAnchor',
       description: 'Η αυτόματη εγγραφή είναι σχεδόν έτοιμη. Μέχρι τότε, κλείστε ένα δωρεάν demo και θα τα ρυθμίσουμε όλα για εσάς.',
     },
+    bookDemo: {
+      title: 'Κλείστε δωρεάν demo | AiAnchor',
+      description: 'Πείτε μας τι σας ξεφεύγει και τρέχουμε τον AI agent ζωντανά σε πραγματικό σενάριο κλήσης για την επιχείρησή σας. Χωρίς δέσμευση, χωρίς κάρτα.',
+    },
   },
 
   comingSoon: {
@@ -24,6 +28,74 @@ export default {
     body: 'Η αυτόματη εγγραφή δεν είναι ακόμη διαθέσιμη. Ολοκληρώνουμε το Command Hub της AiAnchor, την πλατφόρμα στην οποία συνδέεστε. Μέχρι τότε, κλείστε ένα δωρεάν demo και στήνουμε εμείς τον AI agent σας.',
     ctaPrimary: 'Κλείστε demo',
     ctaSecondary: 'Πίσω στα πλάνα',
+  },
+
+  // Standalone /gr/book-demo/ page. Every "κλείστε demo" CTA on the site points here;
+  // the form posts to /api/book-demo, which sends the Resend confirmation.
+  bookDemo: {
+    badge: 'Δωρεάν demo · χωρίς δέσμευση',
+    heading: 'Κλείστε το δωρεάν demo σας',
+    subhead:
+      'Πείτε μας τι σας ξεφεύγει — χαμένες κλήσεις, αργά follow-ups, καμία εικόνα για το τι αξίζουν. Τρέχουμε τον agent ζωντανά σε πραγματικό σενάριο κλήσης για την επιχείρησή σας.',
+    bullets: [
+      {
+        icon: 'phone',
+        title: 'Ακούτε πραγματική κλήση',
+        desc: 'Όχι παρουσίαση. Ο agent απαντά, προκρίνει και κλείνει ραντεβού στα Ελληνικά ή στα Αγγλικά, σε σενάριο φτιαγμένο για εσάς.',
+      },
+      {
+        icon: 'chart',
+        title: 'Βλέπετε τα νούμερα',
+        desc: 'Σας ξεναγούμε στο Command Hub: κλήσεις που απαντήθηκαν, leads που προκρίθηκαν, ραντεβού που κλείστηκαν και τι αξίζουν.',
+      },
+      {
+        icon: 'clock',
+        title: '30 λεπτά και τελειώσαμε',
+        desc: 'Χωρίς κάρτα, χωρίς δέσμευση. Αν δεν ταιριάζει, θα σας το πούμε ευθέως και θα έχετε χάσει μισή ώρα.',
+      },
+    ],
+    reassureTitle: 'Τι γίνεται μετά',
+    reassureBody:
+      'Θα λάβετε αμέσως email επιβεβαίωσης. Διαβάζουμε προσωπικά κάθε αίτημα και επικοινωνούμε μαζί σας εντός μίας εργάσιμης ημέρας για να κλείσουμε ώρα.',
+    backLink: 'Πίσω στο site',
+    form: {
+      heading: 'Πείτε μας τι χρειάζεστε',
+      subheading: 'Όσα περισσότερα μας δώσετε, τόσο πιο στοχευμένο το demo.',
+      firstName: 'Όνομα',
+      lastName: 'Επώνυμο',
+      email: 'Email εργασίας',
+      phone: 'Τηλέφωνο',
+      phoneOptional: 'προαιρετικό',
+      company: 'Επιχείρηση',
+      companyOptional: 'προαιρετικό',
+      website: 'Ιστοσελίδα',
+      websiteOptional: 'προαιρετικό',
+      websitePlaceholder: 'iepixeirisisas.gr',
+      websiteHint: 'Μας βοηθά να ετοιμάσουμε τον agent με τις πραγματικές σας υπηρεσίες πριν την κλήση.',
+      interest: 'Τι χρειάζεστε περισσότερο;',
+      interestOptions: [
+        'Απάντηση κλήσεων με AI',
+        'Καταγραφή & πρόκριση leads',
+        'Κλείσιμο ραντεβού',
+        'Αυτοματισμοί follow-up',
+        'Command Hub / αναφορές ROI',
+        'Custom κατασκευή (Scale)',
+        'Άλλο',
+      ],
+      message: 'Τι σας ξεφεύγει αυτή τη στιγμή;',
+      messagePlaceholder:
+        'π.χ. χάνουμε 20–30 κλήσεις την εβδομάδα μετά τις 18:00, και σε όσες απαντάμε δεν κάνει κανείς follow-up.',
+      privacyNote: 'Χρησιμοποιούμε τα στοιχεία αυτά μόνο για να κανονίσουμε το demo σας.',
+      privacyLink: 'Πολιτική Απορρήτου',
+      submit: 'Ζητήστε το δωρεάν demo',
+      submitting: 'Αποστολή...',
+      successTitle: 'Το αίτημα ελήφθη!',
+      successBody:
+        'Η ομάδα μας έλαβε το αίτημά σας για δωρεάν demo. Η επιβεβαίωση είναι καθ’ οδόν στο email σας και θα επικοινωνήσουμε σύντομα για να κλείσουμε ώρα.',
+      sendAnother: 'Στείλτε νέο αίτημα',
+      errorMessage: 'Κάτι πήγε στραβά. Δοκιμάστε ξανά ή στείλτε μας email στο info@aianchor.online.',
+      endpoint: '/api/book-demo/',
+    },
   },
 
   skipLink: 'Μετάβαση στο περιεχόμενο',
@@ -47,8 +119,8 @@ export default {
     headlineLine2: '',
     headlineLine3: 'αποδεικνύοντας κάθε ευρώ.',
     subhead: 'Η AiAnchor απαντά στις κλήσεις σας, καταγράφει leads από κάθε κανάλι, και αυτοματοποιεί τα follow-ups μέσα στο CRM σας — με κάθε αποτέλεσμα να αποδεικνύεται ζωντανά στο Command Hub της AiAnchor.',
-    ctaPrimary: 'Δωρεάν demo',
-    ctaPrimaryHref: '#contact',
+    ctaPrimary: 'Κλείστε δωρεάν demo',
+    ctaPrimaryHref: '/gr/book-demo/',
     ctaSecondary: 'Δείτε τιμές',
     ctaSecondaryHref: '#pricing',
     visualAlt: 'Το Command Hub της AiAnchor, το ζωντανό dashboard στο οποίο συνδέονται οι πελάτες, με όγκο κλήσεων, αξία pipeline εσόδων και ώρες που εξοικονομήθηκαν',

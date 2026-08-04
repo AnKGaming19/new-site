@@ -16,6 +16,10 @@ export default {
       title: 'Coming Soon | AiAnchor',
       description: 'Self-serve signup is almost ready. Until then, book a free demo and we will set everything up for you.',
     },
+    bookDemo: {
+      title: 'Book a free demo | AiAnchor',
+      description: 'Tell us what is slipping through and we will run the AI agent live on a real call flow for your business. No commitment, no card.',
+    },
   },
 
   comingSoon: {
@@ -24,6 +28,74 @@ export default {
     body: 'Self-serve signup isn’t live yet. We’re still finishing AiAnchor’s Command Hub, the platform you log into. Until then, book a free demo and we’ll set your AI agent up for you.',
     ctaPrimary: 'Book a demo',
     ctaSecondary: 'Back to plans',
+  },
+
+  // Standalone /en/book-demo/ page. Every "book a demo" CTA on the site points here;
+  // the form posts to /api/book-demo, which sends the Resend confirmation.
+  bookDemo: {
+    badge: 'Free demo · no commitment',
+    heading: 'Book your free demo',
+    subhead:
+      'Tell us what’s slipping through — missed calls, slow follow-ups, no idea what any of it is worth. We’ll run the agent live on a real call flow for your business.',
+    bullets: [
+      {
+        icon: 'phone',
+        title: 'You hear a real call',
+        desc: 'Not a slide deck. The agent answers, qualifies and books in Greek or English, on a flow built around your business.',
+      },
+      {
+        icon: 'chart',
+        title: 'You see the numbers',
+        desc: 'We walk you through Command Hub: calls answered, leads qualified, bookings made and what they’re worth.',
+      },
+      {
+        icon: 'clock',
+        title: '30 minutes, and that’s it',
+        desc: 'No card, no commitment. If it isn’t a fit we’ll tell you straight and you’ve lost half an hour.',
+      },
+    ],
+    reassureTitle: 'What happens next',
+    reassureBody:
+      'You’ll get a confirmation email straight away. One of us reads every request personally and comes back to you within one business day to fix a time.',
+    backLink: 'Back to the site',
+    form: {
+      heading: 'Tell us what you need',
+      subheading: 'The more you give us, the more tailored the demo call is.',
+      firstName: 'First name',
+      lastName: 'Last name',
+      email: 'Work email',
+      phone: 'Phone',
+      phoneOptional: 'optional',
+      company: 'Company',
+      companyOptional: 'optional',
+      website: 'Website',
+      websiteOptional: 'optional',
+      websitePlaceholder: 'yourcompany.gr',
+      websiteHint: 'Helps us prep the agent with your real services before the call.',
+      interest: 'What do you need most?',
+      interestOptions: [
+        'AI call answering',
+        'Lead capture & qualification',
+        'Appointment booking',
+        'Follow-up automation',
+        'Command Hub / ROI reporting',
+        'Bespoke build (Scale)',
+        'Other',
+      ],
+      message: 'What’s slipping through right now?',
+      messagePlaceholder:
+        'e.g. we miss 20–30 calls a week after 6pm, and nobody follows up on the ones we do answer.',
+      privacyNote: 'We use these details only to arrange your demo.',
+      privacyLink: 'Privacy Policy',
+      submit: 'Request my free demo',
+      submitting: 'Sending...',
+      successTitle: 'Request received!',
+      successBody:
+        'Our team has received your free demo request. A confirmation is on its way to your inbox and we’ll contact you shortly to fix a time.',
+      sendAnother: 'Send another request',
+      errorMessage: 'Something went wrong. Please try again, or email us at info@aianchor.online.',
+      endpoint: '/api/book-demo/',
+    },
   },
 
   skipLink: 'Skip to content',
@@ -47,8 +119,8 @@ export default {
     headlineLine2: '',
     headlineLine3: 'Prove what it’s worth.',
     subhead: 'AiAnchor answers your calls, captures leads from every channel, and automates your follow-ups across your CRM — with every result proven live in AiAnchor’s Command Hub.',
-    ctaPrimary: 'Free demo',
-    ctaPrimaryHref: '#contact',
+    ctaPrimary: 'Book a free demo',
+    ctaPrimaryHref: '/en/book-demo/',
     ctaSecondary: 'See pricing',
     ctaSecondaryHref: '#pricing',
     visualAlt: 'AiAnchor’s Command Hub, the live dashboard clients log into, showing call volume, revenue pipeline value and hours saved',

@@ -65,44 +65,62 @@
     });
   }
 
-  // Contact form (ported from Contact.tsx's Formspree fetch pattern)
-  var contactForm = document.querySelector('[data-contact-form]');
-  if (contactForm) {
-    var successPanel = document.querySelector('[data-form-success]');
-    var errorMsg = contactForm.querySelector('[data-form-error]');
-    var submitBtn = contactForm.querySelector('[data-submit-btn]');
-    var submitLabelEl = contactForm.querySelector('[data-submit-label-el]');
-    var submitSpinner = contactForm.querySelector('[data-submit-spinner]');
+  // Async forms: the homepage contact form (Formspree, multipart) and the
+  // book-a-demo form (/api/book-demo, JSON). Same markup hooks either way —
+  // data-encoding="json" is what picks the JSON body, which is what the
+  // serverless function expects.
+  document.querySelectorAll('[data-contact-form]').forEach(function (form) {
+    // Scope to the form's own card so a page could carry more than one.
+    var wrapper = form.closest('[data-form-wrapper]') || document;
+    var successPanel = wrapper.querySelector('[data-form-success]');
+    var errorMsg = form.querySelector('[data-form-error]');
+    var submitBtn = form.querySelector('[data-submit-btn]');
+    var submitLabelEl = form.querySelector('[data-submit-label-el]');
+    var submitSpinner = form.querySelector('[data-submit-spinner]');
     var sendAnotherBtn = successPanel && successPanel.querySelector('[data-send-another]');
-    var submitLabel = contactForm.getAttribute('data-submit-label');
-    var submittingLabel = contactForm.getAttribute('data-submitting-label');
+    var submitLabel = form.getAttribute('data-submit-label');
+    var submittingLabel = form.getAttribute('data-submitting-label');
+    var asJson = form.getAttribute('data-encoding') === 'json';
 
-    contactForm.addEventListener('submit', function (e) {
+    var requestInit = function () {
+      var data = new FormData(form);
+      if (!asJson) {
+        return { method: 'POST', body: data, headers: { Accept: 'application/json' } };
+      }
+      var payload = {};
+      data.forEach(function (value, key) {
+        payload[key] = value;
+      });
+      return {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      };
+    };
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      errorMsg.classList.add('hidden');
+      if (errorMsg) errorMsg.classList.add('hidden');
       submitBtn.disabled = true;
       if (submitLabelEl) submitLabelEl.textContent = submittingLabel;
       if (submitSpinner) submitSpinner.classList.remove('hidden');
 
-      fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' },
-      })
+      fetch(form.action, requestInit())
         .then(function (res) {
           if (res.ok) {
-            contactForm.reset();
-            contactForm.classList.add('hidden');
+            form.reset();
+            form.classList.add('hidden');
             if (successPanel) {
               successPanel.classList.remove('hidden');
               successPanel.classList.add('flex');
+              successPanel.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
             }
-          } else {
+          } else if (errorMsg) {
             errorMsg.classList.remove('hidden');
           }
         })
         .catch(function () {
-          errorMsg.classList.remove('hidden');
+          if (errorMsg) errorMsg.classList.remove('hidden');
         })
         .finally(function () {
           submitBtn.disabled = false;
@@ -115,10 +133,10 @@
       sendAnotherBtn.addEventListener('click', function () {
         successPanel.classList.add('hidden');
         successPanel.classList.remove('flex');
-        contactForm.classList.remove('hidden');
+        form.classList.remove('hidden');
       });
     }
-  }
+  });
 
   // Language switch: preserve the current section (#hash) across languages, and
   // remember the explicit choice so "/" redirects consistently next visit.

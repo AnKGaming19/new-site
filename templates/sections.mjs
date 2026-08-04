@@ -284,7 +284,7 @@ export function renderProcess(t) {
 
       <div class="reveal mt-16 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-900/20 to-primary/20 p-8 text-center backdrop-blur-sm">
         <p class="text-xl text-gray-200">${p.bannerHtml}</p>
-        <a href="#contact" class="btn-interactive mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-bold text-dark-900 hover:bg-primary">${p.cta}</a>
+        <a href="/${t.lang}/book-demo/" class="btn-interactive mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-bold text-dark-900 hover:bg-primary">${p.cta}</a>
       </div>
     </div>
     ${waveDivider({ position: 'top', fill: '#050507' })}
@@ -410,7 +410,7 @@ export function renderContact(t) {
       <div class="reveal mb-14 rounded-3xl border border-white/10 bg-gradient-to-br from-dark-700 to-dark-900 p-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] md:p-10">
         <h2 class="mb-4 max-w-4xl font-display text-3xl font-bold sm:text-5xl">${c.panelHeading}</h2>
         <p class="mb-7 max-w-3xl text-base leading-relaxed text-gray-300 md:text-lg">${c.panelSubhead}</p>
-        <a href="#contact-form" class="btn-interactive inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-dark-900 hover:bg-gray-100">${c.panelCta} ${iconMarkup('chevronDown', 'w-4 h-4 -rotate-90')}</a>
+        <a href="/${t.lang}/book-demo/" class="btn-interactive inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-dark-900 hover:bg-gray-100">${c.panelCta} ${iconMarkup('arrowRight', 'w-4 h-4')}</a>
       </div>
 
       <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
@@ -445,7 +445,7 @@ export function renderContact(t) {
           </div>
         </div>
 
-        <div id="contact-form" class="reveal rounded-3xl border border-white/10 bg-dark-900/75 p-7 backdrop-blur-sm md:p-8">
+        <div id="contact-form" data-form-wrapper class="reveal rounded-3xl border border-white/10 bg-dark-900/75 p-7 backdrop-blur-sm md:p-8">
           <form data-contact-form action="${f.endpoint}" method="POST" data-submit-label="${f.submit}" data-submitting-label="${f.submitting}">
             <div class="mb-5 grid gap-5 md:grid-cols-2">
               <div>
@@ -722,7 +722,7 @@ export function renderComingSoon(t, lang) {
       <h1 class="hero-load mt-10 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-8xl" style="animation-delay:120ms"><span class="gradient-text">${c.heading}</span></h1>
       <p class="hero-load mt-10 max-w-lg text-xl leading-relaxed text-gray-300" style="animation-delay:240ms">${c.body}</p>
       <div class="hero-load mt-14 flex flex-col justify-center gap-5 sm:flex-row" style="animation-delay:360ms">
-        <a href="/${lang}/#contact" class="group flex skew-x-[-10deg] items-center justify-center gap-3 bg-white px-8 py-4 text-lg font-bold text-black transition-colors duration-300 hover:bg-primary active:scale-[0.98]">
+        <a href="/${lang}/book-demo/" class="group flex skew-x-[-10deg] items-center justify-center gap-3 bg-white px-8 py-4 text-lg font-bold text-black transition-colors duration-300 hover:bg-primary active:scale-[0.98]">
           <span class="flex skew-x-[10deg] items-center gap-2">${c.ctaPrimary} ${iconMarkup('arrowRight', 'w-5 h-5 transition-transform group-hover:translate-x-1')}</span>
         </a>
         <a href="/${lang}/#pricing" class="flex skew-x-[-10deg] items-center justify-center border border-white/20 bg-white/5 px-8 py-4 text-lg font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:text-primary active:scale-[0.98]">

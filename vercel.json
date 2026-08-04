@@ -2,6 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": true,
+  "rewrites": [
+    { "source": "/api/book-demo/", "destination": "/api/book-demo" }
+  ],
   "redirects": [
     { "source": "/en/gdpr/", "destination": "/en/dpa/", "permanent": true },
     { "source": "/gr/gdpr/", "destination": "/gr/dpa/", "permanent": true }
