@@ -222,7 +222,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: #0a0a0f; /* solid, no transparency */
+  background-color: #000; /* matches your near-black page */
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
@@ -230,9 +230,10 @@
 }
 
 
+
   .mobile-menu.is-open {
     transform: translateX(0);
-    opacity: 0;
+    opacity: 1;
     visibility: visible;
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0s linear 0s;
   }
