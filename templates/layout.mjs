@@ -57,6 +57,9 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
   const home = `/${lang}/`;
   const otherHref = otherLangHref || `/${other}/`;
   const otherHreflang = other === 'en' ? 'en' : 'el';
+  // Client Login goes straight to the app (APP_URL); the coming-soon page stays as the
+  // fallback so the link is never dead if the app URL isn't configured for a build.
+  const loginHref = appUrl || `${home}coming-soon/`;
   // Compact pill showing the OTHER language's code — small enough to sit beside the CTA
   // without competing with it. data-lang-switch lets main.js append the current #hash
   // (when present) so switching languages preserves the section you're on.
@@ -87,7 +90,7 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
         <a href="${home}#pricing" class="nav-link text-gray-300 hover:text-white">${content.nav.pricing}</a>
         <a href="${home}#faq" class="nav-link text-gray-300 hover:text-white">${content.nav.faq}</a>
         <a href="${home}#about" class="nav-link text-gray-300 hover:text-white">${content.nav.about}</a>
-        <a href="${home}coming-soon/" class="nav-link text-gray-300 hover:text-white">${content.nav.clientLogin}</a>
+        <a href="${loginHref}" class="nav-link text-gray-300 hover:text-white">${content.nav.clientLogin}</a>
         ${langSwitch('')}
       </div>
     </nav>
@@ -106,7 +109,7 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
       <a href="${home}#pricing" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.pricing}</a>
       <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
       <a href="${home}#about" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.about}</a>
-      <a href="${home}coming-soon/" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
+      <a href="${loginHref}" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
   </div>`;
 }
 
