@@ -11,8 +11,8 @@
   var navToggle = document.getElementById('nav-toggle');
   var mobileMenu = document.getElementById('mobile-menu');
   if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', function () {
-      var isOpen = mobileMenu.classList.toggle('is-open');
+    var setMenu = function (isOpen) {
+      mobileMenu.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -21,7 +21,31 @@
       document.body.classList.toggle('nav-open', isOpen);
       navToggle.querySelector('.nav-open-icon').classList.toggle('hidden', isOpen);
       navToggle.querySelector('.nav-close-icon').classList.toggle('hidden', !isOpen);
+    };
+
+    navToggle.addEventListener('click', function () {
+      setMenu(!mobileMenu.classList.contains('is-open'));
     });
+
+    // Every menu entry is a same-page #hash link, so tapping one fires no navigation:
+    // without this the overlay would stay up (and body scroll stay locked) and the link
+    // would look dead. Closing here, before the default action, lets the hash jump land.
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) setMenu(false);
+    });
+
+    // Rotating/resizing to the desktop breakpoint hides the overlay via `xl:hidden` but
+    // would otherwise leave the body scroll-locked with no visible way to unlock it.
+    var desktopQuery = window.matchMedia('(min-width: 1280px)');
+    var onDesktopChange = function (e) {
+      if (e.matches && mobileMenu.classList.contains('is-open')) setMenu(false);
+    };
+    if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', onDesktopChange);
+    else if (desktopQuery.addListener) desktopQuery.addListener(onDesktopChange);
   }
 
   // Nav scroll-aware blur (ported from Navbar.tsx), rAF-throttled
