@@ -218,12 +218,17 @@
   }
 
   /* --- Mobile menu: full-screen slide-in overlay (ported from Navbar.tsx AnimatePresence) --- */
-  .mobile-menu {
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0s linear 0.35s;
-  }
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0f; /* your dark bg color, fully opaque */
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, visibility 0s linear 0.35s;
+}
+
   .mobile-menu.is-open {
     transform: translateX(0);
     opacity: 1;
