@@ -91,8 +91,15 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
         ${langSwitch('')}
       </div>
     </nav>
+  </header>
 
-    <div id="mobile-menu" class="mobile-menu flex flex-col gap-1 fixed inset-0 z-40 bg-dark-900 px-8 pt-28 pb-10 xl:hidden" aria-hidden="true">
+  <!--
+    Deliberately a SIBLING of <header>, not a child: once scrolled the header gets
+    backdrop-filter, which makes it the containing block for any position:fixed
+    descendant - the overlay would then size itself to the nav bar instead of the
+    viewport. Kept below the header's z-50 so the close button stays clickable.
+  -->
+  <div id="mobile-menu" class="mobile-menu flex flex-col gap-1 fixed inset-0 z-40 bg-dark-900 px-8 pt-28 pb-10 xl:hidden" aria-hidden="true">
       <a href="${home}#services" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.services}</a>
       <a href="${home}#process" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.process}</a>
       <a href="${home}#voice-agent" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.voiceAgent}</a>
@@ -100,8 +107,7 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
       <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
       <a href="${home}#about" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.about}</a>
       <a href="${home}coming-soon/" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.clientLogin}</a>
-    </div>
-  </header>`;
+  </div>`;
 }
 
 export function renderFooter(content, lang) {

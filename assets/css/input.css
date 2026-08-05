@@ -216,6 +216,17 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+  /*
+   * While the mobile menu is open the nav sits on top of an already-opaque overlay,
+   * so the scrolled bar would only read as a lighter translucent strip. Drop it and
+   * let the menu's own background run edge to edge.
+   */
+  body.nav-open .site-nav.is-scrolled {
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+  }
 
   /* --- Mobile menu: full-screen slide-in overlay (ported from Navbar.tsx AnimatePresence) --- */
   .mobile-menu {

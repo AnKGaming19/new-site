@@ -16,6 +16,9 @@
       navToggle.setAttribute('aria-expanded', String(isOpen));
       mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      // Lets the CSS drop the nav's scrolled blur/background so it doesn't sit as a
+      // translucent strip on top of the full-screen menu.
+      document.body.classList.toggle('nav-open', isOpen);
       navToggle.querySelector('.nav-open-icon').classList.toggle('hidden', isOpen);
       navToggle.querySelector('.nav-close-icon').classList.toggle('hidden', !isOpen);
     });
