@@ -23,7 +23,6 @@ export default {
   },
 
   comingSoon: {
-    badge: 'Command Hub',
     heading: 'Coming soon',
     body: 'Self-serve signup isn’t live yet. We’re still finishing AiAnchor’s Command Hub, the platform you log into. Until then, book a free demo and we’ll set your AI agent up for you.',
     ctaPrimary: 'Book a demo',
@@ -33,7 +32,6 @@ export default {
   // Standalone /en/book-demo/ page. Every "book a demo" CTA on the site points here;
   // the form posts to /api/book-demo, which sends the Resend confirmation.
   bookDemo: {
-    badge: 'Free demo · no commitment',
     heading: 'Book your free demo',
     subhead:
       'Tell us what’s slipping through — missed calls, slow follow-ups, no idea what any of it is worth. We’ll run the agent live on a real call flow for your business.',
@@ -114,7 +112,6 @@ export default {
   },
 
   hero: {
-    eyebrow: 'AI Growth Systems',
     headlineLine1: 'Anchor every lead.',
     headlineLine2: '',
     headlineLine3: 'Prove what it’s worth.',
@@ -127,7 +124,6 @@ export default {
   },
 
   services: {
-    eyebrow: 'Business Gaps & Solutions',
     heading: 'Find the gaps. We run the fix.',
     subhead: 'Missed calls, manual follow-ups, numbers scattered across five tools. We take that work off your team, and you watch it happen in AiAnchor’s Command Hub.',
     items: [
@@ -199,7 +195,6 @@ export default {
   },
 
   voiceSystems: {
-    eyebrow: 'AI-Powered',
     heading: 'AI Voice Agents & Automations',
     subhead: 'Two things we run for you: agents that pick up, qualify and book, plus automations that keep every lead moving through your CRM afterwards. Both report into Command Hub.',
     features: [
@@ -210,7 +205,6 @@ export default {
     ],
     stackHeading: 'Works with your stack',
     stack: ['Airtable', 'Google Sheets', 'Google Calendar', 'Cal.com', 'Outlook', 'HubSpot'],
-    statusLine: 'No lead goes unanswered, day or night.',
   },
 
   about: {

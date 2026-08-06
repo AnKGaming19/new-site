@@ -53,10 +53,7 @@ export function renderBookDemo(t, lang) {
          which silently purges the column rule. The form card caps its own width instead. -->
     <div class="relative mx-auto grid max-w-8xl gap-14 px-6 lg:grid-cols-2 lg:items-start lg:gap-16">
       <div class="lg:sticky lg:top-32">
-        <p class="hero-load inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 font-mono text-xs uppercase text-primary backdrop-blur-sm" style="animation-delay:0ms">
-          <span class="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_#00f0ff]"></span>${d.badge}
-        </p>
-        <h1 class="hero-load mt-8 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl" style="animation-delay:120ms">
+        <h1 class="hero-load font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl" style="animation-delay:120ms">
           <span class="gradient-text">${d.heading}</span>
         </h1>
         <p class="hero-load mt-6 max-w-xl border-l-2 border-primary/30 pl-6 text-lg leading-relaxed text-gray-300" style="animation-delay:240ms">${d.subhead}</p>

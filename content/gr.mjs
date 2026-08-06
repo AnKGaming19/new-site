@@ -23,7 +23,6 @@ export default {
   },
 
   comingSoon: {
-    badge: 'Command Hub',
     heading: 'Έρχεται σύντομα',
     body: 'Η αυτόματη εγγραφή δεν είναι ακόμη διαθέσιμη. Ολοκληρώνουμε το Command Hub της AiAnchor, την πλατφόρμα στην οποία συνδέεστε. Μέχρι τότε, κλείστε ένα δωρεάν demo και στήνουμε εμείς τον AI agent σας.',
     ctaPrimary: 'Κλείστε demo',
@@ -33,7 +32,6 @@ export default {
   // Standalone /gr/book-demo/ page. Every "κλείστε demo" CTA on the site points here;
   // the form posts to /api/book-demo, which sends the Resend confirmation.
   bookDemo: {
-    badge: 'Δωρεάν demo · χωρίς δέσμευση',
     heading: 'Κλείστε το δωρεάν demo σας',
     subhead:
       'Πείτε μας τι σας ξεφεύγει — χαμένες κλήσεις, αργά follow-ups, καμία εικόνα για το τι αξίζουν. Τρέχουμε τον agent ζωντανά σε πραγματικό σενάριο κλήσης για την επιχείρησή σας.',
@@ -114,7 +112,6 @@ export default {
   },
 
   hero: {
-    eyebrow: 'AI Συστήματα Ανάπτυξης',
     headlineLine1: 'Πιάνουμε κάθε lead,',
     headlineLine2: '',
     headlineLine3: 'αποδεικνύοντας κάθε ευρώ.',
@@ -127,7 +124,6 @@ export default {
   },
 
   services: {
-    eyebrow: 'Επιχειρηματικά Κενά & Λύσεις',
     heading: 'Βρείτε τα κενά. Τα καλύπτουμε εμείς.',
     subhead: 'Χαμένες κλήσεις, follow-ups στο χέρι, νούμερα σκορπισμένα σε πέντε εργαλεία. Αυτή τη δουλειά τη σηκώνουμε εμείς, και τη βλέπετε να γίνεται στο Command Hub της AiAnchor.',
     items: [
@@ -199,7 +195,6 @@ export default {
   },
 
   voiceSystems: {
-    eyebrow: 'Με Τεχνολογία AI',
     heading: 'AI Φωνητικοί Agents & Αυτοματισμοί',
     subhead: 'Δύο πράγματα που τρέχουμε για εσάς: agents που σηκώνουν το τηλέφωνο, προκρίνουν και κλείνουν ραντεβού, μαζί με αυτοματισμούς που κρατούν κάθε lead σε κίνηση μέσα στο CRM σας. Και τα δύο αναφέρουν στο Command Hub.',
     features: [
@@ -210,7 +205,6 @@ export default {
     ],
     stackHeading: 'Λειτουργεί με το δικό σας stack',
     stack: ['Airtable', 'Google Sheets', 'Google Calendar', 'Cal.com', 'Outlook', 'HubSpot'],
-    statusLine: 'Καμία κλήση δεν μένει αναπάντητη, μέρα ή νύχτα.',
   },
 
   about: {

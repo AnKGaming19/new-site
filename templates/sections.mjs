@@ -221,7 +221,6 @@ export function renderServices(t) {
     <div class="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[150px]"></div>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal mx-auto mb-20 max-w-4xl text-center">
-        <span class="mb-6 inline-block rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 font-mono text-xs uppercase text-primary">${s.eyebrow}</span>
         <h2 class="mb-6 font-display text-4xl font-bold tracking-tight text-white md:text-6xl">${s.heading}</h2>
         <p class="mx-auto max-w-3xl text-lg text-gray-300">${s.subhead}</p>
       </div>
@@ -298,8 +297,7 @@ export function renderVoiceAgentFull(t) {
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(640px 420px at 50% 42%, rgba(0,240,255,0.05), transparent 70%), radial-gradient(520px 380px at 82% 12%, rgba(112,0,255,0.06), transparent 70%)"></div>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal text-center">
-        <span class="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-primary">${v.eyebrow}</span>
-        <h2 class="mt-5 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${v.heading}</h2>
+        <h2 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">${v.heading}</h2>
         <p class="mx-auto mt-4 max-w-3xl text-lg text-gray-400">${v.subhead}</p>
       </div>
 
@@ -353,9 +351,6 @@ export function renderVoiceAgentFull(t) {
           </div>`
             )
             .join('\n          ')}
-        </div>
-        <div class="mt-8 text-center">
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-400/20 bg-green-500/10 px-4 py-2 text-sm font-semibold text-green-400">${iconMarkup('activity', 'w-4 h-4')} ${v.statusLine}</span>
         </div>
       </div>
     </div>
