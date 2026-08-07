@@ -584,6 +584,242 @@
     50% { transform: scaleY(1); }
   }
 
+  /* --- Integrations band ("works with your stack") ---
+   * A hairline running edge to edge doubles as the divider into the next section, and the
+   * product marks travel along it: the whole row drifts left then back right (alternate),
+   * while each mark bobs on its own offset loop so the group never moves as one block.
+   */
+  .stack-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    transform: translateY(-50%);
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 240, 255, 0.22) 20%,
+      rgba(255, 255, 255, 0.16) 50%,
+      rgba(0, 240, 255, 0.22) 80%,
+      transparent
+    );
+  }
+  .stack-marquee {
+    overflow: hidden;
+    /* Marks fade out before the viewport edge, so the loop seam is never on screen. */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 13%, #000 87%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 13%, #000 87%, transparent);
+  }
+  .stack-drift {
+    display: flex;
+    width: max-content;
+    /* Sinusoidal ease (not --ease-in-out, which is too aggressive at this duration) so the
+       turn at each end reads as a tide rather than a stop. */
+    animation: stack-drift 34s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  }
+  @keyframes stack-drift {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  /* Each set is at least a viewport wide, so translating exactly one set width (-50% of the
+     two-set track) always leaves the rail full at both ends of the sweep. */
+  .stack-set {
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 100vw;
+    /* Taller than the marks themselves: the bob below would otherwise be clipped by the
+       marquee's overflow. */
+    min-height: 4.5rem;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3.5rem;
+    padding: 0 2rem;
+    list-style: none;
+  }
+  .stack-logo {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    animation: stack-float 6.5s ease-in-out infinite alternate;
+    /* Negative delay: every mark starts mid-cycle, so they are already out of phase on load. */
+    animation-delay: calc(-1 * var(--float-delay, 0ms));
+  }
+  @keyframes stack-float {
+    from { transform: translateY(-7px); }
+    to { transform: translateY(7px); }
+  }
+  /* Cuts the hairline out behind each mark, so the logos read as beads on the wire. */
+  .stack-logo-halo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 76px;
+    width: 76px;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, #050507 52%, rgba(5, 5, 7, 0) 100%);
+  }
+  .stack-logo-mark {
+    opacity: 0.8;
+    filter: saturate(0.9);
+    transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out),
+      filter var(--dur-base) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .stack-marquee:hover .stack-drift,
+    .stack-marquee:hover .stack-logo {
+      animation-play-state: paused;
+    }
+    .stack-logo:hover .stack-logo-mark {
+      opacity: 1;
+      transform: scale(1.15);
+      filter: saturate(1.1) drop-shadow(0 0 14px rgba(0, 240, 255, 0.35));
+    }
+  }
+
+  /* --- Cookie consent wizard -------------------------------------------------
+   * Reuses the site's card language (dark-800 surface, white/10 hairline, cyan
+   * accent) so it reads as part of the page rather than a bolted-on vendor widget.
+   * The root ships with the `hidden` attribute; main.js removes it only when there
+   * is no stored decision, so returning visitors never see a flash of the banner.
+   */
+  .cookie-consent-card {
+    box-shadow: 0 24px 70px -20px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(0, 240, 255, 0.06);
+  }
+  /* Gradient hairline along the top edge — the same from-primary/to-secondary cue the
+     logo and pricing cards use, at 1px so it accents rather than decorates. */
+  .cookie-consent-edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 240, 255, 0.7), rgba(112, 0, 255, 0.7), transparent);
+    pointer-events: none;
+  }
+  /*
+   * A scrim, not a blocker: the banner is non-modal (the page stays readable and
+   * scrollable while you decide), so this only darkens the very bottom of the viewport
+   * to lift the card off whatever section happens to be behind it.
+   */
+  .cookie-consent-scrim {
+    position: fixed;
+    inset: auto 0 0 0;
+    height: 22rem;
+    background: linear-gradient(to top, rgba(5, 5, 7, 0.85), rgba(5, 5, 7, 0));
+    pointer-events: none;
+  }
+  /* Entrance: rise + resolve from blur, same curve/duration as the scroll reveals. */
+  .cookie-consent.is-visible .cookie-consent-card {
+    animation: cookie-consent-in var(--dur-entrance) var(--ease-out-soft) both;
+  }
+  @keyframes cookie-consent-in {
+    from { opacity: 0; transform: translateY(28px); filter: blur(6px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  .cookie-consent.is-leaving .cookie-consent-card {
+    animation: cookie-consent-out var(--dur-base) var(--ease-out) both;
+  }
+  @keyframes cookie-consent-out {
+    to { opacity: 0; transform: translateY(16px) scale(0.98); }
+  }
+  .cookie-consent.is-leaving .cookie-consent-scrim {
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+  /* Step change: the incoming panel slides in from the direction of travel, so
+     forward and back read as movement through the wizard rather than a swap. */
+  .cookie-step[data-cookie-enter='forward'] {
+    animation: cookie-step-forward var(--dur-base) var(--ease-out) both;
+  }
+  .cookie-step[data-cookie-enter='back'] {
+    animation: cookie-step-back var(--dur-base) var(--ease-out) both;
+  }
+  @keyframes cookie-step-forward {
+    from { opacity: 0; transform: translateX(14px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes cookie-step-back {
+    from { opacity: 0; transform: translateX(-14px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  /*
+   * On short viewports the card caps at 85vh and scrolls internally; the action row
+   * sticks to its bottom edge so "Accept all" / "Save" are never scrolled out of reach.
+   * Negative margins pull it out to the card's padding edges so its backdrop covers the
+   * full width of whatever is scrolling underneath.
+   */
+  .cookie-actions {
+    position: sticky;
+    bottom: -1.5rem;
+    margin: 0 -1.5rem -1.5rem;
+    padding: 1rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, #0a0a12 0, #0a0a12 82%, rgba(10, 10, 18, 0));
+  }
+  @media (min-width: 640px) {
+    .cookie-actions {
+      bottom: -1.75rem;
+      margin: 0 -1.75rem -1.75rem;
+      padding: 1rem 1.75rem 1.75rem;
+    }
+  }
+
+  /* Progress dots: the wizard's only chrome, so they stay small and unlabelled. */
+  .cookie-dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+  }
+  .cookie-dot.is-active {
+    width: 18px;
+    background: theme('colors.primary.DEFAULT');
+  }
+  /* Category switch: a real <button role="switch">, styled rather than a checkbox hack,
+     so the on-state can carry the brand gradient and the thumb can animate. */
+  .cookie-switch {
+    position: relative;
+    height: 1.5rem;
+    width: 2.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  .cookie-switch[aria-checked='true'] {
+    background: linear-gradient(90deg, #00f0ff, #7000ff);
+    border-color: rgba(0, 240, 255, 0.5);
+  }
+  .cookie-switch-thumb {
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 9999px;
+    background: #fff;
+    transform: translateY(-50%);
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+  .cookie-switch[aria-checked='true'] .cookie-switch-thumb {
+    transform: translate(1.2rem, -50%);
+  }
+  .cookie-switch:focus-visible {
+    outline: 2px solid theme('colors.primary.DEFAULT');
+    outline-offset: 2px;
+  }
+  /* Nothing to reopen when the script never runs, so the footer entry stays out of the DOM flow. */
+  .cookie-settings-item {
+    display: none;
+  }
+  .js .cookie-settings-item {
+    display: list-item;
+  }
+
   /* --- Respect prefers-reduced-motion: neutralize every animation/transition added above --- */
   @media (prefers-reduced-motion: reduce) {
     .js .reveal,
@@ -681,12 +917,54 @@
     .card-lift:hover {
       transform: none !important;
     }
+    /* Integrations band: one static, centred row on the rail — no drift, no bob. */
+    .stack-drift,
+    .stack-logo {
+      animation: none !important;
+      transform: none !important;
+    }
+    .stack-marquee {
+      display: flex;
+      justify-content: center;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    .stack-set {
+      min-width: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    .stack-set[aria-hidden="true"] {
+      display: none;
+    }
+    .stack-logo-mark {
+      opacity: 1;
+      transition: none !important;
+    }
+
     .card-featured::after {
       animation: none !important;
       background: linear-gradient(115deg, transparent 30%, rgba(0, 240, 255, 0.35) 50%, transparent 70%) !important;
     }
     details.faq-item::details-content {
       transition: none !important;
+    }
+
+    /* Consent wizard: appears and switches steps with no motion at all. */
+    .cookie-consent.is-visible .cookie-consent-card,
+    .cookie-consent.is-leaving .cookie-consent-card,
+    .cookie-step[data-cookie-enter],
+    .cookie-dot,
+    .cookie-switch,
+    .cookie-switch-thumb {
+      animation: none !important;
+      transition: none !important;
+    }
+    .cookie-consent.is-visible .cookie-consent-card {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
     }
   }
 }

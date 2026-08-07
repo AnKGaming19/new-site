@@ -1,4 +1,5 @@
 import { iconMarkup } from './icons.mjs';
+import { brandLogo } from './brands.mjs';
 
 // Wave/curve section divider, ported verbatim (path + viewBox) from the original
 // Hero/Process/About components on main — fill/position are the only params that vary.
@@ -293,7 +294,7 @@ export function renderProcess(t) {
 
 export function renderVoiceAgentFull(t) {
   const v = t.voiceSystems;
-  return `<section id="voice-agent" class="relative overflow-hidden py-24 md:py-32">
+  return `<section id="voice-agent" class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(640px 420px at 50% 42%, rgba(0,240,255,0.05), transparent 70%), radial-gradient(520px 380px at 82% 12%, rgba(112,0,255,0.06), transparent 70%)"></div>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal text-center">
@@ -341,20 +342,41 @@ export function renderVoiceAgentFull(t) {
         </div>
       </div>
 
-      <div class="reveal mt-14 rounded-2xl border border-white/10 bg-dark-800/40 p-6 md:p-8">
-        <p class="mb-6 text-center text-gray-400">${v.stackHeading}</p>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-6">
-          ${v.stack
-            .map(
-              (name) => `<div class="flex flex-col items-center justify-center gap-2 rounded-xl border border-white/10 bg-dark-900/60 px-3 py-4 transition-transform hover:-translate-y-1">
-            <span class="text-sm text-gray-300">${name}</span>
-          </div>`
-            )
-            .join('\n          ')}
+    </div>
+
+    ${stackBand(v)}
+  </section>`;
+}
+
+// Full-bleed integrations band that doubles as the divider into the next section: a
+// hairline running edge to edge with the product marks drifting along it (left, then
+// back right - see .stack-drift in input.css) and bobbing on their own staggered loop.
+// Sits outside the max-w-8xl container so the rule and the marquee reach both edges.
+function stackBand(v) {
+  const logo = (name, i) => `<li class="stack-logo" style="--float-delay:${(i % 6) * 420}ms">
+            <span class="stack-logo-halo" aria-hidden="true"></span>
+            ${brandLogo(name, 'stack-logo-mark relative h-9 w-9 md:h-10 md:w-10')}
+            <span class="sr-only">${name}</span>
+          </li>`;
+
+  // Two identical sets: the drift travels exactly one set width, so the row stays full at
+  // both ends of the sweep. The clone is decorative, hence aria-hidden.
+  const set = (hidden) => `<ul class="stack-set"${hidden ? ' aria-hidden="true"' : ''}>
+          ${v.stack.map(logo).join('\n          ')}
+        </ul>`;
+
+  return `<div class="stack-band relative mt-20 md:mt-24">
+      <p class="reveal mb-9 text-center font-mono text-xs uppercase tracking-[0.22em] text-gray-500">${v.stackHeading}</p>
+      <div class="stack-rail relative py-6">
+        <span class="stack-line" aria-hidden="true"></span>
+        <div class="stack-marquee">
+          <div class="stack-drift">
+            ${set(false)}
+            ${set(true)}
+          </div>
         </div>
       </div>
-    </div>
-  </section>`;
+    </div>`;
 }
 
 export function renderAbout(t) {

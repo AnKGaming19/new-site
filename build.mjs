@@ -20,6 +20,7 @@ import {
   renderContact,
   renderComingSoon,
 } from './templates/sections.mjs';
+import { renderCookieConsent } from './templates/cookie-consent.mjs';
 import { renderLegalPage } from './templates/legal.mjs';
 import { renderBookDemo } from './templates/demo.mjs';
 import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScripts } from './templates/schema.mjs';
@@ -27,6 +28,7 @@ import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScr
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(__dirname, 'dist');
 const ASSET_VERSION = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA || Date.now().toString()).slice(0, 12);
+const SOCIAL_PREVIEW_IMAGE = '/assets/img/og/ChatGPT%20Image%20Aug%204%2C%202026%2C%2004_30_12%20PM.png';
 
 const content = { en, gr };
 
@@ -73,6 +75,14 @@ function renderMain(t, lang) {
   </main>`;
 }
 
+// Every page opens the same way: the skip link, then the consent wizard. The wizard sits
+// this early so keyboard users reach it before the nav (it's position:fixed, so the visual
+// placement is unaffected) and it ships `hidden` until main.js decides to show it.
+function pageOpen(t, lang) {
+  return `<a href="#main" class="skip-link">${t.skipLink}</a>
+  ${renderCookieConsent(t, lang)}`;
+}
+
 function buildHomePage(lang) {
   const t = content[lang];
   const other = lang === 'en' ? 'gr' : 'en';
@@ -82,12 +92,12 @@ function buildHomePage(lang) {
     description: t.meta.home.description,
     canonical: `/${lang}/`,
     urlPathByLang: urlPathByLangFactory('home'),
-    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     locale: t.locale,
     jsonLd,
     assetVersion: ASSET_VERSION,
   });
-  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  const body = `${pageOpen(t, lang)}
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('home')(other))}
   ${renderMain(t, lang)}
   ${renderFooter(t, lang)}
@@ -104,12 +114,12 @@ function buildLegalPage(lang, slug) {
     description: t.meta[slug].description,
     canonical: legalPath(lang, slug),
     urlPathByLang: urlPathByLangFactory('legal', slug),
-    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     locale: t.locale,
     jsonLd: '',
     assetVersion: ASSET_VERSION,
   });
-  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  const body = `${pageOpen(t, lang)}
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('legal', slug)(other))}
   ${renderLegalPage(t, slug)}
   ${renderFooter(t, lang)}
@@ -125,7 +135,7 @@ function buildComingSoonPage(lang) {
     description: t.meta.comingSoon.description,
     canonical: comingSoonPath(lang),
     urlPathByLang: urlPathByLangFactory('coming-soon'),
-    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     locale: t.locale,
     jsonLd: '',
     assetVersion: ASSET_VERSION,
@@ -134,7 +144,7 @@ function buildComingSoonPage(lang) {
   });
   // Content + footer share one full-height flex column: the content fills the space
   // between nav and footer, the footer stays pinned at the bottom.
-  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  const body = `${pageOpen(t, lang)}
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('coming-soon')(other))}
   <div class="coming-soon-page">
     ${renderComingSoon(t, lang)}
@@ -152,12 +162,12 @@ function buildBookDemoPage(lang) {
     description: t.meta.bookDemo.description,
     canonical: bookDemoPath(lang),
     urlPathByLang: urlPathByLangFactory('book-demo'),
-    ogImage: `/assets/img/og/og-image-${lang}.png`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     locale: t.locale,
     jsonLd: '',
     assetVersion: ASSET_VERSION,
   });
-  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  const body = `${pageOpen(t, lang)}
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('book-demo')(other))}
   ${renderBookDemo(t, lang)}
   ${renderFooter(t, lang)}
@@ -170,19 +180,20 @@ function buildRootPage() {
   // canonical points to /gr/ to avoid duplicate-content issues, and a tiny blocking script
   // redirects English-browser visitors to /en/ before paint.
   const t = content.gr;
+  const lang = 'gr';
   const jsonLd = jsonLdScripts([organizationSchema(t, 'gr'), softwareApplicationSchema(t, 'gr'), faqPageSchema(t)]);
   const head = renderHead({
     title: t.meta.home.title,
     description: t.meta.home.description,
     canonical: `/gr/`,
     urlPathByLang: urlPathByLangFactory('home'),
-    ogImage: `/assets/img/og/og-image-gr.png`,
+    ogImage: SOCIAL_PREVIEW_IMAGE,
     locale: t.locale,
     jsonLd,
     assetVersion: ASSET_VERSION,
     extraHead: rootRedirectScript(),
   });
-  const body = `<a href="#main" class="skip-link">${t.skipLink}</a>
+  const body = `${pageOpen(t, lang)}
   ${renderNav(t, 'gr', APP_URL, urlPathByLangFactory('home')('en'))}
   ${renderMain(t, 'gr')}
   ${renderFooter(t, 'gr')}

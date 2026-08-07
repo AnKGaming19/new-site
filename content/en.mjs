@@ -478,6 +478,48 @@ export default {
     ],
   },
 
+  // First-visit consent wizard (templates/cookie-consent.mjs). Non-essential categories
+  // start off and stay off until the visitor turns them on — "Reject" is one click, same
+  // as "Accept", which is what the ePrivacy rules actually require.
+  cookieConsent: {
+    ariaLabel: 'Cookie consent',
+    intro: {
+      eyebrow: 'Your privacy',
+      heading: 'We keep this site cookie-light',
+      body: 'Only what the site needs to work is on by default. Anything that measures or markets stays off until you switch it on.',
+      policyLink: 'Read the Cookie Policy',
+      acceptAll: 'Accept all',
+      rejectAll: 'Reject non-essential',
+      customize: 'Customise',
+    },
+    prefs: {
+      heading: 'Choose what you allow',
+      body: 'You can change this any time from “Cookie Settings” in the footer.',
+      back: 'Back',
+      save: 'Save preferences',
+      acceptAll: 'Accept all',
+      alwaysOn: 'Always on',
+      categories: [
+        {
+          id: 'necessary',
+          title: 'Strictly necessary',
+          desc: 'Remembers your language and this consent choice. The site cannot work properly without it.',
+          locked: true,
+        },
+        {
+          id: 'analytics',
+          title: 'Analytics',
+          desc: 'Anonymous page and traffic statistics, so we can see which parts of the site actually help.',
+        },
+        {
+          id: 'marketing',
+          title: 'Marketing',
+          desc: 'Lets us measure our campaigns and show you relevant AiAnchor content on other platforms.',
+        },
+      ],
+    },
+  },
+
   footer: {
     tagline: 'We answer your calls, qualify your leads and run your follow-ups. Every euro of value is proven live in AiAnchor’s Command Hub.',
     columns: {
@@ -494,6 +536,7 @@ export default {
       cookies: 'Cookie Policy',
       aiPolicy: 'AI Disclosure',
       trust: 'Trust & Security',
+      cookieSettings: 'Cookie Settings',
     },
     companyDetails: {
       heading: 'AiAnchor',

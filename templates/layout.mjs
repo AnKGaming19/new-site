@@ -165,6 +165,9 @@ export function renderFooter(content, lang) {
           <li><a href="/${lang}/cookies/" class="link-hover hover:text-white">${f.legalLinks.cookies}</a></li>
           <li><a href="/${lang}/ai-policy/" class="link-hover hover:text-white">${f.legalLinks.aiPolicy}</a></li>
           <li><a href="/${lang}/trust/" class="link-hover hover:text-white">${f.legalLinks.trust}</a></li>
+          <!-- Consent must be as easy to withdraw as it was to give. Hidden without JS
+               (see .cookie-settings-item) since there is nothing to reopen in that case. -->
+          <li class="cookie-settings-item"><button type="button" data-cookie-settings class="link-hover text-left hover:text-white">${f.legalLinks.cookieSettings}</button></li>
         </ul>
       </div>
     </div>
