@@ -107,7 +107,8 @@ export default {
 
   nav: {
     services: 'Services',
-    consulting: 'AI Consulting',
+    // Labels the #consulting section (audit -> roadmap -> deploy) as "Process" in the nav.
+    consulting: 'Process',
     voiceAgent: 'Voice & Automations',
     commandHub: 'Command Hub',
     pricing: 'Pricing',
@@ -598,7 +599,7 @@ export default {
       company: 'Company',
       legal: 'Legal',
     },
-    productLinks: { services: 'Services', consulting: 'AI Consulting', voiceAgent: 'Voice & Automations', commandHub: 'Command Hub', pricing: 'Pricing', faq: 'FAQ' },
+    productLinks: { services: 'Services', consulting: 'Process', voiceAgent: 'Voice & Automations', commandHub: 'Command Hub', pricing: 'Pricing', faq: 'FAQ' },
     companyLinks: { about: 'About', contact: 'Contact', clientLogin: 'Client Login' },
     legalLinks: {
       terms: 'Terms of Service',

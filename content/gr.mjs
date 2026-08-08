@@ -107,7 +107,8 @@ export default {
 
   nav: {
     services: 'Υπηρεσίες',
-    consulting: 'Συμβουλευτική',
+    // Το #consulting section (audit -> οδικός χάρτης -> υλοποίηση) ως «Διαδικασία» στο nav.
+    consulting: 'Διαδικασία',
     voiceAgent: 'Φωνή & Αυτοματισμοί',
     commandHub: 'Command Hub',
     pricing: 'Τιμές',
@@ -594,7 +595,7 @@ export default {
       company: 'Εταιρεία',
       legal: 'Νομικά',
     },
-    productLinks: { services: 'Υπηρεσίες', consulting: 'AI Συμβουλευτική', voiceAgent: 'Φωνή & Αυτοματισμοί', commandHub: 'Command Hub', pricing: 'Τιμές', faq: 'Συχνές ερωτήσεις' },
+    productLinks: { services: 'Υπηρεσίες', consulting: 'Διαδικασία', voiceAgent: 'Φωνή & Αυτοματισμοί', commandHub: 'Command Hub', pricing: 'Τιμές', faq: 'Συχνές ερωτήσεις' },
     companyLinks: { about: 'Σχετικά', contact: 'Επικοινωνία', clientLogin: 'Σύνδεση πελατών' },
     legalLinks: {
       terms: 'Όροι Χρήσης',
