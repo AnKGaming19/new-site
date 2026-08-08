@@ -91,7 +91,7 @@ export const legalEn = {
         id: 'controller',
         h: '1. Who we are',
         ps: [
-          'AiAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ no., ΑΦΜ/VAT no., registered address, Greece) builds AI voice agents, workflow automations and custom CRM/web systems for businesses. You can reach us about anything in this policy at <a class="link-hover text-primary hover:text-white" href="mailto:' +
+          'AiAnchor (PLACEHOLDER: registered company name, ΓΕΜΗ no., ΑΦΜ/VAT no., registered address, Greece) is an AI consultancy that builds and runs AI voice agents, chatbots and workflow automations for businesses, reported through AiAnchor’s Command Hub. You can reach us about anything in this policy at <a class="link-hover text-primary hover:text-white" href="mailto:' +
             PRIVACY_EMAIL +
             '">' +
             PRIVACY_EMAIL +
@@ -255,7 +255,7 @@ export const legalEn = {
     title: 'Terms of Service',
     updated: 'Last updated: 24 July 2026',
     intro:
-      'These Terms govern the services AiAnchor provides to business clients: AI voice agents, workflow automations, custom CRM/web systems and the client portal. By signing an order form or subscribing to a plan, you accept them.',
+      'These Terms govern the services AiAnchor provides to business clients: AI consulting, AI voice agents, chatbots, workflow automations, AiAnchor’s Command Hub client portal, and custom system builds where separately agreed. By signing an order form or subscribing to a plan, you accept them.',
     sections: [
       {
         id: 'parties',
@@ -268,7 +268,7 @@ export const legalEn = {
         id: 'services',
         h: '2. The services',
         ps: [
-          'AiAnchor provides: (a) AI voice agents that answer the Client’s inbound calls, book appointments and capture leads; (b) automation workflows; (c) custom CRM and web systems where agreed; and (d) a client portal showing calls, transcripts, recordings, leads and ROI metrics. Scope per plan is described at <a class="link-hover text-primary hover:text-white" href="/en/#pricing">Pricing</a> and in the order form.',
+          'AiAnchor provides: (a) AI consulting — audit of the Client’s lead flow, a prioritised AI roadmap and ongoing optimisation; (b) AI voice agents that answer the Client’s inbound calls, book appointments and capture leads; (c) chatbots on the Client’s website and messaging channels; (d) automation workflows, including lead qualification, client onboarding and follow-up; (e) AiAnchor’s Command Hub client portal showing calls, chats, transcripts, recordings, leads and ROI metrics; and (f) custom CRM, internal tool and web system builds where separately agreed in an order form. Scope per plan is described at <a class="link-hover text-primary hover:text-white" href="/en/#pricing">Pricing</a> and in the order form.',
         ],
       },
       {
@@ -281,7 +281,7 @@ export const legalEn = {
             ['Starter', '€99 + VAT', 'Included minutes per the pricing table; per-minute overage beyond them'],
             ['Growth', '€249 + VAT', 'Included minutes + overage; one-time setup fee applies'],
             ['Pro', '€549 + VAT', 'Included minutes + overage; one-time setup fee applies'],
-            ['Scale', 'from €1,200 + VAT', 'Custom scope; one-time setup fee applies'],
+            ['Scale', 'from €1,200 + VAT', 'Multi-location scope with a dedicated AI consultant; custom builds quoted separately; one-time setup fee applies'],
           ],
         },
         list: [
@@ -340,7 +340,7 @@ export const legalEn = {
         id: 'ip',
         h: '9. Intellectual property',
         ps: [
-          'AiAnchor retains all rights in its platform, agents, workflows and know-how. The Client retains all rights in its business data, caller data and content. Custom deliverables (e.g. bespoke CRM code) are licensed or assigned as stated in the order form. PLACEHOLDER: default position on custom-build IP.',
+          'AiAnchor retains all rights in its platform, agents, chatbots, automation workflows, consulting methodology and know-how. The Client retains all rights in its business data, caller data and content. Consulting deliverables prepared for the Client (audit findings and roadmap documents) are licensed to the Client for its own internal use, and custom deliverables (e.g. bespoke CRM or web system code) are licensed or assigned as stated in the order form. PLACEHOLDER: default position on deliverable and custom-build IP.',
         ],
       },
       {

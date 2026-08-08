@@ -10,7 +10,7 @@ import {
   renderHero,
   renderHowItWorks,
   renderServices,
-  renderProcess,
+  renderConsulting,
   renderVoiceAgentFull,
   renderFeatures,
   renderPricing,
@@ -56,15 +56,15 @@ function copyRecursive(src, destRel, { skipMarkdown = false } = {}) {
   });
 }
 
-// Section order (narrative arc): broad positioning -> gaps/solutions -> how we
-// build -> voice systems -> capability detail -> pricing -> comparison -> faq
-// -> about -> contact (doubles as the final CTA).
+// Section order (narrative arc): broad positioning -> gaps/solutions -> AI consulting
+// engagement -> voice agents & automations -> Command Hub detail -> pricing -> comparison
+// -> faq -> about -> contact (doubles as the final CTA).
 function renderMain(t, lang) {
   return `<main id="main">
     ${renderHero(t, lang)}
     ${renderHowItWorks(t)}
     ${renderServices(t)}
-    ${renderProcess(t)}
+    ${renderConsulting(t)}
     ${renderVoiceAgentFull(t)}
     ${renderFeatures(t)}
     ${renderPricing(t)}

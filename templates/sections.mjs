@@ -232,15 +232,18 @@ export function renderServices(t) {
   </section>`;
 }
 
-export function renderProcess(t) {
-  const p = t.process;
+// AI consulting: the audit -> roadmap -> deploy engagement. Keeps the three-step card
+// layout (deliverables + timeline read as consulting deliverables) and adds the pill row
+// listing what we consult on, so the four product pillars are named in this section too.
+export function renderConsulting(t) {
+  const p = t.consulting;
   // Per-step accents from the original Process.tsx: blue -> purple -> primary.
   const stepColors = [
     { text: 'text-blue-400', bg: 'bg-blue-500', icon: 'search' },
     { text: 'text-purple-400', bg: 'bg-purple-500', icon: 'rocket' },
     { text: 'text-primary', bg: 'bg-primary', icon: 'trendingUp' },
   ];
-  return `<section id="process" class="relative overflow-hidden bg-dark-800 py-24 md:py-32" data-connector-section>
+  return `<section id="consulting" class="relative overflow-hidden bg-dark-800 py-24 md:py-32" data-connector-section>
     <canvas class="particle-bg absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
     <div class="relative mx-auto max-w-8xl px-6">
       <div class="reveal mx-auto mb-20 max-w-3xl text-center">
@@ -282,7 +285,19 @@ export function renderProcess(t) {
         </div>
       </div>
 
-      <div class="reveal mt-16 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-900/20 to-primary/20 p-8 text-center backdrop-blur-sm">
+      <div class="reveal mt-14 rounded-2xl border border-white/5 bg-dark-900/40 p-8">
+        <p class="text-center font-mono text-xs uppercase tracking-[0.22em] text-gray-500">${p.focusLabel}</p>
+        <ul class="mt-6 flex flex-wrap justify-center gap-3">
+          ${p.focus
+            .map(
+              (item) => `<li class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-200 transition-colors hover:border-primary/50 hover:text-white">${item}</li>`
+            )
+            .join('\n          ')}
+        </ul>
+        <p class="mx-auto mt-6 max-w-2xl border-t border-white/5 pt-5 text-center text-sm text-gray-500">${p.alsoNote}</p>
+      </div>
+
+      <div class="reveal mt-8 rounded-2xl border border-white/10 bg-gradient-to-r from-blue-900/20 to-primary/20 p-8 text-center backdrop-blur-sm">
         <p class="text-xl text-gray-200">${p.bannerHtml}</p>
         <a href="/${t.lang}/book-demo/" class="btn-interactive mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-bold text-dark-900 hover:bg-primary">${p.cta}</a>
       </div>
@@ -302,7 +317,9 @@ export function renderVoiceAgentFull(t) {
         <p class="mx-auto mt-4 max-w-3xl text-lg text-gray-400">${v.subhead}</p>
       </div>
 
-      <div class="mt-14 grid items-center gap-6 lg:grid-cols-[1fr_280px_1fr]">
+      <p class="reveal mt-10 text-center font-mono text-xs uppercase tracking-[0.22em] text-primary/70">${v.voiceLabel}</p>
+
+      <div class="mt-8 grid items-center gap-6 lg:grid-cols-[1fr_280px_1fr]">
         <div class="space-y-5">
           ${[v.features[0], v.features[2]]
             .map(
@@ -342,10 +359,33 @@ export function renderVoiceAgentFull(t) {
         </div>
       </div>
 
+      ${automationsBlock(v)}
     </div>
 
     ${stackBand(v)}
   </section>`;
+}
+
+// Second half of the voice/automations section: the automations we run once the call or
+// chat is over — chatbots, lead qualification, client onboarding, text-back, follow-up
+// sequences, CRM sync. Three-up grid so each card carries a full sentence of detail.
+function automationsBlock(v) {
+  const card = (a, i) => `<article class="spotlight-card reveal relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-800/40 p-6" style="transition-delay:${100 + (i % 3) * 90}ms">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-secondary/10 text-primary">${iconMarkup(a.icon, 'w-5 h-5')}</div>
+          <h4 class="relative mt-4 font-display text-lg font-semibold text-white">${a.title}</h4>
+          <p class="relative mt-2 text-sm leading-relaxed text-gray-400">${a.desc}</p>
+        </article>`;
+
+  return `<div class="mt-20 md:mt-24">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="font-mono text-xs uppercase tracking-[0.22em] text-primary/70">${v.autoLabel}</p>
+          <h3 class="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">${v.autoHeading}</h3>
+          <p class="mt-4 text-lg text-gray-400">${v.autoSubhead}</p>
+        </div>
+        <div class="reveal-stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          ${v.automations.map(card).join('\n          ')}
+        </div>
+      </div>`;
 }
 
 // Full-bleed integrations band that doubles as the divider into the next section: a

@@ -85,8 +85,9 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
 
       <div class="hidden xl:flex items-center gap-4 text-[13px] whitespace-nowrap">
         <a href="${home}#services" class="nav-link text-gray-300 hover:text-white">${content.nav.services}</a>
-        <a href="${home}#process" class="nav-link text-gray-300 hover:text-white">${content.nav.process}</a>
+        <a href="${home}#consulting" class="nav-link text-gray-300 hover:text-white">${content.nav.consulting}</a>
         <a href="${home}#voice-agent" class="nav-link text-gray-300 hover:text-white">${content.nav.voiceAgent}</a>
+        <a href="${home}#features" class="nav-link text-gray-300 hover:text-white">${content.nav.commandHub}</a>
         <a href="${home}#pricing" class="nav-link text-gray-300 hover:text-white">${content.nav.pricing}</a>
         <a href="${home}#faq" class="nav-link text-gray-300 hover:text-white">${content.nav.faq}</a>
         <a href="${home}#about" class="nav-link text-gray-300 hover:text-white">${content.nav.about}</a>
@@ -104,8 +105,9 @@ export function renderNav(content, lang, appUrl, otherLangHref) {
   -->
   <div id="mobile-menu" class="mobile-menu flex flex-col gap-1 fixed inset-0 z-40 bg-dark-900 px-8 pt-28 pb-10 xl:hidden" aria-hidden="true">
       <a href="${home}#services" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.services}</a>
-      <a href="${home}#process" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.process}</a>
+      <a href="${home}#consulting" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.consulting}</a>
       <a href="${home}#voice-agent" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.voiceAgent}</a>
+      <a href="${home}#features" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.commandHub}</a>
       <a href="${home}#pricing" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.pricing}</a>
       <a href="${home}#faq" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.faq}</a>
       <a href="${home}#about" class="mobile-menu-link border-b border-white/5 py-4 text-2xl font-display font-medium text-gray-300">${content.nav.about}</a>
@@ -134,8 +136,9 @@ export function renderFooter(content, lang) {
         <h3 class="text-sm font-semibold text-white">${f.columns.product}</h3>
         <ul class="mt-4 space-y-3 text-sm text-gray-400">
           <li><a href="/${lang}/#services" class="link-hover hover:text-white">${f.productLinks.services}</a></li>
-          <li><a href="/${lang}/#process" class="link-hover hover:text-white">${f.productLinks.process}</a></li>
+          <li><a href="/${lang}/#consulting" class="link-hover hover:text-white">${f.productLinks.consulting}</a></li>
           <li><a href="/${lang}/#voice-agent" class="link-hover hover:text-white">${f.productLinks.voiceAgent}</a></li>
+          <li><a href="/${lang}/#features" class="link-hover hover:text-white">${f.productLinks.commandHub}</a></li>
           <li><a href="/${lang}/#pricing" class="link-hover hover:text-white">${f.productLinks.pricing}</a></li>
           <li><a href="/${lang}/#faq" class="link-hover hover:text-white">${f.productLinks.faq}</a></li>
         </ul>
