@@ -606,7 +606,8 @@ export default {
     openLabel: 'Άνοιγμα του βοηθού της AiAnchor',
     closeLabel: 'Κλείσιμο του βοηθού',
     subtitle: 'Υποστήριξη AiAnchor',
-    status: 'Απαντά σε δευτερόλεπτα',
+    // Kept short on purpose: subtitle and status share one line in the panel header.
+    status: 'Άμεση απάντηση',
     disclosure: 'Ο Anchor είναι βοηθός AI και απαντά από αυτόν τον ιστότοπο. Για ό,τι δεν καλύπτει, σας παραπέμπει στην ομάδα.',
     greeting: 'Γεια σας — είμαι ο Anchor. Ρωτήστε με για το AI audit, τους φωνητικούς agents, τα chatbots, τους αυτοματισμούς, τις τιμές ή το Command Hub.',
     suggestionsLabel: 'Ή ξεκινήστε από εδώ',

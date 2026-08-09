@@ -128,13 +128,21 @@
     if (force || atBottom()) log.scrollTop = log.scrollHeight;
   }
 
-  // Assistant turns are prefixed with the avatar cloned out of the page's <template>;
-  // visitor turns are the bubble alone, right-aligned.
+  /*
+   * Assistant turns are prefixed with the avatar cloned out of the page's <template>;
+   * visitor turns are the bubble alone, right-aligned.
+   *
+   * Both class names are written out in full on purpose. Tailwind tree-shakes
+   * @layer components against the literal strings it finds in these files, so a name
+   * assembled as 'chat-msg-' + role is invisible to it and its rules get dropped.
+   */
   function row(role) {
     var wrap = document.createElement('div');
-    wrap.className = 'chat-msg chat-msg-' + role;
-    if (role === 'assistant' && avatarTemplate) {
-      wrap.appendChild(avatarTemplate.content.cloneNode(true));
+    if (role === 'assistant') {
+      wrap.className = 'chat-msg chat-msg-assistant';
+      if (avatarTemplate) wrap.appendChild(avatarTemplate.content.cloneNode(true));
+    } else {
+      wrap.className = 'chat-msg chat-msg-user';
     }
     return wrap;
   }
