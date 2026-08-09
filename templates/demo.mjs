@@ -58,6 +58,11 @@ export function renderBookDemo(t, lang) {
         </h1>
         <p class="hero-load mt-6 max-w-xl border-l-2 border-primary/30 pl-6 text-lg leading-relaxed text-gray-300" style="animation-delay:240ms">${d.subhead}</p>
 
+        ${d.trialNote ? `<p class="reveal mt-8 flex max-w-xl items-start gap-3 rounded-2xl border border-green-400/25 bg-green-400/5 p-5 text-sm leading-relaxed text-gray-300">
+          <span class="mt-0.5 shrink-0 text-green-400">${iconMarkup('check', 'w-5 h-5')}</span>
+          <span>${d.trialNote}</span>
+        </p>` : ''}
+
         <div class="reveal-stagger mt-12 max-w-xl space-y-7">
           ${d.bullets.map(bullet).join('\n          ')}
         </div>

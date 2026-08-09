@@ -672,6 +672,13 @@ export function renderPricing(t) {
               ${tier.extras.map(featureItem).join('\n              ')}
             </ul>` : ''}
           </div>`;
+  // A tier carrying `trial` sells the free trial instead of "Get started": green pill under
+  // the price, its own CTA label, and the note under the button. The trial CTA goes to
+  // /book-demo/ (not coming-soon) because we set the trial up rather than self-serve signup.
+  const trialPill = (trial) => `<p class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full border border-green-400/30 bg-green-400/10 px-3 py-1 text-xs font-semibold text-green-300">
+            ${iconMarkup('check', 'w-3.5 h-3.5')}${trial.badge}
+          </p>`;
+
   const tierCard = (tier) => `<div class="reveal card-lift ${tier.mostPopular ? 'card-featured border-primary/60 bg-gradient-to-b from-primary/10 to-dark-800/60' : 'border-white/10 bg-dark-800/40'} relative flex flex-col rounded-2xl border p-8">
           ${tier.mostPopular ? `<span class="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-dark-900">${p.mostPopular}</span>` : ''}
           <h3 class="text-lg font-semibold text-white">${tier.name}</h3>
@@ -680,9 +687,11 @@ export function renderPricing(t) {
             <span class="price-monthly"><span class="font-display text-4xl font-bold text-white">€${tier.priceMonthly}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
             <span class="price-annual hidden"><span class="font-display text-4xl font-bold text-white">€${tier.priceAnnual}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
           </p>
+          ${tier.trial ? trialPill(tier.trial) : ''}
           ${featureGroups(tier)}
           <p class="mt-6 text-xs text-gray-400">${p.overageLabel}: ${tier.overage}</p>
-          <a href="/${t.lang}/coming-soon/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${tier.cta || p.ctaTier}</a>
+          <a href="/${t.lang}/${tier.trial ? 'book-demo' : 'coming-soon'}/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${tier.trial ? tier.trial.cta : tier.cta || p.ctaTier}</a>
+          ${tier.trial ? `<p class="mt-3 text-center text-xs leading-relaxed text-gray-400">${tier.trial.note}</p>` : ''}
         </div>`;
 
   const scaleCard = `<div class="reveal card-lift flex flex-col rounded-2xl border border-white/10 bg-dark-800/40 p-8">
