@@ -21,6 +21,7 @@ import {
   renderComingSoon,
 } from './templates/sections.mjs';
 import { renderCookieConsent } from './templates/cookie-consent.mjs';
+import { renderChatWidget } from './templates/chat-widget.mjs';
 import { renderLegalPage } from './templates/legal.mjs';
 import { renderBookDemo } from './templates/demo.mjs';
 import { organizationSchema, softwareApplicationSchema, faqPageSchema, jsonLdScripts } from './templates/schema.mjs';
@@ -83,6 +84,14 @@ function pageOpen(t, lang) {
   ${renderCookieConsent(t, lang)}`;
 }
 
+// ...and closes the same way: the support assistant last in the document (it's
+// position:fixed, so the placement is purely about tab order — the launcher comes after
+// the page content, not before it), then the single script that boots everything.
+function pageClose(t, lang) {
+  return `${renderChatWidget(t, lang)}
+  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+}
+
 function buildHomePage(lang) {
   const t = content[lang];
   const other = lang === 'en' ? 'gr' : 'en';
@@ -101,7 +110,7 @@ function buildHomePage(lang) {
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('home')(other))}
   ${renderMain(t, lang)}
   ${renderFooter(t, lang)}
-  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  ${pageClose(t, lang)}`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -123,7 +132,7 @@ function buildLegalPage(lang, slug) {
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('legal', slug)(other))}
   ${renderLegalPage(t, slug)}
   ${renderFooter(t, lang)}
-  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  ${pageClose(t, lang)}`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -150,7 +159,7 @@ function buildComingSoonPage(lang) {
     ${renderComingSoon(t, lang)}
     ${renderFooter(t, lang)}
   </div>
-  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  ${pageClose(t, lang)}`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -171,7 +180,7 @@ function buildBookDemoPage(lang) {
   ${renderNav(t, lang, APP_URL, urlPathByLangFactory('book-demo')(other))}
   ${renderBookDemo(t, lang)}
   ${renderFooter(t, lang)}
-  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  ${pageClose(t, lang)}`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 
@@ -197,7 +206,7 @@ function buildRootPage() {
   ${renderNav(t, 'gr', APP_URL, urlPathByLangFactory('home')('en'))}
   ${renderMain(t, 'gr')}
   ${renderFooter(t, 'gr')}
-  <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
+  ${pageClose(t, 'gr')}`;
   return htmlDocument({ htmlLang: t.htmlLang, dir: t.dir, head, body });
 }
 

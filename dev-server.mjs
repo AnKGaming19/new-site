@@ -106,7 +106,11 @@ http
   .listen(PORT, () => {
     console.log(`\n  dist  → http://localhost:${PORT}/`);
     console.log(`  api   → http://localhost:${PORT}/api/book-demo/`);
+    console.log(`  api   → http://localhost:${PORT}/api/chat/`);
     console.log(
-      `  resend key: ${process.env.RESEND_API_KEY ? 'loaded from .env' : 'MISSING — form will return 500'}\n`
+      `  resend key:    ${process.env.RESEND_API_KEY ? 'loaded from .env' : 'MISSING — demo form will return 500'}`
+    );
+    console.log(
+      `  anthropic key: ${process.env.ANTHROPIC_API_KEY ? 'loaded from .env' : 'MISSING — assistant will return 503'}\n`
     );
   });

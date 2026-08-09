@@ -3,6 +3,10 @@ export default {
   content: [
     "./templates/**/*.mjs",
     "./build.mjs",
+    // Tailwind tree-shakes @layer components against these sources, so any class that
+    // only ever exists inside a script — the chat widget builds its whole transcript in
+    // JS — has to be scanned here too, or its rules are silently dropped from the build.
+    "./assets/js/**/*.js",
   ],
   darkMode: 'class',
   theme: {

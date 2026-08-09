@@ -3,8 +3,12 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/api/book-demo/", "destination": "/api/book-demo" }
+    { "source": "/api/book-demo/", "destination": "/api/book-demo" },
+    { "source": "/api/chat/", "destination": "/api/chat" }
   ],
+  "functions": {
+    "api/chat.js": { "maxDuration": 30 }
+  },
   "redirects": [
     { "source": "/en/gdpr/", "destination": "/en/dpa/", "permanent": true },
     { "source": "/gr/gdpr/", "destination": "/gr/dpa/", "permanent": true }

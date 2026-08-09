@@ -11,6 +11,9 @@
     "dev": "npm run build && node dev-server.mjs",
     "dev:static": "npm run build && npx http-server dist -p 5173 -c-1"
   },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.116.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "http-server": "^14.1.1",

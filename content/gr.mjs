@@ -598,6 +598,40 @@ export default {
     },
   },
 
+  // «Anchor» — ο βοηθός υποστήριξης στη γωνία κάθε σελίδας (templates/chat-widget.mjs).
+  // Απαντά από το περιεχόμενο αυτού του αρχείου μέσω /api/chat· βλ. content/knowledge-base.mjs.
+  assistant: {
+    name: 'Anchor',
+    launcher: 'Ρωτήστε τον Anchor',
+    openLabel: 'Άνοιγμα του βοηθού της AiAnchor',
+    closeLabel: 'Κλείσιμο του βοηθού',
+    subtitle: 'Υποστήριξη AiAnchor',
+    status: 'Απαντά σε δευτερόλεπτα',
+    disclosure: 'Ο Anchor είναι βοηθός AI και απαντά από αυτόν τον ιστότοπο. Για ό,τι δεν καλύπτει, σας παραπέμπει στην ομάδα.',
+    greeting: 'Γεια σας — είμαι ο Anchor. Ρωτήστε με για το AI audit, τους φωνητικούς agents, τα chatbots, τους αυτοματισμούς, τις τιμές ή το Command Hub.',
+    suggestionsLabel: 'Ή ξεκινήστε από εδώ',
+    suggestions: [
+      'Τι περιλαμβάνει το AI audit;',
+      'Πώς λειτουργεί η τιμολόγηση;',
+      'Υπάρχει δωρεάν δοκιμή;',
+      'Πόσο χρόνο παίρνει η εγκατάσταση;',
+    ],
+    inputLabel: 'Το μήνυμά σας',
+    placeholder: 'Ρωτήστε για τιμές, εγκατάσταση, GDPR…',
+    send: 'Αποστολή',
+    typing: 'Ο Anchor γράφει',
+    transcriptLabel: 'Συνομιλία με τον Anchor',
+    reset: 'Καθαρισμός συνομιλίας',
+    demoCta: 'Κλείστε δωρεάν demo',
+    errors: {
+      generic: 'Κάτι πήγε στραβά από την πλευρά μας. Δοκιμάστε ξανά ή στείλτε email στο info@aianchor.online.',
+      rateLimited: 'Πολλές ερωτήσεις μαζί — δώστε του ένα λεπτό ή στείλτε email στο info@aianchor.online.',
+      unavailable: 'Ο βοηθός είναι εκτός λειτουργίας αυτή τη στιγμή. Στείλτε email στο info@aianchor.online και θα σας απαντήσει άνθρωπος.',
+      refused: 'Σε αυτό δεν μπορώ να βοηθήσω. Ρωτήστε με για την AiAnchor ή στείλτε email στο info@aianchor.online.',
+    },
+    endpoint: '/api/chat/',
+  },
+
   footer: {
     tagline: 'AI συμβουλευτική, φωνητικοί agents, chatbots και αυτοματισμοί για πρόκριση leads, onboarding πελατών και follow-up. Κάθε ευρώ αξίας αποδεικνύεται ζωντανά στο Command Hub της AiAnchor.',
     columns: {

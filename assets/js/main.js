@@ -414,6 +414,21 @@
     }
   }
 
+  // --- Anchor: support assistant --------------------------------------------
+  // The widget markup ships hidden; chat.js is what reveals it, so a failed or blocked
+  // fetch leaves no dead launcher in the corner. Loaded after first paint because nobody
+  // opens a support chat before the page has rendered.
+  if (document.getElementById('chat-widget')) {
+    var loadChat = function () {
+      var c = document.createElement('script');
+      c.src = '/assets/js/chat.js';
+      c.defer = true;
+      document.body.appendChild(c);
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(loadChat, { timeout: 3000 });
+    else setTimeout(loadChat, 1200);
+  }
+
   // The heavier ambient-motion module (particle canvas, hero tilt, connector scroll-fill)
   // is only fetched when it has something to do and the user hasn't asked for less motion.
   var needsMotion =

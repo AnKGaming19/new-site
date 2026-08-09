@@ -602,6 +602,40 @@ export default {
     },
   },
 
+  // "Anchor" — the support assistant in the corner of every page (templates/chat-widget.mjs).
+  // It answers from the copy in this file via /api/chat; see content/knowledge-base.mjs.
+  assistant: {
+    name: 'Anchor',
+    launcher: 'Ask Anchor',
+    openLabel: 'Open the AiAnchor assistant',
+    closeLabel: 'Close the assistant',
+    subtitle: 'AiAnchor support',
+    status: 'Answers in seconds',
+    disclosure: 'Anchor is an AI assistant and answers from this website. For anything it can’t cover, it will hand you to the team.',
+    greeting: 'Hi — I’m Anchor. Ask me anything about the AI audit, voice agents, chatbots, automations, pricing or the Command Hub.',
+    suggestionsLabel: 'Or start with one of these',
+    suggestions: [
+      'What does the AI audit cover?',
+      'How does pricing work?',
+      'Is there a free trial?',
+      'How long does setup take?',
+    ],
+    inputLabel: 'Your message',
+    placeholder: 'Ask about pricing, setup, GDPR…',
+    send: 'Send',
+    typing: 'Anchor is typing',
+    transcriptLabel: 'Conversation with Anchor',
+    reset: 'Clear chat',
+    demoCta: 'Book a free demo',
+    errors: {
+      generic: 'Something went wrong on our side. Try again, or email info@aianchor.online.',
+      rateLimited: 'That’s a lot of questions at once — give it a minute, or email info@aianchor.online.',
+      unavailable: 'The assistant is offline right now. Email info@aianchor.online and a person will answer.',
+      refused: 'I can’t help with that one. Ask me about AiAnchor, or email info@aianchor.online.',
+    },
+    endpoint: '/api/chat/',
+  },
+
   footer: {
     tagline: 'AI consulting, voice agents, chatbots and automations for lead qualification, client onboarding and follow-up. Every euro of value is proven live in AiAnchor’s Command Hub.',
     columns: {
