@@ -89,6 +89,7 @@ function pageOpen(t, lang) {
 // the page content, not before it), then the single script that boots everything.
 function pageClose(t, lang) {
   return `${renderChatWidget(t, lang)}
+  <script type="text/plain" data-cookie-category="analytics" defer src="/_vercel/insights/script.js"></script>
   <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>`;
 }
 

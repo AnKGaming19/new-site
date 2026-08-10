@@ -247,8 +247,8 @@
     };
 
     // Scripts can opt into a category by shipping as <script type="text/plain"
-    // data-cookie-category="analytics">. Nothing uses this yet - it's the hook that keeps
-    // the banner honest the day analytics or a pixel is added.
+    // data-cookie-category="analytics">. Vercel Analytics uses this gate, and future
+    // optional scripts (pixels, etc.) can follow the same pattern.
     var activateGatedScripts = function (categories) {
       document.querySelectorAll('script[type="text/plain"][data-cookie-category]').forEach(function (node) {
         if (!categories[node.getAttribute('data-cookie-category')]) return;
