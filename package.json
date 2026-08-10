@@ -12,7 +12,8 @@
     "dev:static": "npm run build && npx http-server dist -p 5173 -c-1"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.116.0"
+    "@anthropic-ai/sdk": "^0.116.0",
+    "@vercel/analytics": "^2.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
