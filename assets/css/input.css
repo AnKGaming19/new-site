@@ -1297,29 +1297,69 @@
     color: theme('colors.gray.500');
   }
 
-  /* --- Phones: a sheet, not a floating card --- */
+  /* --- Phones: a sheet, not a floating card ---
+   * Everything here is scaled up rather than just reflowed. A widget sized for a mouse
+   * pointer and a 60cm viewing distance reads as cramped on a phone held at arm's length,
+   * and the corner launcher in particular has to survive being the only tap target
+   * competing with a full-width CTA. Bottom offsets respect the iOS home indicator.
+   */
   @media (max-width: 639px) {
     .chat-panel {
       right: 0.5rem;
       left: 0.5rem;
-      bottom: 0.5rem;
+      bottom: max(0.5rem, env(safe-area-inset-bottom));
       width: auto;
       height: calc(100vh - 1rem);
-      height: calc(100dvh - 1rem);
+      height: calc(100dvh - 1rem - env(safe-area-inset-bottom));
       border-radius: 1.25rem;
     }
+    .chat-log {
+      gap: 1.15rem;
+      padding: 1.25rem 1rem 1.4rem;
+    }
+    .chat-msg-assistant .chat-bubble,
+    .chat-msg-user .chat-bubble {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+    .chat-msg-avatar {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+    .chat-suggestions {
+      padding-left: 2.4rem;
+    }
+    .chat-chip {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8125rem;
+    }
+    .chat-notice {
+      font-size: 0.8125rem;
+    }
+    .chat-send {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+    .chat-disclosure {
+      font-size: 0.7rem;
+    }
+
+    /* A proper 60px circular FAB — the label is hidden, so the pill shape has no job. */
     .chat-launcher {
       right: 1rem;
-      bottom: 1rem;
-      height: 3rem;
-      padding: 0 0.325rem;
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      height: 3.75rem;
+      width: 3.75rem;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
     }
     .chat-launcher-label {
       display: none;
     }
     .chat-launcher-icon {
-      height: 2.35rem;
-      width: 2.35rem;
+      height: 2.75rem;
+      width: 2.75rem;
     }
   }
 
