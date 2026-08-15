@@ -59,7 +59,7 @@ export default {
     ],
     // Shown on the demo page because the Growth trial CTA in the pricing table lands here.
     trialNote:
-      'Coming from the 7-day free trial? Mention Growth in the form below. We set your agent up, the 7 days start once it goes live, and no card is needed.',
+      'Coming from the 14-day free trial? Mention Growth in the form below. We set your agent up, the 14 days start once it goes live, and no card is needed.',
     reassureTitle: 'What happens next',
     reassureBody:
       'You’ll get a confirmation email straight away. One of us reads every request personally and comes back to you within one business day to fix a time.',
@@ -347,7 +347,7 @@ export default {
 
   pricing: {
     heading: 'Simple pricing, real ROI',
-    subhead: 'Every plan is done-for-you service: the AI audit that scopes it, the agents and automations we set up and run, and the minutes. AiAnchor’s Command Hub is included at every tier so you can see what it returns. Growth comes with 7 days free, no card. Prices are before VAT, and annual billing saves you roughly 20%.',
+    subhead: 'Every plan is done-for-you service: the AI audit that scopes it, the agents and automations we set up and run, and the minutes. AiAnchor’s Command Hub is included at every tier so you can see what it returns. Growth comes with 14 days free, no card. Prices are before VAT, and annual billing saves you roughly 20%.',
     toggle: { monthly: 'Monthly', annual: 'Annual', save: 'Save ~20%' },
     vatSuffix: '+ VAT',
     perMonth: '/mo',
@@ -394,8 +394,8 @@ export default {
         // since we set the trial up rather than running self-serve signup.
         trial: {
           badge: '14 days free',
-          cta: 'Try free for 7 days',
-          note: 'No card required. We set your agent up and you run Growth free for 7 days.',
+          cta: 'Try free for 14 days',
+          note: 'No card required. We set your agent up and you run Growth free for 14 days.',
         },
         featureGroups: [
           {
@@ -472,7 +472,7 @@ export default {
         'Custom builds on request (quoted separately)',
       ],
     },
-    setupNote: 'The 7-day Growth trial is free and needs no card — the setup fee and your first invoice only apply if you continue. Setup fee of €250–500 applies on Growth and above (waived on annual plans).',
+    setupNote: 'The 14-day Growth trial is free and needs no card — the setup fee and your first invoice only apply if you continue. Setup fee of €250–500 applies on Growth and above (waived on annual plans).',
     overageNote: 'Overage minutes are billed at the rate shown for your plan once your monthly allowance is used.',
   },
 
@@ -550,7 +550,7 @@ export default {
       },
       {
         q: 'Is there a free trial?',
-        a: 'Yes — the Growth plan comes with 7 days free, and no card is required. It isn’t self-serve: you request it from the pricing table or the demo page, we set your agent up with your services, pricing and calendar, and the 7 days start once it goes live. If you stop at the end of the trial you pay nothing, and the setup fee and first invoice only apply if you continue. Starter, Pro and Scale don’t include a trial, but you can book a free demo on any of them and hear the agent run on a real call flow first.',
+        a: 'Yes — the Growth plan comes with 14 days free, and no card is required. It isn’t self-serve: you request it from the pricing table or the demo page, we set your agent up with your services, pricing and calendar, and the 14 days start once it goes live. If you stop at the end of the trial you pay nothing, and the setup fee and first invoice only apply if you continue. Starter, Pro and Scale don’t include a trial, but you can book a free demo on any of them and hear the agent run on a real call flow first.',
       },
       {
         q: 'How long does setup take?',
