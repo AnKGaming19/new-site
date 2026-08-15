@@ -658,51 +658,115 @@ export function renderFeatures(t) {
 
 export function renderPricing(t) {
   const p = t.pricing;
-  const featureItem = (f) => `<li class="flex gap-2"><span class="mt-0.5 text-primary">${iconMarkup('check', 'w-4 h-4')}</span><span>${f}</span></li>`;
-  // Tiers group their features under labelled pillars (Voice / Automations & CRM) so the
-  // value reads as two product areas. `extras` holds cross-cutting items (support, onboarding).
-  const featureGroups = (tier) => `<div class="mt-6 flex-1 space-y-5">
-            ${tier.featureGroups.map((g) => `<div>
-              <p class="text-xs font-semibold uppercase tracking-wider text-primary/70">${g.label}</p>
-              <ul class="mt-2.5 space-y-3 text-sm text-gray-300">
-                ${g.items.map(featureItem).join('\n                ')}
+  const gr = t.lang === 'gr';
+  const pricingExpandLabel = gr ? 'Δείτε περισσότερα' : 'View more';
+  const pricingCollapseLabel = gr ? 'Λιγότερα' : 'Show less';
+  // How many feature lines stay visible while the card is collapsed. The card keeps real
+  // information in its compact state (price + the three headline features) so the expand
+  // is an opt-in for detail, never the only way to understand what a tier is.
+  const PREVIEW_COUNT = 3;
+
+  const featureItem = (f, animated) => `<li class="${animated ? 'pricing-feature ' : ''}flex gap-2.5"><span class="mt-[3px] shrink-0 text-primary">${iconMarkup('check', 'w-3.5 h-3.5')}</span><span>${f}</span></li>`;
+  const groupLabel = (label) => `<p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary/60">${label}</p>`;
+
+  /*
+   * One card renderer for every tier, including Scale. `groups` is a list of
+   * { label, items } pillars; the first PREVIEW_COUNT items of the first group render
+   * outside the collapsible panel, and the panel picks that same list up mid-flow — so
+   * nothing is repeated between the compact and expanded states.
+   */
+  const card = ({ index, name, tagline, priceHtml, groups, extras, footnote, ctaHref, ctaLabel, ctaPrimary, badge, pill, note }) => {
+    const id = `pricing-panel-${index}`;
+    const [firstGroup, ...restGroups] = groups;
+    const preview = firstGroup.items.slice(0, PREVIEW_COUNT);
+    const firstRest = firstGroup.items.slice(PREVIEW_COUNT);
+    const hiddenCount =
+      groups.reduce((n, g) => n + g.items.length, 0) - preview.length + (extras ? extras.length : 0);
+
+    return `<article class="pricing-card reveal card-lift ${badge ? 'card-featured border-primary/50 bg-gradient-to-b from-primary/[0.07] via-dark-800/50 to-dark-800/30' : 'border-white/10 bg-dark-800/40'} relative flex flex-col rounded-2xl border p-5 sm:p-6" data-expanded="false">
+          <span class="pricing-card-glow" aria-hidden="true"></span>
+          <div class="relative flex flex-1 flex-col">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-display text-[11px] font-semibold tracking-[0.22em] text-primary/45">${String(index + 1).padStart(2, '0')}</span>
+              ${badge ? `<span class="pricing-badge rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-dark-900">${badge}</span>` : ''}
+            </div>
+            <h3 class="mt-3 font-display text-xl font-bold text-white">${name}</h3>
+            <p class="pricing-tagline mt-1.5 line-clamp-3 min-h-[3.75rem] text-[13px] leading-5 text-gray-400">${tagline}</p>
+
+            <p class="pricing-price mt-5 flex flex-wrap items-baseline gap-x-1.5 gap-y-1">${priceHtml}</p>
+            ${pill ? `<span class="mt-3 inline-flex items-center gap-1.5 self-start rounded-full border border-green-400/30 bg-green-400/10 px-2.5 py-1 text-[11px] font-semibold text-green-300">${iconMarkup('check', 'w-3 h-3')}${pill}</span>` : ''}
+
+            <div class="mt-5 border-t border-white/[0.07] pt-4">
+              ${groupLabel(firstGroup.label)}
+              <ul class="mt-2.5 space-y-2 text-[13px] leading-5 text-gray-300">
+                ${preview.map((f) => featureItem(f, false)).join('\n                ')}
               </ul>
-            </div>`).join('\n            ')}
-            ${tier.extras ? `<ul class="space-y-3 border-t border-white/10 pt-4 text-sm text-gray-300">
-              ${tier.extras.map(featureItem).join('\n              ')}
-            </ul>` : ''}
-          </div>`;
+              <div class="pricing-card-content" id="${id}">
+                <div>
+                  ${firstRest.length ? `<ul class="mt-2 space-y-2 text-[13px] leading-5 text-gray-300">
+                    ${firstRest.map((f) => featureItem(f, true)).join('\n                    ')}
+                  </ul>` : ''}
+                  ${restGroups.map((g) => `<div class="mt-5">
+                    ${groupLabel(g.label)}
+                    <ul class="mt-2.5 space-y-2 text-[13px] leading-5 text-gray-300">
+                      ${g.items.map((f) => featureItem(f, true)).join('\n                      ')}
+                    </ul>
+                  </div>`).join('\n                  ')}
+                  ${extras ? `<ul class="mt-5 space-y-2 border-t border-white/[0.07] pt-4 text-[13px] leading-5 text-gray-300">
+                    ${extras.map((f) => featureItem(f, true)).join('\n                    ')}
+                  </ul>` : ''}
+                  ${footnote ? `<p class="mt-5 text-[11px] text-gray-500">${footnote}</p>` : ''}
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="pricing-card-toggle mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs font-semibold text-gray-300" aria-expanded="false" aria-controls="${id}" data-expand-text="${pricingExpandLabel}" data-collapse-text="${pricingCollapseLabel}">
+              <span data-pricing-toggle-label>${pricingExpandLabel}</span>
+              ${hiddenCount > 0 ? `<span class="pricing-more-count rounded-full bg-primary/15 px-1.5 py-px text-[10px] font-bold text-primary">+${hiddenCount}</span>` : ''}
+              <span class="pricing-card-toggle-icon text-primary">${iconMarkup('chevronDown', 'w-4 h-4')}</span>
+            </button>
+
+            <div class="mt-auto pt-4">
+              <a href="${ctaHref}" class="btn-interactive block rounded-full ${ctaPrimary ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-2.5 text-center text-sm font-semibold">${ctaLabel}</a>
+              ${note ? `<p class="mt-2.5 text-center text-[11px] leading-relaxed text-gray-500">${note}</p>` : ''}
+            </div>
+          </div>
+        </article>`;
+  };
+
+  const priceUnit = `<span class="text-xs text-gray-500">${p.perMonth} ${p.vatSuffix}</span>`;
+  const savePill = `<span class="price-annual hidden rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">${p.toggle.save}</span>`;
+
   // A tier carrying `trial` sells the free trial instead of "Get started": green pill under
   // the price, its own CTA label, and the note under the button. The trial CTA goes to
   // /book-demo/ (not coming-soon) because we set the trial up rather than self-serve signup.
-  const trialPill = (trial) => `<p class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full border border-green-400/30 bg-green-400/10 px-3 py-1 text-xs font-semibold text-green-300">
-            ${iconMarkup('check', 'w-3.5 h-3.5')}${trial.badge}
-          </p>`;
+  const tierCard = (tier, index) => card({
+    index,
+    name: tier.name,
+    tagline: tier.tagline,
+    priceHtml: `<span class="price-monthly"><span class="font-display text-[2.75rem] font-bold leading-none tracking-tight text-white">€${tier.priceMonthly}</span></span>
+              <span class="price-annual hidden"><span class="font-display text-[2.75rem] font-bold leading-none tracking-tight text-white">€${tier.priceAnnual}</span></span>
+              ${priceUnit}${savePill}`,
+    groups: tier.featureGroups,
+    extras: tier.extras,
+    footnote: `${p.overageLabel}: ${tier.overage}`,
+    ctaHref: `/${t.lang}/${tier.trial ? 'book-demo' : 'coming-soon'}/`,
+    ctaLabel: tier.trial ? tier.trial.cta : tier.cta || p.ctaTier,
+    ctaPrimary: tier.mostPopular,
+    badge: tier.mostPopular ? p.mostPopular : '',
+    pill: tier.trial ? tier.trial.badge : '',
+    note: tier.trial ? tier.trial.note : '',
+  });
 
-  const tierCard = (tier) => `<div class="reveal card-lift ${tier.mostPopular ? 'card-featured border-primary/60 bg-gradient-to-b from-primary/10 to-dark-800/60' : 'border-white/10 bg-dark-800/40'} relative flex flex-col rounded-2xl border p-8">
-          ${tier.mostPopular ? `<span class="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-dark-900">${p.mostPopular}</span>` : ''}
-          <h3 class="text-lg font-semibold text-white">${tier.name}</h3>
-          <p class="mt-1 text-sm text-gray-400">${tier.tagline}</p>
-          <p class="mt-6">
-            <span class="price-monthly"><span class="font-display text-4xl font-bold text-white">€${tier.priceMonthly}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
-            <span class="price-annual hidden"><span class="font-display text-4xl font-bold text-white">€${tier.priceAnnual}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></span>
-          </p>
-          ${tier.trial ? trialPill(tier.trial) : ''}
-          ${featureGroups(tier)}
-          <p class="mt-6 text-xs text-gray-400">${p.overageLabel}: ${tier.overage}</p>
-          <a href="/${t.lang}/${tier.trial ? 'book-demo' : 'coming-soon'}/" class="btn-interactive mt-6 block rounded-full ${tier.mostPopular ? 'bg-white text-dark-900 hover:bg-gray-100' : 'border border-white/15 text-white hover:border-primary/50'} px-5 py-3 text-center font-semibold">${tier.trial ? tier.trial.cta : tier.cta || p.ctaTier}</a>
-          ${tier.trial ? `<p class="mt-3 text-center text-xs leading-relaxed text-gray-400">${tier.trial.note}</p>` : ''}
-        </div>`;
-
-  const scaleCard = `<div class="reveal card-lift flex flex-col rounded-2xl border border-white/10 bg-dark-800/40 p-8">
-          <h3 class="text-lg font-semibold text-white">${p.scale.name}</h3>
-          <p class="mt-1 text-sm text-gray-400">${p.scale.tagline}</p>
-          <p class="mt-6"><span class="font-display text-4xl font-bold text-white">${p.scale.priceFrom}</span><span class="text-gray-400">${p.perMonth} ${p.vatSuffix}</span></p>
-          <ul class="mt-6 flex-1 space-y-3 text-sm text-gray-300">
-            ${p.scale.features.map((f) => `<li class="flex gap-2"><span class="mt-0.5 text-primary">${iconMarkup('check', 'w-4 h-4')}</span><span>${f}</span></li>`).join('\n            ')}
-          </ul>
-          <a href="mailto:${t.footer.contactEmail}?subject=Scale%20plan" class="btn-interactive mt-6 block rounded-full border border-white/15 px-5 py-3 text-center font-semibold text-white hover:border-primary/50">${p.ctaScale}</a>
-        </div>`;
+  const scaleCard = card({
+    index: p.tiers.length,
+    name: p.scale.name,
+    tagline: p.scale.tagline,
+    priceHtml: `<span class="font-display text-[2.75rem] font-bold leading-none tracking-tight text-white">${p.scale.priceFrom}</span>${priceUnit}`,
+    groups: [{ label: gr ? 'Τι περιλαμβάνει' : 'What you get', items: p.scale.features }],
+    ctaHref: `mailto:${t.footer.contactEmail}?subject=Scale%20plan`,
+    ctaLabel: p.ctaScale,
+  });
 
   return `<section id="pricing" class="relative overflow-hidden py-24 md:py-32">
     <div class="pointer-events-none absolute inset-0" aria-hidden="true" style="background:radial-gradient(720px 480px at 38% 55%, rgba(0,240,255,0.04), transparent 70%)"></div>
@@ -717,7 +781,7 @@ export function renderPricing(t) {
         <button type="button" data-pricing-period="annual" class="pricing-toggle-btn rounded-full px-5 py-2 text-sm font-medium text-gray-300" aria-pressed="false">${p.toggle.annual} <span class="text-primary">${p.toggle.save}</span></button>
       </div>
 
-      <div class="reveal-stagger mt-10 grid gap-6 lg:grid-cols-4">
+      <div class="pricing-cards-row reveal-stagger mt-10 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">
         ${p.tiers.map(tierCard).join('\n        ')}
         ${scaleCard}
       </div>

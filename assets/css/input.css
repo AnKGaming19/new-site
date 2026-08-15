@@ -155,6 +155,151 @@
     @apply bg-transparent text-gray-300;
   }
 
+  /*
+   * --- Pricing cards ---
+   * Compact by default: price + three headline features are always readable, and the
+   * rest of the spec lives in a collapsible panel behind "View more". The panel animates
+   * with grid-template-rows 0fr -> 1fr, so the open height is measured by the browser
+   * (no JS scrollHeight bookkeeping, and it stays correct when the card reflows).
+   */
+  .pricing-card {
+    isolation: isolate;
+  }
+  /* Pointer-following spotlight. Coordinates come from JS as --px/--py (desktop only). */
+  .pricing-card-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(340px circle at var(--px, 50%) var(--py, 0%), rgba(0, 240, 255, 0.14), transparent 68%);
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pricing-card:hover .pricing-card-glow,
+    .pricing-card:focus-within .pricing-card-glow {
+      opacity: 1;
+    }
+  }
+
+  /* "Most popular" badge: a slow breathing halo so the eye lands there first. */
+  .pricing-badge {
+    animation: pricing-badge-pulse 3.2s var(--ease-in-out) infinite;
+  }
+  @keyframes pricing-badge-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.35); }
+    50% { box-shadow: 0 0 0 6px rgba(0, 240, 255, 0); }
+  }
+
+  /*
+   * Collapsed state is scoped to `.js` so the full feature list (and the CTA below it)
+   * is still readable when the script never runs.
+   */
+  .pricing-card-content {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+  .pricing-card-content > * {
+    min-height: 0;
+    overflow: hidden;
+  }
+  .js .pricing-card-content {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 420ms var(--ease-out-soft), opacity 200ms var(--ease-out);
+  }
+  .js .pricing-card[data-expanded="true"] .pricing-card-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition: grid-template-rows 420ms var(--ease-out-soft), opacity 260ms var(--ease-out) 80ms;
+  }
+  /* Revealed rows cascade in behind the panel opening rather than appearing all at once. */
+  .js .pricing-card-content .pricing-feature {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+  .js .pricing-card[data-expanded="true"] .pricing-card-content .pricing-feature {
+    opacity: 1;
+    transform: none;
+  }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(1) { transition-delay: 120ms; }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(2) { transition-delay: 155ms; }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(3) { transition-delay: 190ms; }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(4) { transition-delay: 225ms; }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(5) { transition-delay: 260ms; }
+  .js .pricing-card[data-expanded="true"] .pricing-feature:nth-child(n + 6) { transition-delay: 295ms; }
+
+  /*
+   * Taglines are clamped so every collapsed card puts its price on the same line;
+   * expanding releases the clamp, so no copy is permanently truncated.
+   */
+  .pricing-card[data-expanded="true"] .pricing-tagline {
+    -webkit-line-clamp: unset;
+  }
+
+  /* The toggle only does something with JS, so it only exists with JS. */
+  .pricing-card-toggle {
+    display: none;
+    transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .js .pricing-card-toggle {
+    display: inline-flex;
+  }
+  .pricing-card-toggle:active {
+    transform: scale(0.98);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pricing-card-toggle:hover {
+      border-color: rgba(0, 240, 255, 0.45);
+      background-color: rgba(0, 240, 255, 0.07);
+      color: #fff;
+    }
+  }
+  .pricing-card-toggle-icon {
+    transition: transform var(--dur-base) var(--ease-in-out);
+  }
+  .pricing-card[data-expanded="true"] .pricing-card-toggle-icon {
+    transform: rotate(180deg);
+  }
+  /* The "+8 more" counter is only meaningful while those rows are hidden. */
+  .pricing-card[data-expanded="true"] .pricing-more-count {
+    display: none;
+  }
+
+  /* Monthly <-> annual: the incoming figure rolls up instead of swapping instantly. */
+  .price-monthly,
+  .price-annual {
+    display: inline-block;
+  }
+  .pricing-price.is-swapping .price-monthly,
+  .pricing-price.is-swapping .price-annual {
+    animation: price-swap 380ms var(--ease-out-soft);
+  }
+  @keyframes price-swap {
+    from { opacity: 0; transform: translateY(9px) scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-card-toggle-icon,
+    .js .pricing-card-content,
+    .js .pricing-card-content .pricing-feature {
+      transition-duration: 1ms;
+      transition-delay: 0ms;
+    }
+    .pricing-badge,
+    .pricing-price.is-swapping .price-monthly,
+    .pricing-price.is-swapping .price-annual {
+      animation: none;
+    }
+    .pricing-card-glow {
+      display: none;
+    }
+  }
+
   /* Comparison table: row highlight on hover aids scanning across the three columns. */
   .comparison-row {
     transition: background-color var(--dur-fast) var(--ease-out);

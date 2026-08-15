@@ -88,7 +88,58 @@
         document.querySelectorAll('.price-annual').forEach(function (el) {
           el.classList.toggle('hidden', period !== 'annual');
         });
+        // Replay the roll-in on whichever figure is now showing, so the switch reads as
+        // the number changing rather than two elements swapping places.
+        if (reducedMotion) return;
+        document.querySelectorAll('.pricing-price').forEach(function (el) {
+          el.classList.remove('is-swapping');
+          void el.offsetWidth; // restart the animation
+          el.classList.add('is-swapping');
+        });
       });
+    });
+  }
+
+  // Pricing cards: compact by default, "View more" expands the full spec. The panel's
+  // open height is a CSS grid-template-rows transition (see input.css), so there is no
+  // height to measure here and nothing to recompute on resize.
+  var pricingCards = document.querySelectorAll('.pricing-card');
+  pricingCards.forEach(function (card) {
+    var toggleBtn = card.querySelector('.pricing-card-toggle');
+    if (!toggleBtn) return;
+    var toggleLabel = toggleBtn.querySelector('[data-pricing-toggle-label]');
+
+    toggleBtn.addEventListener('click', function () {
+      var expanded = card.getAttribute('data-expanded') !== 'true';
+      card.setAttribute('data-expanded', String(expanded));
+      toggleBtn.setAttribute('aria-expanded', String(expanded));
+      if (toggleLabel) {
+        toggleLabel.textContent = expanded
+          ? toggleBtn.getAttribute('data-collapse-text')
+          : toggleBtn.getAttribute('data-expand-text');
+      }
+    });
+  });
+
+  // Spotlight that tracks the pointer across a card. Pointer-fine only (a touch device
+  // would leave the glow stuck wherever the last tap landed) and skipped under reduced
+  // motion; rAF-throttled so a fast sweep across four cards stays one write per frame.
+  if (pricingCards.length && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var glowFrame = null;
+    pricingCards.forEach(function (card) {
+      card.addEventListener(
+        'pointermove',
+        function (e) {
+          if (glowFrame) return;
+          glowFrame = requestAnimationFrame(function () {
+            glowFrame = null;
+            var rect = card.getBoundingClientRect();
+            card.style.setProperty('--px', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+            card.style.setProperty('--py', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+          });
+        },
+        { passive: true }
+      );
     });
   }
 
