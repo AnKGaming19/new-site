@@ -154,6 +154,20 @@
   .pricing-toggle-btn[aria-pressed="false"] {
     @apply bg-transparent text-gray-300;
   }
+  /*
+   * The saving ("2 months free") sits inside the Annual button, and that button's active
+   * background IS primary — so a primary-coloured span vanished into it the moment it was
+   * pressed. Selected state hands the span back to the button's own dark ink, held slightly
+   * lighter than the label so it still reads as secondary.
+   */
+  .pricing-toggle-save {
+    color: theme('colors.primary.DEFAULT');
+    transition: color var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out);
+  }
+  .pricing-toggle-btn[aria-pressed="true"] .pricing-toggle-save {
+    color: inherit;
+    opacity: 0.7;
+  }
 
   /*
    * --- Pricing cards ---

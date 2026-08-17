@@ -344,20 +344,20 @@ export default {
 
   pricing: {
     heading: 'Απλή τιμολόγηση, πραγματικό ROI',
-    subhead: 'Κάθε πλάνο είναι done-for-you υπηρεσία: το AI audit που το σχεδιάζει, οι agents και οι αυτοματισμοί που στήνουμε και τρέχουμε, και τα λεπτά. Το Command Hub της AiAnchor περιλαμβάνεται σε κάθε επίπεδο, για να βλέπετε τι αποδίδει. Το Growth έρχεται με 14 ημέρες δωρεάν, χωρίς κάρτα. Οι τιμές είναι χωρίς ΦΠΑ και η ετήσια χρέωση σας γλιτώνει περίπου 20%.',
-    toggle: { monthly: 'Μηνιαία', annual: 'Ετήσια', save: 'Εξοικονόμηση ~20%' },
+    subhead: 'Κάθε πλάνο είναι done-for-you υπηρεσία: το AI audit που το σχεδιάζει, οι agents και οι αυτοματισμοί που στήνουμε και τρέχουμε, και τα λεπτά. Το Command Hub της AiAnchor περιλαμβάνεται σε κάθε επίπεδο, για να βλέπετε τι αποδίδει. Το Growth έρχεται με 14 ημέρες δωρεάν, χωρίς κάρτα. Οι τιμές είναι χωρίς ΦΠΑ και με την ετήσια χρέωση κερδίζετε 2 μήνες δωρεάν.',
+    toggle: { monthly: 'Μηνιαία', annual: 'Ετήσια', save: '2 μήνες δωρεάν' },
     vatSuffix: '+ ΦΠΑ',
     perMonth: '/μήνα',
     mostPopular: 'Πιο δημοφιλές',
-    ctaTier: 'Ξεκινήστε',
+    ctaTier: 'Κλείστε δωρεάν demo',
     ctaScale: 'Επικοινωνήστε μαζί μας',
     overageLabel: 'Χρέωση επιπλέον λεπτών',
     overageToggle: 'Χρεώσεις επιπλέον λεπτών',
     tiers: [
       {
         name: 'Starter',
-        priceMonthly: 99,
-        priceAnnual: 79,
+        priceMonthly: 149,
+        priceAnnual: 124,
         tagline: 'Για μεμονωμένους επαγγελματίες. Απαντάμε στις κλήσεις σας και καταγράφουμε κάθε lead.',
         featureGroups: [
           {
@@ -382,8 +382,8 @@ export default {
       },
       {
         name: 'Growth',
-        priceMonthly: 249,
-        priceAnnual: 199,
+        priceMonthly: 349,
+        priceAnnual: 289,
         mostPopular: true,
         tagline: 'Απαντάμε, προκρίνουμε, κλείνουμε ραντεβού και κάνουμε follow-up σε τηλέφωνο και chat, με πλήρη εικόνα του pipeline εσόδων.',
         // Το μόνο πλάνο με δοκιμή. Το `trial` αλλάζει και το CTA της κάρτας σε /book-demo/,
@@ -391,13 +391,13 @@ export default {
         trial: {
           badge: '14 ημέρες δωρεάν',
           cta: 'Δοκιμάστε δωρεάν 14 ημέρες',
-          note: 'Χωρίς κάρτα. Στήνουμε τον agent σας και τρέχετε το Growth δωρεάν για 14 ημέρες.',
+          note: 'Μόνο για το Growth, κατόπιν αιτήματος — χωρίς κάρτα. Στήνουμε τον agent σας και τρέχετε το Growth δωρεάν για 14 ημέρες.',
         },
         featureGroups: [
           {
             label: 'Φωνητικοί agents & chat',
             items: [
-              '2 AI φωνητικοί agents',
+              '3 AI φωνητικοί agents',
               '400 λεπτά / μήνα',
               'Chatbot ιστοσελίδας',
               'Ενσωμάτωση κρατήσεων',
@@ -419,14 +419,14 @@ export default {
       },
       {
         name: 'Pro',
-        priceMonthly: 549,
-        priceAnnual: 449,
+        priceMonthly: 699,
+        priceAnnual: 579,
         tagline: 'Τρέχουμε όλη σας την υποδοχή σε πολλές γλώσσες, με onboarding πελατών, custom αυτοματισμούς και πλήρες σύστημα ROI.',
         featureGroups: [
           {
             label: 'Φωνητικοί agents & chat',
             items: [
-              '5 AI φωνητικοί agents',
+              '8 AI φωνητικοί agents',
               '1.000 λεπτά / μήνα',
               'Chatbots ιστοσελίδας + WhatsApp',
               'Υποστήριξη πολλαπλών γλωσσών',
@@ -451,9 +451,10 @@ export default {
     ],
     scale: {
       name: 'Scale',
-      priceFrom: 'από €1.200',
-      tagline: 'Για επιχειρήσεις με πολλά καταστήματα, με αφιερωμένο AI σύμβουλο στον λογαριασμό σας.',
+      priceFrom: 'από €1.500',
+      tagline: 'Για επιχειρήσεις με πολλά καταστήματα, με αφιερωμένο AI σύμβουλο στον λογαριασμό σας. Κατόπιν προσφοράς, με βάση το μέγεθός σας.',
       features: [
+        'Απεριόριστοι AI φωνητικοί agents',
         'Υποστήριξη πολλαπλών καταστημάτων',
         'Απεριόριστοι αυτοματισμοί',
         'Αφιερωμένος AI σύμβουλος',
@@ -482,7 +483,7 @@ export default {
       { label: 'Ζωντανό dashboard ROI στο Command Hub της AiAnchor', aianchor: true, human: false, basic: false },
       { label: 'AI συμβουλευτική: audit, οδικός χάρτης & συνεχής βελτιστοποίηση', aianchor: true, human: false, basic: false },
       { label: 'Συνδέεται με τα υπάρχοντα εργαλεία σας (CRM, ημερολόγιο, chat)', aianchor: true, human: false, basic: false },
-      { label: 'Μηνιαίο κόστος', aianchor: '€99–549+', human: '€800–1.500', basic: '€150–400' },
+      { label: 'Μηνιαίο κόστος', aianchor: '€149–699+', human: '€800–1.500', basic: '€150–400' },
     ],
   },
 

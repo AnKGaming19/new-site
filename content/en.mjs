@@ -347,20 +347,20 @@ export default {
 
   pricing: {
     heading: 'Simple pricing, real ROI',
-    subhead: 'Every plan is done-for-you service: the AI audit that scopes it, the agents and automations we set up and run, and the minutes. AiAnchor’s Command Hub is included at every tier so you can see what it returns. Growth comes with 14 days free, no card. Prices are before VAT, and annual billing saves you roughly 20%.',
-    toggle: { monthly: 'Monthly', annual: 'Annual', save: 'Save ~20%' },
+    subhead: 'Every plan is done-for-you service: the AI audit that scopes it, the agents and automations we set up and run, and the minutes. AiAnchor’s Command Hub is included at every tier so you can see what it returns. Growth comes with 14 days free, no card. Prices are before VAT, and paying annually gives you 2 months free.',
+    toggle: { monthly: 'Monthly', annual: 'Annual', save: '2 months free' },
     vatSuffix: '+ VAT',
     perMonth: '/mo',
     mostPopular: 'Most popular',
-    ctaTier: 'Get started',
+    ctaTier: 'Book a free demo',
     ctaScale: 'Talk to us',
     overageLabel: 'Overage rate',
     overageToggle: 'Overage rates',
     tiers: [
       {
         name: 'Starter',
-        priceMonthly: 99,
-        priceAnnual: 79,
+        priceMonthly: 149,
+        priceAnnual: 124,
         tagline: 'For solo operators. We answer your calls and log every lead.',
         featureGroups: [
           {
@@ -386,8 +386,8 @@ export default {
       },
       {
         name: 'Growth',
-        priceMonthly: 249,
-        priceAnnual: 199,
+        priceMonthly: 349,
+        priceAnnual: 289,
         mostPopular: true,
         tagline: 'We answer, qualify, book and follow up across phone and chat, with the full revenue pipeline in view.',
         // Only tier with a trial. `trial` also switches this card's CTA to /book-demo/,
@@ -395,13 +395,13 @@ export default {
         trial: {
           badge: '14 days free',
           cta: 'Try free for 14 days',
-          note: 'No card required. We set your agent up and you run Growth free for 14 days.',
+          note: 'Growth only, on request — no card. We set your agent up, then you run Growth free for 14 days.',
         },
         featureGroups: [
           {
             label: 'Voice agents & chat',
             items: [
-              '2 AI voice agents',
+              '3 AI voice agents',
               '400 minutes / month',
               'Website chatbot',
               'Booking integration',
@@ -425,14 +425,14 @@ export default {
       },
       {
         name: 'Pro',
-        priceMonthly: 549,
-        priceAnnual: 449,
+        priceMonthly: 699,
+        priceAnnual: 579,
         tagline: 'We run your whole front desk in multiple languages, with client onboarding, custom automations and the full ROI suite.',
         featureGroups: [
           {
             label: 'Voice agents & chat',
             items: [
-              '5 AI voice agents',
+              '8 AI voice agents',
               '1,000 minutes / month',
               'Website + WhatsApp chatbots',
               'Multilingual support',
@@ -459,9 +459,10 @@ export default {
     ],
     scale: {
       name: 'Scale',
-      priceFrom: 'from €1,200',
-      tagline: 'Multi-location operations with a dedicated AI consultant on the account.',
+      priceFrom: 'from €1,500',
+      tagline: 'Multi-location operations with a dedicated AI consultant on the account. Quote-based, scoped to your footprint.',
       features: [
+        'Unlimited AI voice agents',
         'Multi-location support',
         'Unlimited automations',
         'Dedicated AI consultant',
@@ -492,7 +493,7 @@ export default {
       { label: 'Live ROI dashboard in AiAnchor’s Command Hub', aianchor: true, human: false, basic: false },
       { label: 'AI consulting: audit, roadmap & ongoing optimisation', aianchor: true, human: false, basic: false },
       { label: 'Connects your existing tools (CRM, calendar, chat)', aianchor: true, human: false, basic: false },
-      { label: 'Monthly cost', aianchor: '€99–549+', human: '€800–1,500', basic: '€150–400' },
+      { label: 'Monthly cost', aianchor: '€149–699+', human: '€800–1,500', basic: '€150–400' },
     ],
   },
 

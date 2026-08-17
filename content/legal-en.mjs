@@ -278,10 +278,10 @@ export const legalEn = {
         table: {
           head: ['Plan', 'Price / month', 'Notes'],
           rows: [
-            ['Starter', '€99 + VAT', 'Included minutes per the pricing table; per-minute overage beyond them'],
-            ['Growth', '€249 + VAT', 'Included minutes + overage; one-time setup fee applies'],
-            ['Pro', '€549 + VAT', 'Included minutes + overage; one-time setup fee applies'],
-            ['Scale', 'from €1,200 + VAT', 'Multi-location scope with a dedicated AI consultant; custom builds quoted separately; one-time setup fee applies'],
+            ['Starter', '€149 + VAT', 'Included minutes per the pricing table; per-minute overage beyond them'],
+            ['Growth', '€349 + VAT', 'Included minutes + overage; one-time setup fee applies'],
+            ['Pro', '€699 + VAT', 'Included minutes + overage; one-time setup fee applies'],
+            ['Scale', 'from €1,500 + VAT', 'Multi-location scope with a dedicated AI consultant; custom builds quoted separately; one-time setup fee applies'],
           ],
         },
         list: [

@@ -737,9 +737,9 @@ export function renderPricing(t) {
   const priceUnit = `<span class="text-xs text-gray-500">${p.perMonth} ${p.vatSuffix}</span>`;
   const savePill = `<span class="price-annual hidden rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">${p.toggle.save}</span>`;
 
-  // A tier carrying `trial` sells the free trial instead of "Get started": green pill under
-  // the price, its own CTA label, and the note under the button. The trial CTA goes to
-  // /book-demo/ (not coming-soon) because we set the trial up rather than self-serve signup.
+  // Every tier CTA goes to /book-demo/: there is no self-serve signup, so a pricing card can
+  // only ever start a conversation. A tier carrying `trial` sells the free trial instead of
+  // the demo — green pill under the price, its own CTA label, and the note under the button.
   const tierCard = (tier, index) => card({
     index,
     name: tier.name,
@@ -750,7 +750,7 @@ export function renderPricing(t) {
     groups: tier.featureGroups,
     extras: tier.extras,
     footnote: `${p.overageLabel}: ${tier.overage}`,
-    ctaHref: `/${t.lang}/${tier.trial ? 'book-demo' : 'coming-soon'}/`,
+    ctaHref: `/${t.lang}/book-demo/`,
     ctaLabel: tier.trial ? tier.trial.cta : tier.cta || p.ctaTier,
     ctaPrimary: tier.mostPopular,
     badge: tier.mostPopular ? p.mostPopular : '',
@@ -778,7 +778,7 @@ export function renderPricing(t) {
 
       <div class="reveal mt-8 inline-flex items-center gap-1 rounded-full border border-white/10 bg-dark-800/60 p-1" id="pricing-toggle" role="group">
         <button type="button" data-pricing-period="monthly" class="pricing-toggle-btn rounded-full px-5 py-2 text-sm font-medium text-dark-900 bg-primary" aria-pressed="true">${p.toggle.monthly}</button>
-        <button type="button" data-pricing-period="annual" class="pricing-toggle-btn rounded-full px-5 py-2 text-sm font-medium text-gray-300" aria-pressed="false">${p.toggle.annual} <span class="text-primary">${p.toggle.save}</span></button>
+        <button type="button" data-pricing-period="annual" class="pricing-toggle-btn rounded-full px-5 py-2 text-sm font-medium text-gray-300" aria-pressed="false">${p.toggle.annual} <span class="pricing-toggle-save">${p.toggle.save}</span></button>
       </div>
 
       <div class="pricing-cards-row reveal-stagger mt-10 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">
