@@ -1,0 +1,1711 @@
+{
+  "nodes": [
+    {
+      "id": "readme_ai_studio_app",
+      "label": "AI Studio App (new-site)",
+      "file_type": "document",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "lines 5-9",
+      "source_url": "https://ai.studio/apps/drive/1j0r9Gq9fmP0KijDJyqpeLZ2BbsaBocSj",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_local_run_workflow",
+      "label": "Local Run Workflow (npm install / npm run dev)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "lines 11-20",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_gemini_api_key",
+      "label": "GEMINI_API_KEY environment variable",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_env_local",
+      "label": ".env.local configuration file",
+      "file_type": "document",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_nodejs_prerequisite",
+      "label": "Node.js prerequisite",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_screenshot_shot_list",
+      "label": "Screenshot Shot List",
+      "file_type": "document",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 1-12",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_hero_dashboard_webp",
+      "label": "hero-dashboard.webp (AI Operations Overview, 1280x800)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 5",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_same_filename_swap_convention",
+      "label": "Same-Filename Asset Swap Convention",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 7-8, 23-25",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_retina_capture_downscale",
+      "label": "2x Retina Capture then Downscale",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 16-18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_customer_data_redaction",
+      "label": "Customer Data Redaction in Screenshots",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 18-19",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_webp_format_policy",
+      "label": "WebP/JPEG over PNG Format Policy",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 20-25",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_content_en_mjs",
+      "label": "content/en.mjs (English content, file: fields)",
+      "file_type": "code",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_content_gr_mjs",
+      "label": "content/gr.mjs (Greek content, file: fields)",
+      "file_type": "code",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_templates_sections_mjs",
+      "label": "templates/sections.mjs (hardcoded hero image path)",
+      "file_type": "code",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 25",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_og_social_preview_images",
+      "label": "OG/Social Preview Images (og-image-en.png, og-image-gr.png, 1200x630)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 26-29",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_shotlist_dropped_portal_industries_sections",
+      "label": "Dropped Portal and Industries Sections",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 10-12",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_hero_visual",
+      "label": "AI Anchor CRM Dashboard Hero Visual (ChatGPT-generated)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+      "label": "Lead Pipeline Dashboard UI Mockup",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_roi_kpi_metrics",
+      "label": "ROI KPI Metric Tiles (Total Pipeline, Open Deals, Win Rate, Avg Deal Size)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_sources_breakdown",
+      "label": "Lead Sources Donut Breakdown (Website, LinkedIn, Referrals, Events, Other)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_wordmark_serif",
+      "label": "AIANCHOR Serif Wordmark (dark cinematic variant)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_dark_navy_aesthetic",
+      "label": "Dark Navy Cinematic Product-Shot Aesthetic",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_en",
+      "label": "Open Graph Social Card - English",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_en_tagline_never_miss_a_call",
+      "label": "Tagline: Never miss a call. Never guess your ROI.",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_en_value_prop",
+      "label": "Value Proposition: AI receptionists + business automation with live ROI portal",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_en_anchor_logo_mark",
+      "label": "AI ANCHOR Anchor Logo Mark (cyan-violet gradient)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_en_teal_violet_gradient_system",
+      "label": "Teal-to-Violet Gradient Grid Brand System",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_gr",
+      "label": "Open Graph Social Card - Greek",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_gr_tagline_kamia_klisi_chameni",
+      "label": "Greek Tagline: Kamia klisi chameni. Kanena ROI stin tychi.",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_gr_value_prop",
+      "label": "Greek Value Proposition: AI resepsionist kai automatismoi me portal ROI",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_og_og_image_gr_bilingual_og_strategy",
+      "label": "Bilingual EN/GR Open Graph Localization Strategy",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "label": "Voice Agent Performance Screen (AIAnchor Client Portal)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_card",
+      "label": "Voice Agent Status Card Pattern",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_ai_receptionist_roles",
+      "label": "AI Receptionist Agent Roles (Inbound, Lead Qualification, Viewing Coordinator)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_workspace_sidebar_nav",
+      "label": "Workspace Sidebar Navigation (Dashboard, Automation Analytics, Voice Agents, Calls, Leads, Activity)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_dark_neon_portal_design_language",
+      "label": "Dark Neon Portal Design Language (near-black surfaces, cyan CTA, green status accents)",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "label": "Calls Screen (AIAnchor Client Portal)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_kpi_stat_tile_row",
+      "label": "KPI Stat Tile Row (Total Calls, Completed, Issues, Avg Duration, Sentiment)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+      "label": "Call Log Table with Filters (agent, outcome, time range)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_sentiment_analysis_badge",
+      "label": "Call Sentiment Badge (positive / neutral)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_live_status_indicator",
+      "label": "Live Status Indicator Pill",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_live_activity_screen",
+      "label": "Live Activity Screen (AIAnchor Client Portal)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+      "label": "Automation Event Feed Timeline",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_northstar_realty_demo_scenario",
+      "label": "Northstar Realty AI Receptionist Demo Scenario",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "label": "Leads CRM Screen (AIAnchor Client Portal)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_pipeline_status_model",
+      "label": "Lead Pipeline Status Model (New, Qualified, Follow-up, Booked)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_crm_search_filter_panel",
+      "label": "CRM Search and Filter Panel (status, tag, source)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_export_actions",
+      "label": "Lead Export Actions (Export CSV, Export Excel, New Lead)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_source_workflow_attribution",
+      "label": "Source Workflow Attribution (voice_agent origin per lead)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "label": "AI Operations Overview Dashboard (AiAnchor Client Portal)",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics",
+      "label": "ROI Metrics (Potential Revenue Pipeline, Estimated Business Value, Hours Saved, Labor Cost Saved)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_recent_opportunities_table",
+      "label": "Recent Opportunities Captured Table",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_business_value_proof_rationale",
+      "label": "Prove Business Value First (lead with euro impact, not raw activity counts)",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_all_systems_operational_banner",
+      "label": "All Systems Operational Health Banner",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard",
+      "label": "Hero Dashboard Screenshot",
+      "file_type": "image",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_ai_operations_overview",
+      "label": "AI Operations Overview Dashboard",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_kpi_metric_cards",
+      "label": "KPI Metric Card Row",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_recent_opportunities_table",
+      "label": "Recent Opportunities Captured Table",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_roi_proof_metrics",
+      "label": "ROI Proof Metrics (Revenue Pipeline, Business Value, Hours Saved, Labor Cost Saved)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_ai_receptionist_workflow",
+      "label": "AI Receptionist Workflow Source",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_client_portal",
+      "label": "Client Portal Demo Workspace",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_dark_teal_design_language",
+      "label": "Dark Navy / Teal Accent Design Language",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_credibility_rationale",
+      "label": "Show Measurable Business Impact to Build Hero Credibility",
+      "file_type": "rationale",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_realty_demo_data",
+      "label": "Northstar Realty Demo Lead Data",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "media_hero_dashboard_system_status_indicator",
+      "label": "All Systems Operational Status Pill",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_ai_studio_app",
+      "target": "readme_local_run_workflow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "lines 11-20",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_local_run_workflow",
+      "target": "readme_nodejs_prerequisite",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 13",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_local_run_workflow",
+      "target": "readme_gemini_api_key",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 18",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_gemini_api_key",
+      "target": "readme_env_local",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md",
+      "source_location": "line 18",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_screenshot_shot_list",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 5",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_same_filename_swap_convention",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 7-8",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_same_filename_swap_convention",
+      "target": "media_shotlist_content_en_mjs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_same_filename_swap_convention",
+      "target": "media_shotlist_content_gr_mjs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_same_filename_swap_convention",
+      "target": "media_shotlist_templates_sections_mjs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 25",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_templates_sections_mjs",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 25",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_content_en_mjs",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_content_gr_mjs",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_content_en_mjs",
+      "target": "media_shotlist_content_gr_mjs",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "line 24",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_retina_capture_downscale",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 16-18",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_customer_data_redaction",
+      "target": "media_shotlist_screenshot_shot_list",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 18-19",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_webp_format_policy",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 20-25",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_webp_format_policy",
+      "target": "media_shotlist_same_filename_swap_convention",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 23-25",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_og_social_preview_images",
+      "target": "media_shotlist_hero_dashboard_webp",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 26-29",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_og_social_preview_images",
+      "target": "media_shotlist_webp_format_policy",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 20-29",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_dropped_portal_industries_sections",
+      "target": "media_shotlist_screenshot_shot_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": "lines 10-12",
+      "weight": 1.0
+    },
+    {
+      "source": "media_shotlist_screenshot_shot_list",
+      "target": "readme_ai_studio_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_hero_visual",
+      "target": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+      "target": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_roi_kpi_metrics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+      "target": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_sources_breakdown",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_hero_visual",
+      "target": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_wordmark_serif",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_dark_navy_aesthetic",
+      "target": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_hero_visual",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_en",
+      "target": "assets_img_og_og_image_en_tagline_never_miss_a_call",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_en",
+      "target": "assets_img_og_og_image_en_value_prop",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_en",
+      "target": "assets_img_og_og_image_en_anchor_logo_mark",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_en_teal_violet_gradient_system",
+      "target": "assets_img_og_og_image_en",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-en.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr",
+      "target": "assets_img_og_og_image_gr_tagline_kamia_klisi_chameni",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr",
+      "target": "assets_img_og_og_image_gr_value_prop",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr",
+      "target": "assets_img_og_og_image_en_anchor_logo_mark",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr",
+      "target": "assets_img_og_og_image_en",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr_bilingual_og_strategy",
+      "target": "assets_img_og_og_image_gr",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr_tagline_kamia_klisi_chameni",
+      "target": "assets_img_og_og_image_en_tagline_never_miss_a_call",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_og_image_gr_value_prop",
+      "target": "assets_img_og_og_image_en_value_prop",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_roi_kpi_metrics",
+      "target": "assets_img_og_og_image_en_value_prop",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_wordmark_serif",
+      "target": "assets_img_og_og_image_en_anchor_logo_mark",
+      "relation": "semantically_similar_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_dark_navy_aesthetic",
+      "target": "assets_img_og_og_image_en_teal_violet_gradient_system",
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.25,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_card",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_card",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_ai_receptionist_roles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_workspace_sidebar_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_dark_neon_portal_design_language",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_33 PM (3).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_kpi_stat_tile_row",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_sentiment_analysis_badge",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_live_status_indicator",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_workspace_sidebar_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_34 PM (4).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_live_activity_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_northstar_realty_demo_scenario",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_live_activity_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_live_status_indicator",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_pipeline_status_model",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_crm_search_filter_panel",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_export_actions",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_source_workflow_attribution",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_source_workflow_attribution",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_ai_receptionist_roles",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_northstar_realty_demo_scenario",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_recent_opportunities_table",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_all_systems_operational_banner",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_business_value_proof_rationale",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_recent_opportunities_table",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_workspace_sidebar_nav",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_dark_neon_portal_design_language",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_all_systems_operational_banner",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_live_status_indicator",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_kpi_stat_tile_row",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_pipeline_status_model",
+      "target": "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_sentiment_analysis_badge",
+      "relation": "semantically_similar_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.25,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard",
+      "target": "media_hero_dashboard_ai_operations_overview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_ai_operations_overview",
+      "target": "media_hero_dashboard_kpi_metric_cards",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_ai_operations_overview",
+      "target": "media_hero_dashboard_recent_opportunities_table",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_ai_operations_overview",
+      "target": "media_hero_dashboard_system_status_indicator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_kpi_metric_cards",
+      "target": "media_hero_dashboard_roi_proof_metrics",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_recent_opportunities_table",
+      "target": "media_hero_dashboard_ai_receptionist_workflow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_recent_opportunities_table",
+      "target": "media_hero_dashboard_realty_demo_data",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_ai_operations_overview",
+      "target": "media_hero_dashboard_client_portal",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard",
+      "target": "media_hero_dashboard_dark_teal_design_language",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_credibility_rationale",
+      "target": "media_hero_dashboard_roi_proof_metrics",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_credibility_rationale",
+      "target": "media_hero_dashboard",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_realty_demo_data",
+      "target": "media_hero_dashboard_roi_proof_metrics",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_ai_receptionist_workflow",
+      "target": "media_hero_dashboard_client_portal",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "media_hero_dashboard_dark_teal_design_language",
+      "target": "media_hero_dashboard_system_status_indicator",
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.3,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hero_image_reference_chain",
+      "label": "Hero image referenced from bilingual content and templates",
+      "nodes": [
+        "media_shotlist_hero_dashboard_webp",
+        "media_shotlist_content_en_mjs",
+        "media_shotlist_content_gr_mjs",
+        "media_shotlist_templates_sections_mjs",
+        "media_shotlist_same_filename_swap_convention"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md"
+    },
+    {
+      "id": "screenshot_capture_policy_set",
+      "label": "Screenshot capture and asset policy set",
+      "nodes": [
+        "media_shotlist_retina_capture_downscale",
+        "media_shotlist_customer_data_redaction",
+        "media_shotlist_webp_format_policy",
+        "media_shotlist_same_filename_swap_convention"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\SHOTLIST.md"
+    },
+    {
+      "id": "local_dev_setup_flow",
+      "label": "Local development setup flow",
+      "nodes": [
+        "readme_nodejs_prerequisite",
+        "readme_local_run_workflow",
+        "readme_gemini_api_key",
+        "readme_env_local",
+        "readme_ai_studio_app"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\README.md"
+    },
+    {
+      "id": "og_social_card_bilingual_pair",
+      "label": "Bilingual OG social card pair sharing layout, logo mark and gradient system",
+      "nodes": [
+        "assets_img_og_og_image_en",
+        "assets_img_og_og_image_gr",
+        "assets_img_og_og_image_en_anchor_logo_mark",
+        "assets_img_og_og_image_en_teal_violet_gradient_system",
+        "assets_img_og_og_image_gr_bilingual_og_strategy"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\og-image-gr.png"
+    },
+    {
+      "id": "roi_portal_proof_visual",
+      "label": "Dashboard components together demonstrate the live ROI portal claim",
+      "nodes": [
+        "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+        "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_roi_kpi_metrics",
+        "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_sources_breakdown",
+        "assets_img_og_og_image_en_value_prop"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\og\\ChatGPT Image Aug 4, 2026, 04_30_12 PM.png"
+    },
+    {
+      "id": "aianchor_client_portal_screen_suite",
+      "label": "AIAnchor Client Portal Screen Suite (Dashboard, Voice Agents, Calls, Leads, Activity)",
+      "nodes": [
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_live_activity_screen"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_53_18 PM.png"
+    },
+    {
+      "id": "voice_call_to_lead_conversion_funnel",
+      "label": "Voice Call to Lead Conversion Funnel (agent handles call, event logged, lead booked, value reported)",
+      "nodes": [
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_ai_receptionist_roles",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_pipeline_status_model",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (6).png"
+    },
+    {
+      "id": "shared_demo_dataset_persona_set",
+      "label": "Shared Demo Dataset Persona Set (Olivia Bennett, Daniel Carter, Sophia Reed, Ethan Brooks, Maya Collins)",
+      "nodes": [
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_northstar_realty_demo_scenario",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+        "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_recent_opportunities_table"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\assets\\img\\placeholders\\ChatGPT Image Jul 22, 2026, 04_52_35 PM (5).png"
+    },
+    {
+      "id": "hero_dashboard_layout_composition",
+      "label": "Dashboard Hero Composition: Banner, KPI Row, Data Table",
+      "nodes": [
+        "media_hero_dashboard_ai_operations_overview",
+        "media_hero_dashboard_kpi_metric_cards",
+        "media_hero_dashboard_recent_opportunities_table",
+        "media_hero_dashboard_system_status_indicator"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp"
+    },
+    {
+      "id": "hero_dashboard_roi_proof_narrative",
+      "label": "ROI Proof Narrative for Marketing Hero",
+      "nodes": [
+        "media_hero_dashboard",
+        "media_hero_dashboard_roi_proof_metrics",
+        "media_hero_dashboard_realty_demo_data",
+        "media_hero_dashboard_credibility_rationale"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\akarn\\OneDrive - University of the Peloponnese\\Documents\\AiAnchor\\new-site\\media\\hero-dashboard.webp"
+    }
+  ],
+  "input_tokens": 186713,
+  "output_tokens": 0
+}

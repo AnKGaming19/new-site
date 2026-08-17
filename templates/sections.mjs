@@ -764,7 +764,7 @@ export function renderPricing(t) {
     tagline: p.scale.tagline,
     priceHtml: `<span class="font-display text-[2.75rem] font-bold leading-none tracking-tight text-white">${p.scale.priceFrom}</span>${priceUnit}`,
     groups: [{ label: gr ? 'Τι περιλαμβάνει' : 'What you get', items: p.scale.features }],
-    ctaHref: `mailto:${t.footer.contactEmail}?subject=Scale%20plan`,
+    ctaHref: `/${t.lang}/book-demo/`,
     ctaLabel: p.ctaScale,
   });
 

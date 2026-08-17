@@ -1,0 +1,416 @@
+{
+  "communities": {
+    "0": [
+      "build",
+      "build_asset_version",
+      "build_bookdemopath",
+      "build_buildbookdemopage",
+      "build_buildcomingsoonpage",
+      "build_buildhomepage",
+      "build_buildlegalpage",
+      "build_buildrobotstxt",
+      "build_buildrootpage",
+      "build_buildsitemap",
+      "build_comingsoonpath",
+      "build_content",
+      "build_copyrecursive",
+      "build_dirname",
+      "build_dist",
+      "build_pageopen",
+      "build_urlpathbylangfactory",
+      "build_writefile",
+      "templates_config",
+      "templates_config_app_url",
+      "templates_config_default_lang",
+      "templates_config_langpath",
+      "templates_config_langs",
+      "templates_config_legal_slugs",
+      "templates_config_legalpath",
+      "templates_config_site_url",
+      "templates_layout",
+      "templates_layout_hreflangtags",
+      "templates_layout_htmldocument",
+      "templates_layout_renderfooter",
+      "templates_layout_renderhead",
+      "templates_layout_rendernav",
+      "templates_layout_rootredirectscript",
+      "templates_schema",
+      "templates_schema_faqpageschema",
+      "templates_schema_jsonldscripts",
+      "templates_schema_organizationschema",
+      "templates_schema_softwareapplicationschema"
+    ],
+    "1": [
+      "build_rendermain",
+      "templates_brands",
+      "templates_brands_brandkey",
+      "templates_brands_brandlogo",
+      "templates_brands_brands",
+      "templates_brands_svg",
+      "templates_cookie_consent",
+      "templates_cookie_consent_rendercookieconsent",
+      "templates_icons",
+      "templates_icons_iconmarkup",
+      "templates_icons_icons",
+      "templates_icons_wrap",
+      "templates_sections",
+      "templates_sections_automationsblock",
+      "templates_sections_headlinelines",
+      "templates_sections_heromockup",
+      "templates_sections_micorbaccent",
+      "templates_sections_renderabout",
+      "templates_sections_rendercomingsoon",
+      "templates_sections_rendercomparison",
+      "templates_sections_renderconsulting",
+      "templates_sections_rendercontact",
+      "templates_sections_renderfaq",
+      "templates_sections_renderfeatures",
+      "templates_sections_renderhero",
+      "templates_sections_renderhowitworks",
+      "templates_sections_renderpricing",
+      "templates_sections_renderservices",
+      "templates_sections_rendersocialproof",
+      "templates_sections_rendervoiceagentfull",
+      "templates_sections_shotimg",
+      "templates_sections_stackband",
+      "templates_sections_wavedivider"
+    ],
+    "2": [
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_ai_receptionist_roles",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_dark_neon_portal_design_language",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_card",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_voice_agent_performance_screen",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_33_pm_3_workspace_sidebar_nav",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_call_log_table",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_calls_screen",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_kpi_stat_tile_row",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_live_status_indicator",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_34_pm_4_sentiment_analysis_badge",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_event_feed_timeline",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_live_activity_screen",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_5_northstar_realty_demo_scenario",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_crm_search_filter_panel",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_export_actions",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_lead_pipeline_status_model",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_leads_crm_screen",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_52_35_pm_6_source_workflow_attribution",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_ai_operations_overview_dashboard",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_all_systems_operational_banner",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_business_value_proof_rationale",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_recent_opportunities_table",
+      "assets_img_placeholders_chatgpt_image_jul_22_2026_04_53_18_pm_roi_metrics"
+    ],
+    "3": [
+      "autoprefixer",
+      "http_server",
+      "package",
+      "package_description",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_http_server",
+      "package_devdependencies_postcss",
+      "package_devdependencies_tailwindcss",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_build_css",
+      "package_scripts_build_site",
+      "package_scripts_dev",
+      "package_scripts_dev_static",
+      "package_type",
+      "package_version",
+      "postcss",
+      "tailwindcss"
+    ],
+    "4": [
+      "media_shotlist_content_en_mjs",
+      "media_shotlist_content_gr_mjs",
+      "media_shotlist_customer_data_redaction",
+      "media_shotlist_dropped_portal_industries_sections",
+      "media_shotlist_hero_dashboard_webp",
+      "media_shotlist_og_social_preview_images",
+      "media_shotlist_retina_capture_downscale",
+      "media_shotlist_same_filename_swap_convention",
+      "media_shotlist_screenshot_shot_list",
+      "media_shotlist_templates_sections_mjs",
+      "media_shotlist_webp_format_policy",
+      "readme_ai_studio_app",
+      "readme_env_local",
+      "readme_gemini_api_key",
+      "readme_local_run_workflow",
+      "readme_nodejs_prerequisite"
+    ],
+    "5": [
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_dark_navy_aesthetic",
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_hero_visual",
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_pipeline_dashboard",
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_lead_sources_breakdown",
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_roi_kpi_metrics",
+      "assets_img_og_chatgpt_image_aug_4_2026_04_30_12_pm_wordmark_serif",
+      "assets_img_og_og_image_en",
+      "assets_img_og_og_image_en_anchor_logo_mark",
+      "assets_img_og_og_image_en_tagline_never_miss_a_call",
+      "assets_img_og_og_image_en_teal_violet_gradient_system",
+      "assets_img_og_og_image_en_value_prop",
+      "assets_img_og_og_image_gr",
+      "assets_img_og_og_image_gr_bilingual_og_strategy",
+      "assets_img_og_og_image_gr_tagline_kamia_klisi_chameni",
+      "assets_img_og_og_image_gr_value_prop"
+    ],
+    "6": [
+      "api_book_demo",
+      "api_book_demo_clean",
+      "api_book_demo_confirmationemail",
+      "api_book_demo_copy",
+      "api_book_demo_escapehtml",
+      "api_book_demo_handler",
+      "api_book_demo_isemail",
+      "api_book_demo_max",
+      "api_book_demo_normalizewebsite",
+      "api_book_demo_notificationemail",
+      "api_book_demo_readbody",
+      "api_book_demo_row",
+      "api_book_demo_sendemail"
+    ],
+    "7": [
+      "media_hero_dashboard",
+      "media_hero_dashboard_ai_operations_overview",
+      "media_hero_dashboard_ai_receptionist_workflow",
+      "media_hero_dashboard_client_portal",
+      "media_hero_dashboard_credibility_rationale",
+      "media_hero_dashboard_dark_teal_design_language",
+      "media_hero_dashboard_kpi_metric_cards",
+      "media_hero_dashboard_realty_demo_data",
+      "media_hero_dashboard_recent_opportunities_table",
+      "media_hero_dashboard_roi_proof_metrics",
+      "media_hero_dashboard_system_status_indicator"
+    ],
+    "8": [
+      "dev_server",
+      "dev_server_decorate",
+      "dev_server_dirname",
+      "dev_server_dist",
+      "dev_server_envfile",
+      "dev_server_handleapi",
+      "dev_server_mime",
+      "dev_server_servestatic"
+    ],
+    "9": [
+      "vercel",
+      "vercel_buildcommand",
+      "vercel_headers",
+      "vercel_outputdirectory",
+      "vercel_redirects",
+      "vercel_rewrites",
+      "vercel_trailingslash"
+    ],
+    "10": [
+      "content_en",
+      "content_legal_en",
+      "content_legal_en_legalen",
+      "content_legal_en_legalmetaen",
+      "content_legal_en_subprocessors_table"
+    ],
+    "11": [
+      "content_gr",
+      "content_legal_gr",
+      "content_legal_gr_legalgr",
+      "content_legal_gr_legalmetagr",
+      "content_legal_gr_subprocessors_table"
+    ],
+    "12": [
+      "assets_js_motion",
+      "assets_js_motion_initconnector",
+      "assets_js_motion_initparticles",
+      "assets_js_motion_inittilt"
+    ],
+    "13": [
+      "templates_demo",
+      "templates_demo_optionaltag",
+      "templates_demo_renderbookdemo",
+      "templates_demo_textfield"
+    ],
+    "14": [
+      "templates_legal",
+      "templates_legal_renderlegalpage",
+      "templates_legal_rendersection",
+      "templates_legal_rendertable"
+    ],
+    "15": [
+      "assets_js_main"
+    ],
+    "16": [
+      "postcss_config"
+    ],
+    "17": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.14793741109530584,
+    "1": 0.12878787878787878,
+    "2": 0.11857707509881422,
+    "3": 0.09523809523809523,
+    "4": 0.175,
+    "5": 0.18095238095238095,
+    "6": 0.3076923076923077,
+    "7": 0.2545454545454545,
+    "8": 0.2857142857142857,
+    "9": 0.2857142857142857,
+    "10": 0.6,
+    "11": 0.6,
+    "12": 0.5,
+    "13": 0.8333333333333334,
+    "14": 0.8333333333333334,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0
+  },
+  "gods": [
+    {
+      "id": "templates_icons_iconmarkup",
+      "label": "iconMarkup()",
+      "degree": 21
+    },
+    {
+      "id": "build_rendermain",
+      "label": "renderMain()",
+      "degree": 14
+    },
+    {
+      "id": "build_buildrootpage",
+      "label": "buildRootPage()",
+      "degree": 13
+    },
+    {
+      "id": "build_buildhomepage",
+      "label": "buildHomePage()",
+      "degree": 12
+    },
+    {
+      "id": "build_urlpathbylangfactory",
+      "label": "urlPathByLangFactory()",
+      "degree": 9
+    },
+    {
+      "id": "build_buildlegalpage",
+      "label": "buildLegalPage()",
+      "degree": 9
+    },
+    {
+      "id": "build_buildcomingsoonpage",
+      "label": "buildComingSoonPage()",
+      "degree": 9
+    },
+    {
+      "id": "build_buildbookdemopage",
+      "label": "buildBookDemoPage()",
+      "degree": 9
+    },
+    {
+      "id": "api_book_demo_handler",
+      "label": "handler()",
+      "degree": 8
+    },
+    {
+      "id": "templates_layout_renderhead",
+      "label": "renderHead()",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "pageOpen()",
+      "target": "renderCookieConsent()",
+      "source_files": [
+        "build.mjs",
+        "templates/cookie-consent.mjs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "buildLegalPage()",
+      "target": "renderLegalPage()",
+      "source_files": [
+        "build.mjs",
+        "templates/legal.mjs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "buildComingSoonPage()",
+      "target": "renderComingSoon()",
+      "source_files": [
+        "build.mjs",
+        "templates/sections.mjs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "buildBookDemoPage()",
+      "target": "renderBookDemo()",
+      "source_files": [
+        "build.mjs",
+        "templates/demo.mjs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "Screenshot Shot List",
+      "target": "AI Studio App (new-site)",
+      "source_files": [
+        "media/SHOTLIST.md",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `AIANCHOR Serif Wordmark (dark cinematic variant)` and `AI ANCHOR Anchor Logo Mark (cyan-violet gradient)`?",
+      "why": "Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Dark Navy Cinematic Product-Shot Aesthetic` and `Teal-to-Violet Gradient Grid Brand System`?",
+      "why": "Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Call Sentiment Badge (positive / neutral)` and `Lead Pipeline Status Model (New, Qualified, Follow-up, Booked)`?",
+      "why": "Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Dark Navy / Teal Accent Design Language` and `All Systems Operational Status Pill`?",
+      "why": "Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `iconMarkup()` connect `Community 1` to `Community 0`, `Community 13`?",
+      "why": "High betweenness centrality (0.009) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `MAX`, `COPY`, `__dirname` to the rest of the system?",
+      "why": "41 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14793741109530584 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
