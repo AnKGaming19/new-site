@@ -39,7 +39,7 @@ export default {
       {
         icon: 'phone',
         title: 'You hear a real call',
-        desc: 'Not a slide deck. The agent answers, qualifies and books in Greek or English, on a flow built around your business.',
+        desc: 'Not a slide deck. The agent answers, qualifies and books in multiple languages (Greek and English by default), on a flow built around your business.',
       },
       {
         icon: 'workflow',
@@ -145,7 +145,7 @@ export default {
         problem: 'Calls, chats, messages and web forms get lost when your team is busy, offline, or switching between tools.',
         impact: 'IMPACT: Lost revenue and slower response times',
         solutionTitle: 'Voice Agents & Chatbots',
-        solution: 'A voice agent answers every call, 24/7, in Greek and English, while chatbots handle your website and WhatsApp. They ask your qualifying questions, book the appointment and get the lead to the right person before it goes cold.',
+        solution: 'A voice agent answers every call, 24/7, in multiple languages (with Greek and English as the primary setup), while chatbots handle your website and WhatsApp. They ask your qualifying questions, book the appointment and get the lead to the right person before it goes cold.',
         result: 'Every call and chat answered, qualified and visible in the Command Hub the moment it lands.',
         icon: 'phone',
         solutionIcon: 'workflow',
@@ -222,10 +222,10 @@ export default {
 
   voiceSystems: {
     heading: 'AI voice agents & automations',
-    subhead: 'The two engines we run for you: agents that answer, qualify and book across phone and chat, and automations that carry every lead through qualification, onboarding and follow-up inside your CRM. Everything reports into the Command Hub.',
+    subhead: 'The two engines we run for you: multilingual agents (Greek and English by default) that answer, qualify and book across phone and chat, and automations that carry every lead through qualification, onboarding and follow-up inside your CRM. Everything reports into the Command Hub.',
     voiceLabel: 'Voice agents',
     features: [
-      { title: 'Instant call pickup', desc: 'Answers every call in Greek or English, day or night, so no opportunity ever reaches voicemail.' },
+      { title: 'Instant call pickup', desc: 'Answers every call in multiple languages (Greek and English by default), day or night, so no opportunity ever reaches voicemail.' },
       { title: 'Smart discovery & booking', desc: 'Asks your qualifying questions, works out what the caller actually wants and books straight into your calendar.' },
       { title: 'Warm handover to your team', desc: 'Calls that need a person reach the right person, with the context already written up and the lead already logged.' },
       { title: 'Spam screened out', desc: 'Robocalls and time-wasters get filtered before they waste your agent’s minutes, or your team’s attention.' },
@@ -320,7 +320,7 @@ export default {
       {
         n: '02',
         title: 'We build and run the agents & automations',
-        desc: 'Done for you. Voice agents and chatbots answer in Greek and English, qualification scores and routes every lead, and onboarding, text-backs and follow-up sequences run inside your CRM.',
+        desc: 'Done for you. Voice agents and chatbots answer in multiple languages (Greek and English as primary), qualification scores and routes every lead, and onboarding, text-backs and follow-up sequences run inside your CRM.',
       },
       {
         n: '03',
@@ -334,7 +334,7 @@ export default {
     heading: 'AiAnchor’s Command Hub',
     subhead: 'One platform you log into, where every agent and automation we run reports in real numbers: calls and chats answered, leads qualified, clients onboarded, bookings made and what they’re worth.',
     items: [
-      { icon: 'phone', title: 'AI voice agents (GR + EN)', desc: 'Natural, on-brand phone conversations in Greek and English, around the clock, with summaries and sentiment on every call.' },
+      { icon: 'phone', title: 'AI voice agents (multilingual)', desc: 'Natural, on-brand phone conversations across multiple languages (Greek and English by default), around the clock, with summaries and sentiment on every call.' },
       { icon: 'bot', title: 'Chatbots on site & WhatsApp', desc: 'Web chat and WhatsApp answered from your own services and pricing, capturing the lead in the same pipeline as your calls.' },
       { icon: 'users', title: 'Lead qualification & routing', desc: 'Every enquiry scored against your criteria and routed to the right person, so your team only touches the ones worth touching.' },
       { icon: 'calendar', title: 'Real bookings into your calendar', desc: 'Appointments land directly in the calendar you already use. No double-booking, no back-and-forth.' },
@@ -523,7 +523,7 @@ export default {
       },
       {
         q: 'What languages does it support?',
-        a: 'Greek and English as standard, and it can switch language mid-call. Pro plans add more.',
+        a: 'Your agent is multilingual and can be configured for multiple languages. Greek and English are the primary setup we use by default, and it can switch language mid-call.',
       },
       {
         q: 'Can you put a chatbot on my website and WhatsApp as well?',
